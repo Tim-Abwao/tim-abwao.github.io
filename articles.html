@@ -1,0 +1,41 @@
+---
+layout: default
+title: Tim Abwao | Articles
+---
+	<style>
+		body {
+	  		background: black url( /assets/images/8.jpg) no-repeat fixed; background-size: cover;
+		}
+		@media only screen and (max-width: 768px) {
+	  		body {
+	    		background: black url( /assets/images/john-silliman-ZK1HZiMZ2EM-unsplash.jpg) no-repeat fixed; background-size: cover;
+	  		}
+		}
+    .article-link {
+        margin: 5% 10%; 
+        padding:20px 50px; 
+        background-color: rgb(255,255,255,0.6); 
+        max-width: 800px; 
+        border-radius: 10px; 
+        color: black;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+	</style>
+</head>
+<body >
+{% include nav.html %}
+
+<div class="article-link"> 
+ <ul>
+  {% for post in site.posts %}
+     
+    <li>
+      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      <p>{{ post.excerpt }}</p>
+    </li>
+
+  {% endfor %}
+</ul>
+  </div>
+
+

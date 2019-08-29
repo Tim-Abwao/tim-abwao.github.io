@@ -1,0 +1,35 @@
+---
+layout: default
+---
+	<style type="text/css">
+		body {
+	  		background: grey url( /assets/images/11.jpg) no-repeat fixed; background-size: cover;
+	  		
+	  		font-family: "Comic Sans MS", cursive, sans-serif;
+	  		font-size: 1.15em;
+		}
+		@media only screen and (max-width: 768px) {
+	  		body {
+	    		background: grey url( /assets/images/10.jpg) no-repeat fixed; background-size: cover;
+	  		}
+		}
+	</style>
+</head>
+<body>
+	<div style="max-width: 800px; margin: 10%;">	
+		<h1>{{ page.title }}</h1>
+		<p>{{ page.date | date_to_string }} - {{ page.author }}</p>
+
+		{{ content }}
+	</div>
+
+	<div style="margin: 5% 20%; ">
+		<ul class="nav">
+		  <li class="nav-item">
+		    <a class="nav-link active" href="/articles">Back to Articles</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" href="/">Back to Home</a>
+		  </li>
+		</ul>
+	</div>
