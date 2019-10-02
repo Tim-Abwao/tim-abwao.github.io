@@ -1,0 +1,6 @@
+I"<p><a href="http://initd.org/psycopg/docs">Psycopg</a> is a trusted and reliable Python adaptor for <a href="https://www.postgresql.org">PostgreSQL</a>. It enables one to connect to a PostgreSQL database and run SQL commands, right from within Python Scripts.</p>
+
+<p>PostgreSQL is a popular <a href="https://database.guide/what-is-an-ordbms">object-relational database management system</a> ( it stores data in relations/tables with rows and columns, and tables can be linked). It is fast, reliable and open source (free). It can hold databases as large as 32TB.</p>
+
+<p>Psycopg is very handy for applications written in Python that wish to store and/or access data in a PostgreSQL database (e.g. flask/django websites &amp; blogs, data analysis apps, report-generating apps, etc.)</p>
+:ET

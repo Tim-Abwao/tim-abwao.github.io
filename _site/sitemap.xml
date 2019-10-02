@@ -17,13 +17,14 @@
 <lastmod>2019-09-18T00:00:00+03:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:5000/2019/10/02/Connecting-To-PostgreSQL-Databases-From-Python/</loc>
+<lastmod>2019-10-02T00:00:00+03:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:5000/about/</loc>
 </url>
 <url>
 <loc>http://localhost:5000/articles/</loc>
-</url>
-<url>
-<loc>http://localhost:5000/blog/</loc>
 </url>
 <url>
 <loc>http://localhost:5000/projects/</loc>
