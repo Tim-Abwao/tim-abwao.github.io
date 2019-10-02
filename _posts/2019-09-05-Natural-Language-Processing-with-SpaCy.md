@@ -22,7 +22,7 @@ Some of it's [main features](https://spacy.io/usage/spacy-101#features) include:
 
 and many more.
 ## Getting Started
-Installation instructions for the various OS platforms can be found at [spaCy's usage guide](https://spacy.io/usage). (**Note:** On *Windows* OS, installing spaCy with pip requires you to have a Microsoft Visual C++ Compiler installed. You can get it [here](https://visualstudio.microsoft.com/visual-cpp-build-tools/), or you can use `conda` instead)
+Installation instructions for the various OS platforms can be found at [spaCy's usage guide](https://spacy.io/usage). (**Note:** On *Windows* OS, installing spaCy with `pip` requires you to have a Microsoft Visual C++ Compiler installed. You can get it [here](https://visualstudio.microsoft.com/visual-cpp-build-tools/), or you can use `conda` instead)
 
 Spacy has its very own [Advanced NLP with spaCy course](https://course.spacy.io) that introduces and explains its various features; and even includes practice sessions to see them in action. It's the best way to learn what spaCy is all about.
 
