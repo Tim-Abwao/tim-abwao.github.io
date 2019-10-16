@@ -1,8 +1,0 @@
-I"=<p><a href="https://www.postgresql.org">PostgreSQL</a> is a popular <a href="https://database.guide/what-is-an-ordbms">object-relational database management system</a> (<em>it stores data in relations/tables with rows and columns; and tables can be linked</em>). It is fast, reliable and open source (free). It can hold databases as large as 32TB, with virtually unlimited rows.</p>
-
-<p><a href="http://initd.org/psycopg/docs">Psycopg</a> is a trusted and reliable Python adaptor for PostgreSQL. It enables one to connect to a PostgreSQL database and run <a href="http://www.sqlcourse.com/intro.html">SQL</a> commands, right from within Python scripts.</p>
-
-<p>Psycopg is very handy for applications written in Python that wish to store and/or retrieve data in a PostgreSQL database e.g. flask/django websites &amp; blogs, data analysis apps, report-generating apps, etc.</p>
-
-<p>If you wish, you can explore some of Psycopg’s features using <a href="https://github.com/Tim-Abwao/Psycopg2-Basics/blob/master/PostgreSQL%20Basics%20with%20Psycopg2.ipynb">this jupyter notebook</a></p>
-:ET
