@@ -26,6 +26,6 @@ Installation instructions for the various OS platforms can be found at [spaCy's 
 
 Spacy has its very own [Advanced NLP with spaCy course](https://course.spacy.io) that introduces and explains its various features; and even includes practice sessions to see them in action. It's the best way to learn what spaCy is all about.
 
-If you wish, you can download and try out a [simple NLP app](https://github.com/Tim-Abwao/spaCy-Text-App) I'd made using *spaCy*.
+If you wish, you can download and try out a [simple NLP app](https://github.com/Tim-Abwao/spaCy-Text-App) I'd made using *spaCy*. It can extract text from documents of various formats, and derive basic information like names & countries.
 
 

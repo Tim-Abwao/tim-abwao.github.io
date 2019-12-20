@@ -10,7 +10,7 @@ Flask can make wonderful dynamic websites and responsive applications, since it 
 
 It'll be exciting discovering the ingenuity behind today's sophisticated and artistic websites. And there's an abundance of resources, such as [W3Schools](https://www.w3schools.com)(a personal favourite) and [Bootstrap](https://getbootstrap.com), to help along the way.   
 
-If you wish, you can view a demo flask app and explore some common statistical distributions [here](https://statistics-distributions.herokuapp.com). The code for the app is available [here](https://github.com/Tim-Abwao/statistical-distributions-flask)
+I'll re-edit this page to add a step-by-step guide on how to build a flask web app to explore some common statistical distributions. But in the meantime, if you wish, you can view the live demo [here](https://statistics-distributions.herokuapp.com). The code for the app is available [here](https://github.com/Tim-Abwao/statistical-distributions-flask)
 
 
 

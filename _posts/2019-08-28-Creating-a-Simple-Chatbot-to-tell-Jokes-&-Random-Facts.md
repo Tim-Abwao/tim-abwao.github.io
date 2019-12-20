@@ -2,6 +2,7 @@
 layout: post
 author: Abwao
 ---
+
 [Rasa](https://rasa.com/){:target="_blank"} is an [open source](https://opensource.com/resources/what-open-source){:target="_blank"} software with user-friendly tools to design, train and build intelligent chatbots.
 
 ### Installation
@@ -24,4 +25,4 @@ For adjustments to the **endpoints.yml**, **config.yml**, **credentials.yml**, *
 
 **Hint:** some features *might* at times appear quite challenging to design and implement (custom actions are particularly notorious), but you *will* find plenty of help in online forums.
 
-If you'd like, you can download a sample chatbot I had made [here](https://github.com/Tim-Abwao/rasa-chatbot). It uses internet APIs to tell jokes and random number/date facts.
+If you'd like, you can download a sample chatbot I had made [here](https://github.com/Tim-Abwao/rasa-chatbot). It uses internet APIs to tell jokes and random number/date facts. I'll re-edit this page in future to describe how to build it.

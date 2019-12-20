@@ -8,4 +8,4 @@ layout: post
 
 Psycopg is very handy for applications written in Python that need to store and/or retrieve data in a PostgreSQL database e.g. flask/django websites & blogs, data analysis apps, report-generating apps, etc.
 
-If you wish, you can explore some of Psycopg's features using [this jupyter notebook](https://github.com/Tim-Abwao/Psycopg2-Basics/blob/master/PostgreSQL%20Basics%20with%20Psycopg2.ipynb)
+You can explore some of Psycopg's features using [this jupyter notebook](https://github.com/Tim-Abwao/Psycopg2-Basics/blob/master/PostgreSQL%20Basics%20with%20Psycopg2.ipynb)
