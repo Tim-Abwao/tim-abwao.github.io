@@ -8,6 +8,7 @@ author: Abwao
 ### Installation
 This simple [getting started guide](https://rasa.com/docs/getting-started/) will take you through the installation process, and even create a chatbot (Rasa project) that you can try out right away. The [Rasa Tutorial](https://rasa.com/docs/rasa/user-guide/rasa-tutorial/) is the best way to get acquainted with how Rasa works. 
 
+
 **Note:** Please check out the [Installation guide](https://rasa.com/docs/rasa/user-guide/installation/#installation-guide) for platform-specific dependencies (e.g. if you're using **Windows**, you'll need to have the Microsoft VC++ Compiler installed beforehand, or else the Rasa installation will fail).
 
 ### Modifying the Chatbot
