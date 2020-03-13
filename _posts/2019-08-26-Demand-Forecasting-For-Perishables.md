@@ -2,7 +2,7 @@
 layout: post
 author: Abwao
 ---
-[Demand forecasting](https://en.wikipedia.org/wiki/Demand_forecasting){:target="_blank"} "tries to understand and predict customer demand" so as to "optimize supply decisions". It has the potential to minimise, and even completely eliminate losses resulting from spoilt items.
+[Demand forecasting](https://en.wikipedia.org/wiki/Demand_forecasting) can be described as the analysis of data predictive methods to estimate the demand for products. It has the potential to minimise, and even completely eliminate losses resulting from spoilt items.
 
 Perishable goods are often defined as items that have a short shelf-life: things like vegetables, fruits, milk, meat and fish, among others. Some can stay fresh for only a few hours, but grocery stores and supermarkets have to keep them in stock and available to customers.
 
