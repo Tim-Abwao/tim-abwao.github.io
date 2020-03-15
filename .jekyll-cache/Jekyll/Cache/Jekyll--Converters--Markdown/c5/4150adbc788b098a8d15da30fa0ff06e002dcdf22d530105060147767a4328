@@ -1,6 +1,6 @@
-I"t<p><a href="https://www.postgresql.org">PostgreSQL</a> is a <strong>fast</strong>, <strong>reliable</strong> and <strong>open source</strong>(free) <a href="https://database.guide/what-is-an-ordbms">object-relational database management system</a> (<em>it stores data in relations: which are really just tables with rows and columns</em>). It can hold databases as large as 32TB, with virtually unlimited rows. This makes it an ideal choice for many companies dealing with large volumes of data.</p>
+I"v<p><a href="https://www.postgresql.org">PostgreSQL</a> is a <strong>fast</strong>, <strong>reliable</strong> and <strong>open source</strong>(free) <a href="https://database.guide/what-is-an-ordbms">object-relational database management system</a> (<em>it stores data in relations: which are really just tables with rows and columns</em>). It can hold databases as large as 32TB, with virtually unlimited rows. This makes it an ideal choice for many companies dealing with large volumes of data.</p>
 
-<h2 id="psycopg2---pythons-vessel-to-postgres">Psycopg2 - Python’s Vessel to Postgres</h2>
+<h2 id="psycopg2---pythons-vessel-for-postgres">Psycopg2 - Python’s Vessel for Postgres</h2>
 <p><a href="http://initd.org/psycopg/docs">Psycopg</a> is a <strong>robust</strong> Python adaptor for PostgreSQL. It enables one to connect to PostgreSQL servers, create database and run various operations and <a href="http://www.sqlcourse.com/intro.html">SQL</a> queries, right from within Python scripts.</p>
 
 <p>It comes in handy for applications written in Python that need to store and/or retrieve data in a PostgreSQL database e.g. flask/django websites &amp; blogs, data analysis apps, report-generating apps, etc.</p>

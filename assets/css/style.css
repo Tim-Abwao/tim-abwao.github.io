@@ -36,7 +36,7 @@
 	text-decoration: none;
 }
 .link-label img {
-	max-width: 450px;
+	max-width: 80%;
 	border-radius: 15px;
 	box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
 }
