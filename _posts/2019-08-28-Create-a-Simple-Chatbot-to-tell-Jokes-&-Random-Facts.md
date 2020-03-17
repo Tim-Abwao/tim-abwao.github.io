@@ -17,7 +17,7 @@ The chatbot is taught/trained using data in the **data** folder. It understands 
 
 You can add as many *intents* as you wish to customise it (e.g. for small talk, customer service, ticket-booking, financial-assistant service, etc). Just be careful to make sure the intents' respective examples are distinct, and unlikely to be mixed up.
 
-The [stories](https://rasa.com/docs/rasa/core/stories/) in the **stories.md** file present the chatbot with sample real-world conversation flows to help it predict the most approprite responses (Please see [Stories](https://rasa.com/docs/rasa/core/stories/)).
+The [stories](https://rasa.com/docs/rasa/core/stories/) in the **stories.md** file present the chatbot with sample real-world conversation flows to help it predict the most approprite responses.
 
 ### (ii). 'The body'
 The skeleton of the chatbot is the [domain](https://rasa.com/docs/rasa/core/domains/) in the **domain.yml** file. It holds all the *intents* & *entities* the chatbot should know, the [slots](https://rasa.com/docs/rasa/core/slots/) and [forms](https://rasa.com/docs/rasa/core/forms/) it should store, the list of [actions](https://rasa.com/docs/rasa/core/actions/) it can perform, the [responses](https://rasa.com/docs/rasa/core/responses/) it can make  and additional configurations. 
