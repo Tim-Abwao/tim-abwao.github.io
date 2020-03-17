@@ -1,0 +1,37 @@
+I"<p><a href="https://rasa.com/">Rasa</a> is an <a href="https://opensource.com/resources/what-open-source">open source</a> Python package with easy-to-use tools for building intelligent text and voice based chatbots. It features several <em>machine learning</em>, <em>natural language processing</em> and <em>natural language understanding</em> tools to produce smart, life-like chatbots.</p>
+
+<h3 id="installation">Installation</h3>
+<p>Please check out the <a href="https://rasa.com/docs/rasa/user-guide/installation/#installation-guide">step-by-step installation guide</a> for platform-specific instructions. This <a href="https://rasa.com/docs/getting-started/">getting started guide</a> installs Rasa and creates a basic chatbot (Rasa project) that you can try out right away.</p>
+
+<h2 id="getting-started">Getting Started</h2>
+<p>The <a href="https://rasa.com/docs/rasa/user-guide/rasa-tutorial/">Rasa Tutorial</a> is the best way to get acquainted with how Rasa works. It defines the fundamental files required to build chatbots, and their varied formats.</p>
+
+<h2 id="anatomy-of-the-chatbot">Anatomy of the Chatbot</h2>
+<h3 id="a-the-brains">(a). ‘The brains’</h3>
+<p>The chatbot is ‘taught/trained’ using data in the <strong>data</strong> folder. It understands a user’s input by learning the various <em>intents</em> and <em>entities</em> in the <strong>nlu.md</strong> file (Please see <a href="https://rasa.com/docs/rasa/nlu/training-data-format/">Training Data Format</a>).</p>
+
+<p>You can add as many <em>intents</em> as you wish to customise it (e.g. for small talk, customer service, ticket-booking, financial-assistant service, etc). Just be careful to make sure the intents’ respective examples are distinct, and unlikely to be mixed up.</p>
+
+<p>The <a href="https://rasa.com/docs/rasa/core/stories/">stories</a> in the <strong>stories.md</strong> file present the chatbot with sample real-world conversation flows to help it predict the most approprite responses (Please see <a href="https://rasa.com/docs/rasa/core/stories/">Stories</a>).</p>
+
+<h3 id="b-the-body">(b). ‘The body’</h3>
+<p>The skeleton of the chatbot is the <a href="https://rasa.com/docs/rasa/core/domains/">domain</a> in the <strong>domain.yml</strong> file. It holds all the <em>intents</em> &amp; <em>entities</em> the chatbot should know, the <a href="https://rasa.com/docs/rasa/core/slots/">slots</a> and <a href="https://rasa.com/docs/rasa/core/forms/">forms</a> it should store, the list of <a href="https://rasa.com/docs/rasa/core/actions/">actions</a> it can perform, the <a href="https://rasa.com/docs/rasa/core/responses/">responses</a> it can make  and additional configurations.</p>
+
+<p>The <strong>endpoints.yml</strong> file has the details for connection to channels e.g. Telegram &amp; Facebook Messenger.</p>
+
+<p>The <strong>config.yml</strong> file defines the <a href="https://rasa.com/docs/rasa/nlu/choosing-a-pipeline/">pipeline</a> and <a href="https://rasa.com/docs/rasa/core/policies/">policies</a> to use to train the chatbot.</p>
+
+<p>The <strong>credentials.yml</strong> files contains authorisation details for connecting to external services.</p>
+
+<p>The <strong>actions.py</strong> file contains <a href="https://rasa.com/docs/rasa/core/actions/#id7">custom actions</a> written in Python.</p>
+
+<p><strong>Hint:</strong> some features <em>might</em> at times appear quite challenging to design and implement (complex custom actions are particularly notorious), but you <em>will</em> find plenty of help in the <a href="https://forum.rasa.com/">Rasa community</a> and other online forums.</p>
+
+<h2 id="next-steps">Next Steps</h2>
+<p>It’s recommended to go through the official <a href="https://rasa.com/docs/rasa/">Rasa Docs</a>, as they’re the most detailed and up-to-date way of finding out exactly what’s happening behind the scenes, and how to mould your chatbot in line with how you envisioned it.</p>
+
+<p>If you’d like, you can download and try out a sample chatbot <a href="https://github.com/Tim-Abwao/rasa-chatbot">here</a>. It can tell jokes and random number/date facts, which it collects from online APIs. I’ll re-edit this page in future to describe how to build it.</p>
+
+<h3 id="modifying-the-chatbot">Modifying the Chatbot</h3>
+<p>You can give the chatbot a unique personality by editing the files in the Rasa Project.</p>
+:ET

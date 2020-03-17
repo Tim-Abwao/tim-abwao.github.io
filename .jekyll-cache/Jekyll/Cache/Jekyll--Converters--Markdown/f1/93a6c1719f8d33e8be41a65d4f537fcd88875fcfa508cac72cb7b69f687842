@@ -1,0 +1,38 @@
+I"�<p><a href="https://spacy.io/">spaCy</a> is a <strong>powerful</strong>, <strong>convenient</strong>, open source <strong>Natural Language Processing (NLP)</strong> Python package built by <a href="https://explosion.ai/">Explosions AI</a>. It is excellent for quickly processing large volumes of text and picking out information about the entities (people/places/organisations/etc) present. It also has wonderful text visualisation tools, demonstrated <a href="https://explosion.ai/demos/">here</a>.</p>
+
+<h2 id="linguistic-features">Linguistic Features</h2>
+<p>Some of spaCy’s <a href="https://spacy.io/usage/spacy-101#features">main features</a> include:</p>
+
+<ul>
+  <li>
+    <p><strong>Tokenization:</strong> splitting text into pieces (i.e words, numbers, punctuation marks, etc) termed ‘tokens’.</p>
+  </li>
+  <li>
+    <p><strong>Part-of-Speech Tagging:</strong> classifying the tokens according to their <em>syntactic functions</em>, as nouns/verbs/conjunctions/determiners/etc.</p>
+  </li>
+  <li>
+    <p><strong>Named Entity Recognition:</strong> getting the names, places, organisations, dates, events, landmark structures, nationalities, languages, etc. in the text. Please see <a href="https://spacy.io/api/annotation#named-entities">Named Entities</a>.</p>
+  </li>
+  <li>
+    <p><strong>Sentiment Analysis:</strong> gives the positivity/negativity score for a phrase/sentence/document.</p>
+  </li>
+  <li>
+    <p><strong>Lemmatization:</strong> getting the root/base form of the tokens, without inflections for tense/plural/case/gender/ etc. This allows words like ‘was’ and ‘be’ to be interpreted as similar.</p>
+  </li>
+  <li>
+    <p><strong>Dependency Parsing:</strong> getting the grammatical structure i.e relationships between the tokens in terms of ‘subject’ or ‘object’ in the given contexts.</p>
+  </li>
+  <li>
+    <p><strong>Sentence Boundary Detection:</strong> getting the sentences in the text (grouping together tokens that make up individual sentences by identifying where sentences begin and end).</p>
+  </li>
+</ul>
+
+<h2 id="getting-started">Getting Started</h2>
+<p>Installation instructions can be found at <a href="https://spacy.io/usage">spaCy’s usage guide</a>. The form there helps configure your install for a particular Operating System, Python Package Manager, Python version, Language and a few extra options.</p>
+
+<p>Spacy has its very own <a href="https://course.spacy.io">Advanced NLP with spaCy course</a> which <em>exlains</em> and <em>demonstrates</em> its more advanced features. The included <em>practice sessions</em> let you see it in action. This is probably the best way to learn what spaCy is all about.</p>
+
+<h2 id="next-steps">Next Steps</h2>
+<p>If you’re interested in trying spaCy out for yourself, you can download and test  <a href="https://github.com/Tim-Abwao/spaCy-Text-App">this simple NLP app</a>. It’s intended to extract text from documents in a multitude of formats, and derive named-entity information. Feel free to make adjustments and improvements.</p>
+
+:ET

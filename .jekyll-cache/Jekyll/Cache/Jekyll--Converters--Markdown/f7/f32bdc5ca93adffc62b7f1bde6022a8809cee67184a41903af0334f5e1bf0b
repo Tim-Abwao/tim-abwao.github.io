@@ -1,0 +1,39 @@
+I"m<p><a href="https://www.postgresql.org">PostgreSQL</a> is a <strong>fast</strong> and <strong>reliable</strong> <a href="https://database.guide/what-is-an-ordbms">object-relational database management system</a>. It can hold databases as large as 32TB, with virtually unlimited rows. This makes it an ideal choice for many companies needing to store and access huge volumes of data. What is more, it’s <strong>open source</strong>(free).</p>
+
+<h2 id="psycopg2---pythons-vessel-into-postgres">Psycopg2 - Python’s Vessel into Postgres</h2>
+<p><a href="http://initd.org/psycopg/docs">Psycopg</a> is a <strong>robust</strong> Python adaptor for PostgreSQL. It enables Python programs to connect to PostgreSQL servers, create databases, and run various <a href="http://www.sqlcourse.com/intro.html">SQL</a> queries and operations.</p>
+
+<p>The Psycopg official website states that “<em>It (Psycopg) was designed for heavily multi-threaded applications that create and destroy lots of cursors and make a large number of concurrent INSERTs or UPDATEs.</em>”</p>
+
+<p>Example use-cases include:</p>
+<ul>
+  <li>Storing users’ account/transaction/etc info to Postgres databases from flask/django websites &amp; blogs.</li>
+  <li>Extracting data from Postgres databases for automated Python based data analysis and report-generating apps, among others.</li>
+</ul>
+
+<h2 id="getting-started">Getting Started</h2>
+<p>Please see <a href="https://www.psycopg.org/docs/install.html">Installation</a> for the various ways to install Psycopg2.</p>
+
+<p>Generally, if you already have PostgreSQL and Python installed, then</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nv">$ </span>pip <span class="nb">install </span>psycopg2
+
+</code></pre></div></div>
+<p>should do the trick.</p>
+
+<p>Afterwards, head on to the <a href="https://www.psycopg.org/docs/usage.html">Basic Module Usage</a> page for an introduction on how to use it. For instance, to connect to a database named <em>database1</em> on a locally running Postgres server as the user <em>user1</em>, and obtain data; try the following:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">psycopg2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">conn</span><span class="o">=</span><span class="n">ps</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s">"dbname=database1 user=user1 password=user1password host=localhost "</span><span class="p">)</span>
+
+<span class="c1"># Open a cursor to perform database operations
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+<span class="c1"># Execute a command: query data from table1 in the database 
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">"SELECT * FROM table1;"</span><span class="p">)</span>
+
+<span class="c1"># Save the data to a variable called 'data'
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">data</span><span class="o">=</span><span class="n">cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span></code></pre></figure>
+
+<p>You can explore these and more features of Psycopg2 using <a href="https://github.com/Tim-Abwao/Psycopg2-Basics/blob/master/PostgreSQL%20Basics%20with%20Psycopg2.ipynb">this jupyter notebook</a>.</p>
+:ET
