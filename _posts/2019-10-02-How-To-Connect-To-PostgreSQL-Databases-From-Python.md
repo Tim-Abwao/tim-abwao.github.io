@@ -11,7 +11,7 @@ The Psycopg official website states that "_It (Psycopg) was designed for heavily
 
 Example use-cases include:
 - Storing users' account/transaction/etc info to Postgres databases from flask/django websites & blogs.
-- Extracting data from Postgres databases for automated Python based data analysis and report-generating apps, among others.
+- Extracting data from Postgres databases for automated, Python-based data analysis and report-generating apps, among others.
 
 ## Getting Started
 Please see [Installation](https://www.psycopg.org/docs/install.html) for the various ways to install Psycopg2. 
