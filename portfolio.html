@@ -3,31 +3,63 @@ layout: default
 title: Tim Abwao | Portfolio
 ---
 	<style type="text/css">
+		.projects {
+		    height: 100%; 
+		    display: grid; 
+		    grid-template-columns: auto auto auto;
+		    }
 		.project-link {
-		    max-width: 900px; 
-		    padding: 5%;
-			    }
-		.project-link a {
+			max-width: 400px; 
+			height: 280px; background: url(/assets/images/test.jpg); 
+			margin: 7%; padding: 30px;  
+			box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.3); 
+			box-sizing: border-box; 
+			justify-content: center;
+			color: #111;
+		}
+		.project-link:hover {
+			background: rgb(2,2,2,0.3);
+			color: white;
+		}
+		.project-title {
+			font-weight: bolder;
 			text-decoration: none;
-			color: #fff;
-}
+			font-size: 1.6em;
+
+		}
+		@media only screen and (max-width: 1024px) {
+		.projects {
+			float: none;
+			display: grid;
+			grid-template-columns: auto auto;
+			text-align: center;
+			}
+		}
+		@media only screen and (max-width: 768px) {
+  			.projects {
+    			float: none;
+    			display: block;
+    			width: 100%;
+    		}
+		}
 	</style>
 </head>
-<body style="background: black url(/assets/images/portfolio_background.jpg) no-repeat fixed; background-size: cover; color: white; font-family: Georgia;" >
+<body style="background: black url(/assets/images/portfolio_background.jpg) no-repeat fixed; background-size: cover; font-family: Georgia;" >
 {% include nav.html %}
-	<div style="margin: 5%; border-radius: 10px; padding: 5%; background-color: rgb(0,0,0,0.5);">
-		<h1>GitHub Projects:</h1>
+	<h1 style="margin-left: 5%; ">GitHub Projects:</h1>
+	<hr>
+	<div class="projects">
+
+		{% for project in site.data.projects %}
 		<div class="project-link">
-			<h4><a href="https://github.com/Tim-Abwao/statistical-distributions-flask">Statistical Distributions App</a></h4>
-			<p>An interactive web app to explore some of the most common statistical distributions. Powered by Python (Flask, Scipy, NumPy, Seaborn).</p>
-
-			<h4><a href="https://github.com/Tim-Abwao/Psycopg2-Basics/blob/master/PostgreSQL%20Basics%20with%20Psycopg2.ipynb">PostgreSQL Databases with Python</a></h4>
-			<p>A jupyter notebook to create, connect to and run queries on PostgreSQL<sup>&reg;</sup> databases.</p>
-
-			<h4><a href="https://github.com/Tim-Abwao/spaCy-Text-App">Text Processing using spaCy</a></h4>
-			<p>A Jupyter notebook and a Python script to extract information from documents (in hundreds of text file formats) using the spaCy<sup>&reg;</sup> Natural Language Processing toolkit.</p>
-
-			<h4><a href="https://github.com/Tim-Abwao/rasa-chatbot">Chatbot - Number & Date facts, plus jokes. </a></h4>
-			<p>A simple chatbot that can tell random facts & jokes. Made with Rasa<sup>&reg;</sup>.</p>
+			<a class="project-title" href= "{{ project.link }}">{{ project.title }} </a>
+			<p style=""> {{ project.summary }}</p>
+			<a style="position: relative; bottom: 10px;" href= "{{ project.link }}">view code</a>
 		</div>
+		{% endfor %}
+	</div>
+	<h1 style="margin: 20% 5% 30px;">Skills</h1>
+	<hr>
+	<div style="background: black url(/assets/images/menu_blog_background.jpg) no-repeat fixed; background-size: cover; height: 900px;">
+
 	</div>

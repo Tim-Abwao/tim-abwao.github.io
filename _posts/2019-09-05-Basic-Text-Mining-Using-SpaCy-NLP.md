@@ -22,11 +22,11 @@ Some of spaCy's [main features](https://spacy.io/usage/spacy-101#features) inclu
 - **Sentence Boundary Detection:** getting the sentences in the text (grouping together tokens that make up individual sentences by identifying where sentences begin and end).
 
 ## Getting Started
-Installation instructions can be found at [spaCy's usage guide](https://spacy.io/usage). The form there helps configure your install for a particular Operating System, Python Package Manager, Python version, Language and a few extra options.
+Installation instructions can be found at [spaCy's usage guide](https://spacy.io/usage). The customisation-form there helps configure your install for a particular Operating System, Python Package Manager, Python version, Language and a few extra options.
 
 Spacy has its very own [Advanced NLP with spaCy course](https://course.spacy.io) which *exlains* and *demonstrates* its more advanced features. The included *practice sessions* let you see it in action. This is probably the best way to learn what spaCy is all about.
 
 ## Next Steps
-If you're interested in trying spaCy out for yourself, you can download and test  [this simple NLP app](https://github.com/Tim-Abwao/spaCy-Text-App). It's intended to extract text from documents in a multitude of formats, and derive named-entity information. Feel free to make adjustments and improvements.
+If you're interested in trying spaCy out for yourself, you can download and test  [this simple NLP app](https://github.com/Tim-Abwao/text-mining-spacy). It's intended to extract text from documents in a multitude of formats, and derive named-entity information. Feel free to make adjustments and improvements.
 
 
