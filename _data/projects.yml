@@ -1,19 +1,19 @@
 - title: "Statistical Distribution Sampler"
   link: "https://github.com/Tim-Abwao/statistical-distributions-flask"
   summary: "An interactive web app to explore, and generate random samples of some of the most common statistical distributions. Built with Python (Flask, Scipy, NumPy, Seaborn)."
-  background: ""
+  background: "/assets/images/test.jpg"
 
 - title: "Chatbot; for uplifting conversations"
   link: "https://github.com/Tim-Abwao/rasa-chatbot"
   summary: 'A simple, "considerate" chatbot with custom actions to fetch random facts & jokes, on user request. Made with Rasa<sup>&copy;</sup>.'
-  background: ""
+  background: "/assets/images/test.jpg"
 
-- title: "PostgreSQL Databases with Python"
+- title: "PostgreSQL with Python"
   link: "https://github.com/Tim-Abwao/Psycopg2-Basics/blob/master/PostgreSQL%20Basics%20with%20Psycopg2.ipynb"
   summary: "A Jupyter notebook to reliably connect to, create, and run numerous typical SQL queries on PostgreSQL<sup>&reg;</sup> databases using the Psycopg2 package."
-  background: ""
+  background: "/assets/images/test.jpg"
 
 - title: "Text mining with spaCy<sup>&copy</sup>"
   link: "https://github.com/Tim-Abwao/statistical-distributions-flask"
   summary: "A Python script to extract useful information from documents in hundreds of file formats, using the spaCy<sup>&reg;</sup> Natural Language Processing toolkit."
-  background: ""
+  background: "/assets/images/test.jpg"

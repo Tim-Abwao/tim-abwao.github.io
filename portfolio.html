@@ -10,21 +10,21 @@ title: Tim Abwao | Portfolio
 		    }
 		.project-link {
 			max-width: 400px; 
-			height: 280px; background: url(/assets/images/test.jpg); 
-			margin: 7%; padding: 30px;  
-			box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.3); 
+			height: 280px; 
+			margin: 7%; padding: 7%;  
+			box-shadow: 0px 30px 40px 0px rgba(0, 0, 0, 0.5); 
 			box-sizing: border-box; 
 			justify-content: center;
 			color: #111;
 		}
 		.project-link:hover {
-			background: rgb(2,2,2,0.3);
-			color: white;
+			color: #777;
 		}
 		.project-title {
 			font-weight: bolder;
 			text-decoration: none;
 			font-size: 1.6em;
+			color: #000;
 
 		}
 		@media only screen and (max-width: 1024px) {
@@ -41,6 +41,9 @@ title: Tim Abwao | Portfolio
     			display: block;
     			width: 100%;
     		}
+    		.project-title {
+    			font-size: 1.25em;
+    		}
 		}
 	</style>
 </head>
@@ -51,15 +54,18 @@ title: Tim Abwao | Portfolio
 	<div class="projects">
 
 		{% for project in site.data.projects %}
-		<div class="project-link">
+		<div class="project-link" style="background-image: url({{ project.background }}); ">
 			<a class="project-title" href= "{{ project.link }}">{{ project.title }} </a>
 			<p style=""> {{ project.summary }}</p>
-			<a style="position: relative; bottom: 10px;" href= "{{ project.link }}">view code</a>
+			<a href= "{{ project.link }}">view code</a>
 		</div>
 		{% endfor %}
 	</div>
-	<h1 style="margin: 20% 5% 30px;">Skills</h1>
+	<h1 style="margin: 20% 5% 30px;">Skills & Toolkit</h1>
 	<hr>
 	<div style="background: black url(/assets/images/menu_blog_background.jpg) no-repeat fixed; background-size: cover; height: 900px;">
-
+		<div style="margin: 100px 10%;">
+		<h2 >Under construction...</h2>
+		<p> Working on an aesthetically appealing desing & graphics to list current skills.</p>
+		</div>
 	</div>
