@@ -12,19 +12,33 @@ title: Tim Abwao | Portfolio
 			max-width: 400px; 
 			height: 280px; 
 			margin: 7%; padding: 7%;  
-			box-shadow: 0px 30px 40px 0px rgba(0, 0, 0, 0.5); 
+			box-shadow:  10px 25px 25px rgba(0, 0, 0, 0.5); 
 			box-sizing: border-box; 
 			justify-content: center;
-			color: #111;
+			color: #777;
 		}
 		.project-link:hover {
-			color: #777;
+			color: #222;
 		}
 		.project-title {
 			font-weight: bolder;
 			text-decoration: none;
 			font-size: 1.6em;
-			color: #000;
+			color: #111;
+
+		}
+		.prog {
+			width: 700px;
+			height: 40px;
+			color: yellow; 
+		}
+		.skills {
+			 margin: 5%; display: inline-block; float: left;
+		}
+		.skill-icon {
+			box-shadow: 10px 10px 15px sienna;
+			border-radius: 20px;
+			width: 120px; height: 120px;
 
 		}
 		@media only screen and (max-width: 1024px) {
@@ -35,6 +49,9 @@ title: Tim Abwao | Portfolio
 			text-align: center;
 			}
 		}
+		.skills {
+			display: grid; grid-template-columns: auto auto auto auto;
+		}
 		@media only screen and (max-width: 768px) {
   			.projects {
     			float: none;
@@ -44,10 +61,19 @@ title: Tim Abwao | Portfolio
     		.project-title {
     			font-size: 1.25em;
     		}
+    		.skills {
+    			display: grid; grid-template-columns: auto auto auto;
+    		}
+    		.skill-icon {
+    			width: 90; height: 90;
+    		}
+    	@media only screen and (max-width: 620px) {
+    		.skills {
+    			display: grid; grid-template-columns: auto auto;
 		}
 	</style>
 </head>
-<body style="background: black url(/assets/images/portfolio_background.jpg) no-repeat fixed; background-size: cover; font-family: Georgia;" >
+<body style="background: black url(/assets/images/portfolio_background3.jpg) no-repeat fixed; background-size: cover; font-family: Georgia;" >
 {% include nav.html %}
 	<h1 style="margin-left: 5%; ">GitHub Projects:</h1>
 	<hr>
@@ -61,11 +87,19 @@ title: Tim Abwao | Portfolio
 		</div>
 		{% endfor %}
 	</div>
-	<h1 style="margin: 20% 5% 30px;">Skills & Toolkit</h1>
-	<hr>
-	<div style="background: black url(/assets/images/menu_blog_background.jpg) no-repeat fixed; background-size: cover; height: 900px;">
-		<div style="margin: 100px 10%;">
-		<h2 >Under construction...</h2>
-		<p> Working on an aesthetically appealing desing & graphics to list current skills.</p>
+	
+	
+	<div style="background: black url(/assets/images/portfolio_background2.jpg) no-repeat fixed; background-size: cover; height: 900px;">
+		<h1 style="margin-left: 5%;">Toolkit:</h1>
+		<hr>
+		{% for tool in site.data.toolkit %}
+		<div class="skills" style="">
+			<div>		
+				<figure>			
+				<a href="{{ tool.link }}"><img class="skill-icon" src="{{ tool.icon | prepend: '/assets/images/toolkit/'}}"></a>
+				<figcaption style="margin: 5% 10%;">{{ tool.name }}</figcaption>
+				</figure>
+			</div>
 		</div>
+		{% endfor %}
 	</div>
