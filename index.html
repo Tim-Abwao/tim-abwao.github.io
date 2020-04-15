@@ -10,12 +10,6 @@
   	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
 	<link rel="shortcut icon" type="image/jpg" href="/favicon.jpg">
     <style type="text/css">
-        .link-design {
-            text-align: center;
-            margin: auto;
-            margin-bottom: 10%;
-            max-width: 600px;
-        }
         .social-icon {
             width: 50px;
             height: 50px;
@@ -24,51 +18,35 @@
         .social-icon:hover {
             opacity: 0.7;
         }
-        .link-label:hover {
-            opacity: 0.7;
-            text-decoration: none;
+        body {
+            background: black url(/assets/images/home_background.jpg) no-repeat fixed;
         }
-        .link-label img {
-            max-width: 80%;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
-        }
-        .link-label h3 {
-            color: #000;
-            font-style: oblique;
-            font-weight: bolder;
+        @media only screen and (max-width: 768px) {
+            body {
+                background: black url(/assets/images/home_background_small.jpg) no-repeat fixed; background-size: cover;
+            }
         }
     </style>
 </head>
-<body style="background-image: url(/assets/images/home_background.jpg); background-size: cover; background-repeat: no-repeat">
+<body style=" ">
 	{% include nav.html %}
-    <div style="margin: 450px 10%;">
+    <div style="margin: 30% 15% ; text-align: center;">
     	<p style="font-size: 2em;"><strong><i>A blog to share tips, tricks and experiences from my experiments as I work towards being a good Data Scientist</i></strong></p>
     </div>
-    <div class='link-design' >
-    	<a class='link-label' href="/blog">
-    		<img src="/assets/images/menu_blog_background.jpg">
-    		<h3>Browse blog posts</h3>
-    	</a>
-    </div>
-    <div class='link-design'>
-    	<a class='link-label' href="/portfolio">
-    		<img src="/assets/images/menu_portfolio_background.jpg">
-    		<h3>View portfolio</h3>
-    	</a>
-    </div>
-    <div class='link-design'>
-    	<a class='link-label' href="/about">
-    		<img src="/assets/images/menu_about_background.jpg">
-    		<h3>About</h3>
-    	</a>
-    </div>
-	<footer style="display: block; margin: 70px auto 20px; text-align: center;">
-		<a href="mailto:abwaomusungu@gmail.com" ><img src="/assets/images/gmail.svg" class="social-icon"></a>
-		<a href="https://github.com/Tim-Abwao" target="_blank"><img src="/assets/images/github.svg" class="social-icon"></a>
-		<a href="https://ke.linkedin.com/in/timothy-abwao-12b001173" target="_blank"><img src="/assets/images/linkedin.svg" class="social-icon"></a>
-		<a href="https://twitter.com/timoam" target="_blank" ><img src="/assets/images/twitter.svg" class="social-icon"></a>
-		<a href="https://www.facebook.com/TimAbwao" target="_blank"><img src="/assets/images/facebook.svg" class="social-icon"></a>
+    
+	<footer style=" margin: auto; text-align: center;">
+        <hr>
+        <a style="margin: 20px; color: #000; text-decoration: underline;" href="/">Home</a>
+        <a style="margin: 20px; color: #000; text-decoration: underline;" href="/blog">Blog</a>
+        <a style="margin: 20px; color: #000; text-decoration: underline;" href="/portfolio">Portfolio</a>
+       
+        <div style="display: block;">
+    		<a href="mailto:abwaomusungu@gmail.com" ><img src="/assets/images/gmail.svg" class="social-icon"></a>
+    		<a href="https://github.com/Tim-Abwao" target="_blank"><img src="/assets/images/github.svg" class="social-icon"></a>
+    		<a href="https://ke.linkedin.com/in/timothy-abwao-12b001173" target="_blank"><img src="/assets/images/linkedin.svg" class="social-icon"></a>
+    		<a href="https://twitter.com/timoam" target="_blank" ><img src="/assets/images/twitter.svg" class="social-icon"></a>
+    		<a href="https://www.facebook.com/TimAbwao" target="_blank"><img src="/assets/images/facebook.svg" class="social-icon"></a>
+        </div>
 	</footer>
     <script src="/assets/js/jquery-3.4.1.min.js"></script>
     <script src="/assets/js/bootstrap.bundle.min.js"></script>

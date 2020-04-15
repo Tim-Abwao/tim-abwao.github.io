@@ -8,6 +8,14 @@ layout: default
 	  		font-family: Georgia;
 	  		font-size: 1.4em;
 		}
+		.social-icon {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+        }
+        .social-icon:hover {
+            opacity: 0.7;
+        }
 		@media only screen and (max-width: 768px) {
 	  		body {
 	    		background: grey url( /assets/images/blog_background_camel.jpg) no-repeat fixed; background-size: cover;
@@ -23,13 +31,3 @@ layout: default
 		{{ content }}
 	</div>
 
-	<div style="margin: 5% 20%; ">
-		<ul class="nav">
-		  <li class="nav-item">
-		    <a class="nav-link active" href="/blog">Back to Blog Menu</a>
-		  </li>
-		  <li class="nav-item">
-		    <a class="nav-link" href="/">Back to Home</a>
-		  </li>
-		</ul>
-	</div>
