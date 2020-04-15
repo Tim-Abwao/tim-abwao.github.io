@@ -36,7 +36,7 @@ title: Tim Abwao | Portfolio
 			 margin: 5%; display: inline-block; float: left;
 		}
 		.skill-icon {
-			box-shadow: 10px 10px 15px sienna;
+			box-shadow: 10px 10px 15px #cd754c;
 			border-radius: 20px;
 			width: 120px; height: 120px;
 
@@ -49,8 +49,12 @@ title: Tim Abwao | Portfolio
 			text-align: center;
 			}
 		}
+		.skill-container {
+			background: black url(/assets/images/portfolio_background2.jpg) no-repeat fixed; background-size: cover; height: 1400px;
+		}
 		.skills {
 			display: grid; grid-template-columns: auto auto auto auto;
+
 		}
 		@media only screen and (max-width: 768px) {
   			.projects {
@@ -67,13 +71,20 @@ title: Tim Abwao | Portfolio
     		.skill-icon {
     			width: 90; height: 90;
     		}
+    		.skill-container {
+    			height: 1700px;
+    		}
     	@media only screen and (max-width: 620px) {
     		.skills {
     			display: grid; grid-template-columns: auto auto;
-		}
+    		}
+    		.skill-container {
+    			height: 2200px;
+    		}
+			
 	</style>
 </head>
-<body style="background: black url(/assets/images/portfolio_background3.jpg) no-repeat fixed; background-size: cover; font-family: Georgia;" >
+<body style="background: black url(/assets/images/portfolio_background.jpg) no-repeat fixed; background-size: cover; font-family: Georgia;" >
 {% include nav.html %}
 	<h1 style="margin-left: 5%; ">GitHub Projects:</h1>
 	<hr>
@@ -89,7 +100,7 @@ title: Tim Abwao | Portfolio
 	</div>
 	
 	
-	<div style="background: black url(/assets/images/portfolio_background2.jpg) no-repeat fixed; background-size: cover; height: 900px;">
+	<div class="skill-container">
 		<h1 style="margin-left: 5%;">Toolkit:</h1>
 		<hr>
 		{% for tool in site.data.toolkit %}
