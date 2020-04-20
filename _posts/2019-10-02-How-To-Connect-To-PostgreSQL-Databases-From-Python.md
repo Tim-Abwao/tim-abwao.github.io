@@ -19,9 +19,7 @@ Please see [Installation](https://www.psycopg.org/docs/install.html) for the var
 
 Generally, if you already have PostgreSQL and Python installed, then
 ``` bash
-
 $ pip install psycopg2
-
 ```
 should do the trick.
 

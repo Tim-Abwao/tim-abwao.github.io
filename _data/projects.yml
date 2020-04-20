@@ -1,6 +1,6 @@
-- title: "Time Series App"
+- title: "Time Series Analysis Basics"
   link: "https://github.com/Tim-Abwao/time-series-app"
-  summary: "A simple web app to learn and apply time series analysis methods. Users can upload files, or interactively create samples to process."
+  summary: "A simple web app to learn and apply a few time series analysis models. Users can upload files, or interactively create samples to process."
   background: "/assets/images/test.jpg"
 - title: "Statistical Distribution Sampler"
   link: "https://github.com/Tim-Abwao/statistical-distributions-flask"
