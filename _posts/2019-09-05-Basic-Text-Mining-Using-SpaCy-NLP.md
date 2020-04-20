@@ -1,6 +1,7 @@
 ---
 layout: post
 author: Abwao
+last_modified_at: 2020-03-13T15:26:09+03:00
 ---
 [spaCy](https://spacy.io/) is a **powerful**, **convenient**, open source **Natural Language Processing (NLP)** Python package built by [Explosions AI](https://explosion.ai/). It is excellent for quickly processing large volumes of text and picking out information about the entities (people/places/organisations/etc) present. It also has wonderful text visualisation tools, demonstrated [here](https://explosion.ai/demos/).
 
