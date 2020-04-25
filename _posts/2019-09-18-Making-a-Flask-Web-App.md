@@ -43,6 +43,6 @@ To add functionality and content, [HTML templates](https://flask.palletsprojects
 ## Next Steps
 ### Example: 'Statistical Distributions App'
 [This](https://statistics-distributions.herokuapp.com) is a web app designed to allow users to learn basic facts about some common statistical distributions, and create samples. The code for the app, along with instructions for use are available 
-[here](https://github.com/Tim-Abwao/statistical-distributions-flask). Please feel free to give it a try.
+[here](https://github.com/Tim-Abwao/statistical-distributions-flask). Please feel free to give it a try, and experiment with some changes.
 
 Challenge yourself: Think of great ideas for web apps. Then pick one to start on.
