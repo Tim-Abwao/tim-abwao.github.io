@@ -5,7 +5,7 @@ last_modified_at: 2020-04-25T15:01:00+03:00
 ---
 [PostgreSQL](https://www.postgresql.org) is a **fast** and **reliable** [object-relational database management system](https://database.guide/what-is-an-ordbms). It can hold databases as large as 32TB, with virtually unlimited rows. This makes it an ideal choice for many companies needing to store and access huge volumes of data. What is more, it's **open source**(free).
 
-![Elaphant](/assets/images/elephant.jpg)<br>
+![Elaphant](/assets/images/articles/elephant.jpg)<br>
 <sub>*Photo by <a href="https://unsplash.com/@zoeeee_?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Zoë Reeve</a> on <a href="https://unsplash.com/">Unsplash</a>*</sub>
 
 ## Psycopg2 - Python's Vessel into Postgres

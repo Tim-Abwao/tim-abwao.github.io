@@ -6,7 +6,7 @@ last_modified_at: 2020-04-21T12:48:00+03:00
 [Demand forecasting](https://en.wikipedia.org/wiki/Demand_forecasting) could be described as the use of [predictive analytics](https://en.wikipedia.org/wiki/Predictive_analytics) to determine the **expected demand** for products or services. It is mostly applied in industries with **volatile products**, and has the potential to minimise or even completely **eliminate losses** resulting from spoilt items.
 
 ## Perishables and their problems
- ![Perishable products photo](/assets/images/produce.jpg)<br>
+ ![Perishable products photo](/assets/images/articles/produce.jpg)<br>
   <sub>*Photo by nrd on Unsplash*</sub>
 
 Perishables are products that have a rather short shelf-life: vegetables, fruits, milk, meat, fish, and the like. Some can stay fresh for only a few hours. This presents unique challenges to wholesellers and retailers dealing with them.

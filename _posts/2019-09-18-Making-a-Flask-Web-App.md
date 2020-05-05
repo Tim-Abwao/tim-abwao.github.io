@@ -5,7 +5,7 @@ last_modified_at: 2020-04-21T14:55:00+03:00
 ---
 [Flask](https://flask.palletsprojects.com/en/1.1.x/) is a "**lightweight... web app framework**" for Python. It is designed to be **simple** and basic; thus making it easy to learn, while simultaneously allowing experienced web developers the freedom to integrate custom/preferred features.
 
-![Flask logo](/assets/images/logo-full.svg)<br>
+![Flask logo](/assets/images/articles/logo-full.svg)<br>
 <sub>*Flask logo*</sub>
 
 ## Getting Started

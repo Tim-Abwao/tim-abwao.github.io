@@ -5,7 +5,7 @@ last_modified_at: 2020-04-25T16:58:09+03:00
 ---
 [spaCy](https://spacy.io/) is a **powerful**, **convenient**, open source **Natural Language Processing (NLP)** Python package built by [Explosions AI](https://explosion.ai/). It is excellent for quickly processing large volumes of text and picking out information about the entities (people/places/organisations/etc) present. It also has wonderful text visualisation tools, demonstrated [here](https://explosion.ai/demos/).
 
-![displacy demo](/assets/images/displacy.png)<br>
+![displacy demo](/assets/images/articles/displacy.png)<br>
 <sub> *spaCy's Named Entity Visualiser <a href="https://explosion.ai/demos/displacy-ent">displaCy</a> in action*</sub>
 
 ## Linguistic Features
