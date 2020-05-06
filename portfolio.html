@@ -4,7 +4,7 @@ title: Tim Abwao | Portfolio
 ---
 	<style type="text/css">
 		body {
-			background: url(/assets/images/portfolio_background.jpg) no-repeat fixed;
+			background: url(/assets/images/portfolio_background_large.jpg) no-repeat fixed;
 			background-size: cover; font-family: Georgia;
 		}
 		h1 {
@@ -25,14 +25,19 @@ title: Tim Abwao | Portfolio
 			box-sizing: border-box; 
 			justify-content: center;
 			color: #777;
+			background: rgb(255,255,212,0.3);
+
 		}
 		.project-link:hover {
 			color: #222;
+			text-decoration: none;
+			width: 410px;
+			height: 290px;
+			background: initial;
 		}
 		.project-title {
 			font-weight: bolder;
 			text-decoration: none;
-			font-size: 1.6em;
 			color: #111;
 		}
 		.skill-container {
@@ -43,6 +48,7 @@ title: Tim Abwao | Portfolio
 			display: grid; 
 			grid-template-columns: auto auto auto auto;
 			margin: 5%;
+			max-width: 1080px;
 		}
 		.skill-icon {
 			box-shadow: 10px 10px 15px grey;
@@ -64,10 +70,14 @@ title: Tim Abwao | Portfolio
 			}
 		}
 		@media only screen and (max-width: 768px) {
+			body {
+			background: url(/assets/images/portfolio_background.jpg) no-repeat fixed;
+			background-size: cover;
+			}
   			.projects {
     			float: none;
-    			display: block;
-    			width: 100%;
+    			display: grid;
+				grid-template-columns: auto;
     		}
     		.project-title {
     			font-size: 1.25em;
@@ -95,6 +105,8 @@ title: Tim Abwao | Portfolio
     		.skill-container {
     			height: 2000px;
     		}
+    		.project-link:hover {
+			width: 90%;
     	}
 	</style>
 </head>
@@ -106,11 +118,13 @@ title: Tim Abwao | Portfolio
 	<div class="projects">
 
 		{% for project in site.data.projects %}
-		<div class="project-link" style="background: rgb(255,255,212,0.3); ">
-			<a class="project-title" href= "{{ project.link }}">{{ project.title }} </a>
+		<a class="project-link" href= "{{ project.link }}">
+		<div >
+			<h3 class="project-title">{{ project.title }}</h3>
 			<p style=""> {{ project.summary }}</p>
-			<a href= "{{ project.link }}">view code</a>
+			
 		</div>
+		</a>
 		{% endfor %}
 	</div>
 	
@@ -118,12 +132,12 @@ title: Tim Abwao | Portfolio
 	<div class="skill-container">
 		<h1 style="margin-left: 5%;">Tools & Platforms:</h1>
 		<hr>
-		<div class="skills" style="">
+		<div class="skills">
 			{% for tool in site.data.toolkit %}
 			<div style="margin: 5%;">		
 				<figure>			
 				<a href="{{ tool.link }}"><img class="skill-icon" src="{{ tool.icon | prepend: '/assets/images/toolkit/'}}" alt="{{ tool.icon }}"></a>
-				<figcaption style="margin: 5% 10%;">{{ tool.name }}</figcaption>
+				<figcaption style="margin: 5% 10%;"><strong>{{ tool.name }}</strong></figcaption>
 				</figure>
 			</div>
 			{% endfor %}
