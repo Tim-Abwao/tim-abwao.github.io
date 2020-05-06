@@ -5,6 +5,7 @@ title: Tim Abwao | Portfolio
 	<style type="text/css">
 		body {
 			background: url(/assets/images/portfolio_background.jpg) no-repeat fixed;
+			background-size: cover; font-family: Georgia;
 		}
 		h1 {
 			margin: 2%; 
@@ -95,24 +96,17 @@ title: Tim Abwao | Portfolio
     			height: 2000px;
     		}
     	}
-		.social-icon {
-            width: 50px;
-            height: 50px;
-            margin: 10px;
-        }
-        .social-icon:hover {
-            opacity: 0.7;
-        }
 	</style>
 </head>
-<body style=" background-size: cover; font-family: Georgia;" >
+<body  >
+<div class="content">
 {% include nav.html %}
 	<h1>GitHub Projects:</h1>
 	<hr>
 	<div class="projects">
 
 		{% for project in site.data.projects %}
-		<div class="project-link" style="background-image: url({{ project.background }}); ">
+		<div class="project-link" style="background: rgb(255,255,212,0.3); ">
 			<a class="project-title" href= "{{ project.link }}">{{ project.title }} </a>
 			<p style=""> {{ project.summary }}</p>
 			<a href= "{{ project.link }}">view code</a>
@@ -122,7 +116,7 @@ title: Tim Abwao | Portfolio
 	
 	
 	<div class="skill-container">
-		<h1 style="margin-left: 5%;">Toolkit:</h1>
+		<h1 style="margin-left: 5%;">Tools & Platforms:</h1>
 		<hr>
 		<div class="skills" style="">
 			{% for tool in site.data.toolkit %}
