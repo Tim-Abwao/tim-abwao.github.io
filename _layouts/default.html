@@ -8,16 +8,38 @@
   	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/pastie.css">
   	<link rel="shortcut icon" type="image/png" href="/favicon.jpg">
-  	{% feed_meta %}
-  	{% seo %}
+    {% feed_meta %}
+    {% seo %}
+    <style type="text/css">
+      ._footer {
+        margin: 20px; color: #000; text-decoration: underline; font-size: 20px;
+        }
+      ._footer:hover {
+        color: teal;
+        text-decoration: none;
+      }
+      .social-icon {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+        }
+      .social-icon:hover {
+            opacity: 0.7;
+        }
+      .content {
+          min-height: calc(100vh - 70px);
+        }
+    </style>
+
 {{ content }}
-    <footer style=" margin: auto; text-align: center;">
+    </div>
+    <footer style=" margin: auto; text-align: center; height: 50px;">
           <hr>
-          <a style="margin: 20px; color: #000; text-decoration: underline;" href="/">Home</a>
-          <a style="margin: 20px; color: #000; text-decoration: underline;" href="/blog">Blog</a>
-          <a style="margin: 20px; color: #000; text-decoration: underline;" href="/portfolio">Portfolio</a>
+          <a class="_footer" href="/">Home</a>
+          <a class="_footer" href="/blog">Blog</a>
+          <a class="_footer" href="/portfolio">Portfolio</a>
          
-          <div style="display: block;">
+          <div >
           <a href="mailto:abwaomusungu@gmail.com" ><img src="/assets/images/gmail.svg" class="social-icon" alt="Email"></a>
           <a href="https://github.com/Tim-Abwao" target="_blank"><img src="/assets/images/github.svg" class="social-icon" alt="Github"></a>
           <a href="https://ke.linkedin.com/in/timothy-abwao-12b001173" target="_blank"><img src="/assets/images/linkedin.svg" class="social-icon" alt="LinkedIn"></a>

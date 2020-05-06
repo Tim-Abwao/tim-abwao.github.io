@@ -28,28 +28,21 @@ title: Tim Abwao | Data Science Blog
 			text-decoration:none;
 			color: #444;
 		}
-		.social-icon {
-            width: 50px;
-            height: 50px;
-            margin: 10px;
-        }
-        .social-icon:hover {
-            opacity: 0.7;
-        }
 	</style>
 </head>
 <body >
-{% include nav.html %}
+<div class="content">
+	{% include nav.html %}
 
-<div class="post-list"> 
- 
-  {% for post in site.posts %}
-    <div style="margin-bottom: 5%">
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      {{ post.excerpt }}
-    </div>
-  {% endfor %}
+	<div class="post-list"> 
+	 
+	  {% for post in site.posts %}
+	    <div style="margin-bottom: 5%">
+	      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+	      {{ post.excerpt }}
+	    </div>
+	  {% endfor %}
 
- </div>
+	 </div>
 
 
