@@ -2,145 +2,170 @@
 layout: default
 title: Tim Abwao | Portfolio
 ---
-	<style type="text/css">
-		body {
-			background: url(/assets/images/portfolio_background_large.jpg) no-repeat fixed;
-			background-size: cover; font-family: Georgia;
-		}
-		h1 {
-			margin: 2%; 
-			padding: 2%;
-		}
-		.projects {
-		    height: 100%; 
-		    display: grid; 
-		    grid-template-columns: auto auto auto;
-		    }
-		.project-link {
-			max-width: 400px; 
-			height: 280px; 
-			margin: 7%; 
-			padding: 7%;  
-			box-shadow: 10px 25px 25px rgba(0, 0, 0, 0.5); 
-			box-sizing: border-box; 
-			justify-content: center;
-			color: #777;
-			background: rgb(255,255,212,0.3);
+<style type="text/css">
+	body {
+		background: url(/assets/images/portfolio_background_large.jpg) no-repeat fixed;
+		background-size: cover;
+		font-family: Georgia;
+	}
 
-		}
-		.project-link:hover {
-			color: #222;
-			text-decoration: none;
-			width: 407px;
-			height: 287px;
-			background: initial;
-		}
-		.project-title {
-			font-weight: bolder;
-			text-decoration: none;
-			color: #111;
-		}
-		.skill-container {
-			background-size: cover;
-			height: 1250px;
-		}
-		.skills {
-			display: grid; 
-			grid-template-columns: auto auto auto auto;
-			margin: 5%;
-			max-width: 1080px;
-		}
-		.skill-icon {
-			box-shadow: 10px 10px 15px grey;
-			border-radius: 20px;
-			width: 120px; height: 120px;
-		}
-		.skill-icon:hover {
-			opacity: 0.5;
-		}
-		@media only screen and (max-width: 1024px) {
+	h1 {
+		margin: 2%;
+		padding: 2%;
+	}
+
+	.projects {
+		height: 100%;
+		display: grid;
+		grid-template-columns: auto auto auto;
+	}
+
+	.project-link {
+		max-width: 400px;
+		height: 280px;
+		margin: 7%;
+		padding: 7%;
+		box-shadow: 10px 25px 25px rgba(0, 0, 0, 0.5);
+		box-sizing: border-box;
+		justify-content: center;
+		color: #777;
+		background: rgb(255, 255, 212, 0.3);
+	}
+
+	.project-link:hover {
+		color: #222;
+		text-decoration: none;
+		width: 407px;
+		height: 287px;
+		background: initial;
+	}
+
+	.project-title {
+		font-weight: bolder;
+		text-decoration: none;
+		color: #111;
+	}
+
+	.skill-container {
+		background-size: cover;
+		height: 1250px;
+	}
+
+	.skills {
+		display: grid;
+		grid-template-columns: auto auto auto auto;
+		margin: 5%;
+		max-width: 1080px;
+	}
+
+	.skill-icon {
+		box-shadow: 10px 10px 15px grey;
+		border-radius: 20px;
+		width: 120px;
+		height: 120px;
+	}
+
+	.skill-icon:hover {
+		opacity: 0.5;
+	}
+
+	@media only screen and (max-width: 1024px) {
 		.projects {
 			float: none;
 			display: grid;
 			grid-template-columns: auto auto;
 			text-align: center;
-			}
+		}
+
 		.skill-container {
 			height: 1150px;
-			}
 		}
-		@media only screen and (max-width: 768px) {
-			body {
+	}
+
+	@media only screen and (max-width: 768px) {
+		body {
 			background: url(/assets/images/portfolio_background.jpg) no-repeat fixed;
 			background-size: cover;
-			}
-  			.projects {
-    			float: none;
-    			display: grid;
-				grid-template-columns: auto;
-    		}
-    		.project-title {
-    			font-size: 1.25em;
-    		}
-    		.skills {
-    			display: grid; grid-template-columns: auto auto auto;
-    			margin-left: 5%;
-    		}
-    		.skill-icon {
-    			width: 90; height: 90;
-    		}
-    		.skill-container {
-    			height: 1500px;
-    		}
-    	}
-    	@media only screen and (max-width: 620px) {
-    		.skills {
-    			display: grid; grid-template-columns: auto auto;
-    		}
-    		.skill-container {
-    			height: 2150px;
-    		}
-    	}
-    	@media only screen and (max-width: 420px) {
-    		.skill-container {
-    			height: 2000px;
-    		}
-    		.project-link:hover {
-			width: 90%;
-    	}
-	</style>
-</head>
-<body  >
-<div class="content">
-{% include nav.html %}
-	<h1>GitHub Projects:</h1>
-	<hr>
-	<div class="projects">
+		}
 
-		{% for project in site.data.projects %}
-		<a class="project-link" href= "{{ project.link }}">
-		<div >
-			<h3 class="project-title">{{ project.title }}</h3>
-			<p style=""> {{ project.summary }}</p>
-			
-		</div>
-		</a>
-		{% endfor %}
-	</div>
-	
-	
-	<div class="skill-container">
-		<h1 style="margin-left: 5%;">Tools & Platforms:</h1>
+		.projects {
+			float: none;
+			display: grid;
+			grid-template-columns: auto;
+		}
+
+		.project-title {
+			font-size: 1.25em;
+		}
+
+		.skills {
+			display: grid;
+			grid-template-columns: auto auto auto;
+			margin-left: 5%;
+		}
+
+		.skill-icon {
+			width: 90;
+			height: 90;
+		}
+
+		.skill-container {
+			height: 1500px;
+		}
+	}
+
+	@media only screen and (max-width: 620px) {
+		.skills {
+			display: grid;
+			grid-template-columns: auto auto;
+		}
+
+		.skill-container {
+			height: 2150px;
+		}
+	}
+
+	@media only screen and (max-width: 420px) {
+		.skill-container {
+			height: 2000px;
+		}
+
+		.project-link:hover {
+			width: 90%;
+		}
+	}
+</style>
+</head>
+
+<body>
+	<div class="content">
+		{% include nav.html %}
+		<h1>GitHub Projects:</h1>
 		<hr>
-		<div class="skills">
-			{% for tool in site.data.toolkit %}
-			<div style="margin: 5%;">		
-				<figure>			
-				<a href="{{ tool.link }}"><img class="skill-icon" src="{{ tool.icon | prepend: '/assets/images/toolkit/'}}" alt="{{ tool.icon }}"></a>
-				<figcaption style="margin: 5% 10%;"><strong>{{ tool.name }}</strong></figcaption>
-				</figure>
-			</div>
+		<div class="projects">
+			{% for project in site.data.projects %}
+			<a class="project-link" href="{{ project.link }}">
+				<div>
+					<h3 class="project-title">{{ project.title }}</h3>
+					<p> {{ project.summary }}</p>
+
+				</div>
+			</a>
 			{% endfor %}
 		</div>
-		
-	</div>
+
+		<div class="skill-container">
+			<h1 style="margin-left: 5%;">Tools & Platforms:</h1>
+			<hr>
+			<div class="skills">
+				{% for tool in site.data.toolkit %}
+				<div style="margin: 5%;">
+					<figure>
+						<a href="{{ tool.link }}"><img class="skill-icon"
+								src="{{ tool.icon | prepend: '/assets/images/toolkit/'}}" alt="{{ tool.icon }}"></a>
+						<figcaption style="margin: 5% 10%;"><strong>{{ tool.name }}</strong></figcaption>
+					</figure>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
