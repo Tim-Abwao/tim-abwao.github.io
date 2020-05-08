@@ -1,51 +1,59 @@
 ---
 layout: default
 ---
-	<style type="text/css">
+<style type="text/css">
+	body {
+		background: grey url(/assets/images/blog_background_camel_lg.jpg) no-repeat fixed;
+		background-size: cover;
+		font-family: Georgia;
+		font-size: 1.4em;
+	}
+
+	.social-icon {
+		width: 50px;
+		height: 50px;
+		margin: 10px;
+	}
+
+	.social-icon:hover {
+		opacity: 0.7;
+	}
+
+	@media only screen and (max-width: 768px) {
 		body {
-	  		background: grey url( /assets/images/blog_background_camel_lg.jpg) no-repeat fixed; background-size: cover;
-	  		
-	  		font-family: Georgia;
-	  		font-size: 1.4em;
+			background: grey url(/assets/images/blog_background_camel.jpg) no-repeat fixed;
+			background-size: cover;
 		}
-		.social-icon {
-            width: 50px;
-            height: 50px;
-            margin: 10px;
-        }
-        .social-icon:hover {
-            opacity: 0.7;
-        }
 
-		@media only screen and (max-width: 768px) {
-	  		body {
-	    		background: grey url( /assets/images/blog_background_camel.jpg) no-repeat fixed; background-size: cover;
-	  		}
-	  		img {
-	  			width: 520px;
-	  		}
+		img {
+			width: 520px;
 		}
-		@media only screen and (max-width: 420px) {
-			img {
-				width: 320px;
-			}
+	}
+
+	@media only screen and (max-width: 420px) {
+		img {
+			width: 320px;
 		}
-	</style>
+	}
+</style>
 </head>
+
 <body>
-	
-	<div style="max-width: 800px; margin: 7% 10%;">	
-		<h1>{{ page.title }}</h1>
-		<p class="post-meta">
-	  <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time><br>
-	  {% if page.last_modified_at %}
-	  (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time>)
-	  {% endif %}
-	  {% if page.author %}
-	  • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
-	  {% endif %}
-	</p>
+	<div class="content">
+		<div style="max-width: 800px; margin: 7% 10%;">
+			<h1>{{ page.title }}</h1>
+			<p class="post-meta">
+				<time datetime="{{ page.date | date_to_xmlschema }}"
+					itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time><br>
+				{% if page.last_modified_at %}
+				(Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}"
+					itemprop="dateModified">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time>)
+				{% endif %}
+				{% if page.author %}
+				• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span
+						itemprop="name">{{ page.author }}</span></span>
+				{% endif %}
+			</p>
 
-		{{ content }}
-	</div>
-
+			{{ content }}
+		</div>

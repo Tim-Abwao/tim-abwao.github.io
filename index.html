@@ -2,38 +2,45 @@
 layout: default
 title: Tim Abwao | Aspiring Data Scientist
 ---
-    <style type="text/css">
-        body {
-            background: url(/assets/images/home_background.jpg) no-repeat fixed;
-        }
-        a:hover {
-            text-decoration: none;
-            color: beige;
-        }
-        .featured {
-            color: white;
-            font-size: 20px;
-            font-weight: bold;
-        }
-        @media only screen and (max-width: 768px) {
-            body {
-                background: url(/assets/images/home_background_small.jpg) no-repeat fixed; background-size: cover;
-            }
-        }
-    </style>
-</head>
-<body>
-<div class="content">
-	{% include nav.html %}
-    <div style="margin: 30% 15% 10%; text-align: center;">
-    	<p style="font-size: 2em;"><strong><i>A blog to share experiences from my experiments & adventures as I work towards being a good Data Scientist</i></strong></p>
-    </div>
+<style type="text/css">
+    body {
+        background: url(/assets/images/home_background.jpg) no-repeat fixed;
+    }
 
-    <div style="margin: auto; justify-content: center; display: grid; grid-template-columns: auto auto;">
-        <h2 style="margin: 5% 10%; font-weight: bolder;"><em>Featured articles</em></h2> 
-        <div style="margin: 5%; ">
-            <a class="featured" href="{{ site.posts[2].url}}"><em>{{ site.posts[2].title}}</em></a>
-            <br><hr>
-            <a class="featured" href="{{ site.posts[5].url}}"><em>{{ site.posts[5].title}}</em></a>
+    a:hover {
+        text-decoration: none;
+        color: beige;
+    }
+
+    .featured {
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    @media only screen and (max-width: 768px) {
+        body {
+            background: url(/assets/images/home_background_small.jpg) no-repeat fixed;
+            background-size: cover;
+        }
+    }
+</style>
+</head>
+
+<body>
+    <div class="content">
+        {% include nav.html %}
+        <div style="margin: 30% 15% 10%; text-align: center;">
+            <p style="font-size: 2em;"><strong><i>A blog to share experiences from my experiments & adventures as I work
+                        towards being a good Data Scientist</i></strong></p>
         </div>
-    </div>
+
+        <div style="margin: auto; justify-content: center; display: grid; grid-template-columns: auto auto;">
+            <h2 style="margin: 5% 10%; font-weight: bolder;"><em>Featured articles</em></h2>
+            <div style="margin: 5%; ">
+                <a class="featured" href="{{ site.posts[2].url}}"><em>{{ site.posts[2].title}}</em></a>
+                <br>
+                <hr>
+                <a class="featured" href="{{ site.posts[5].url}}"><em>{{ site.posts[5].title}}</em></a>
+            </div>
+        </div>
