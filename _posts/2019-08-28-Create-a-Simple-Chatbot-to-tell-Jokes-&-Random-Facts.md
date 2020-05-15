@@ -4,7 +4,9 @@ author: Abwao
 last_modified_at: 2020-03-17T15:18:32+03:00
 ---
 
-[Rasa](https://rasa.com/) is an [open source](https://opensource.com/resources/what-open-source) Python package with easy-to-use tools for building intelligent text and voice based chatbots. It features several *machine learning*, *natural language processing* and *natural language understanding* tools to produce smart, life-like chatbots.
+[Rasa](https://rasa.com/) is an [open source](https://opensource.com/resources/what-open-source) Python package with easy-to-use tools for building intelligent text and voice based chatbots.
+
+It features several *machine learning*, *natural language processing* and *natural language understanding* tools to produce smart, life-like chatbots.
 
 ## Installation
 

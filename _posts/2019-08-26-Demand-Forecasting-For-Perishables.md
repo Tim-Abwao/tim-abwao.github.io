@@ -3,7 +3,9 @@ layout: post
 author: Abwao
 last_modified_at: 2020-04-21T12:48:00+03:00
 ---
-[Demand forecasting](https://en.wikipedia.org/wiki/Demand_forecasting) could be described as the use of [predictive analytics](https://en.wikipedia.org/wiki/Predictive_analytics) to determine the **expected demand** for products or services. It is mostly applied in industries with **volatile products**, and has the potential to minimise or even completely **eliminate losses** resulting from spoilt items.
+[Demand forecasting](https://en.wikipedia.org/wiki/Demand_forecasting) could be described as the use of [predictive analytics](https://en.wikipedia.org/wiki/Predictive_analytics) to determine the **expected demand** for products or services.
+
+It is mostly applied in industries with **volatile products**, and has the potential to minimise or even completely **eliminate losses** resulting from spoilt items.
 
 ## Perishables and their problems
 
