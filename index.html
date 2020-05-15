@@ -4,7 +4,13 @@ title: Tim Abwao | Aspiring Data Scientist
 ---
 <style type="text/css">
     body {
-        background: url(/assets/images/home_background.jpg) no-repeat fixed;
+        background: url(/assets/images/home_background.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .headline {
+        font-size: 1.8em;
+        font-weight: bold;
     }
 
     a:hover {
@@ -13,16 +19,33 @@ title: Tim Abwao | Aspiring Data Scientist
     }
 
     .featured {
-        color: white;
+        color: rgb(0, 0, 0, 0.3);
         font-size: 20px;
         font-weight: bold;
     }
 
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 1024px) {
         body {
-            background: url(/assets/images/home_background_small.jpg) no-repeat fixed;
+            background: url(/assets/images/home_background_medium.jpg) no-repeat;
             background-size: cover;
         }
+
+        .headline {
+            margin: 40% 5%;
+        }
+    }
+
+    @media only screen and (max-width: 420px) {
+        body {
+            background: url(/assets/images/home_background_small.jpg) no-repeat;
+            background-size: cover;
+        }
+
+        .headline {
+            margin: 10% 5%;
+            font-size: 1.5em;
+        }
+
     }
 </style>
 </head>
@@ -30,12 +53,12 @@ title: Tim Abwao | Aspiring Data Scientist
 <body>
     <div class="content">
         {% include nav.html %}
-        <div style="margin: 30% 15% 10%; text-align: center;">
-            <p style="font-size: 2em;"><strong><i>A blog to share experiences from my experiments & adventures as I work
-                        towards being a good Data Scientist</i></strong></p>
+        <div style="margin: 12% 15%; text-align: center;">
+            <p class="headline"><em>A blog to share experiences from my experiments & adventures as I work
+                    towards being a good Data Scientist</em></p>
         </div>
 
-        <div style="margin: auto; justify-content: center; display: grid; grid-template-columns: auto auto;">
+        <div style="margin: 5% auto; justify-content: center; display: grid; grid-template-columns: auto auto;">
             <h2 style="margin: 5% 10%; font-weight: bolder;"><em>Featured articles</em></h2>
             <div style="margin: 5%; ">
                 <a class="featured" href="{{ site.posts[2].url}}"><em>{{ site.posts[2].title}}</em></a>
