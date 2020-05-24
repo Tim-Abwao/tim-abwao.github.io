@@ -1,7 +1,7 @@
 ---
 author: Abwao
 layout: post
-last_modified_at: 2020-04-25T15:01:00+03:00
+last_modified_at: 2020-05-24T21:20:00+03:00
 ---
 [PostgreSQL](https://www.postgresql.org) is a **fast** and **reliable** open-source [object-relational database management system](https://database.guide/what-is-an-ordbms).
 It can hold databases as large as 32TB, with virtually unlimited rows.
@@ -11,51 +11,86 @@ It can hold databases as large as 32TB, with virtually unlimited rows.
 
 ## Psycopg2 - Python's Vessel into Postgres
 
-[Psycopg](http://initd.org/psycopg/docs) is a **robust** Python adaptor for PostgreSQL. It enables Python programs to connect to PostgreSQL servers, create databases, and run various [SQL](http://www.sqlcourse.com/intro.html) queries and operations.
+[Psycopg](http://initd.org/psycopg/docs) is a **robust** Python adaptor for PostgreSQL. It enables you to create databases, run [SQL](http://www.sqlcourse.com/intro.html) queries, and accomplish pretty much every other task you'd wish to with your postgres database(s); from within Python programs.
 
-The Psycopg official website states that "_It (Psycopg) was designed for heavily multi-threaded applications that create and destroy lots of cursors and make a large number of concurrent INSERTs or UPDATEs._"
+The Psycopg official website states that "_It was designed for heavily multi-threaded applications that create and destroy lots of cursors and make a large number of concurrent INSERTs or UPDATEs._" This is good news for any who are concerned about scalability.
 
 Example use-cases include:
 
-- Storing users' account/transaction/etc info to Postgres databases from flask/django websites & blogs.
-- Extracting data from Postgres databases for automated, Python-based data analysis and report-generating apps, among others.
+- Storing users' account/transaction/etc data to Postgres databases from flask or django websites & blogs.
+- Extracting data from Postgres databases for automated data analysis and report-generating apps written in Python.
 
-## Getting Started
+## Installation
 
-Please see [Installation](https://www.psycopg.org/docs/install.html) for the various ways to install Psycopg2, and all required dependencies.
+The following are required:
 
-Generally, if you already have PostgreSQL and Python installed, then
+- A C compiler
+- Python header files (**python-dev** or **python3-dev**)
+- **libpq** header files
+- The **pg_config** program
 
-``` bash
-$pip install psycopg2
+In general, if you already have *Postgres* and Python installed, then
+
+```bash
+$ sudo apt-get install python3-dev libpq-dev  
+$ pip install psycopg2
 ```
 
 should do the trick.
 
-Afterwards, head on to the [Basic Module Usage](https://www.psycopg.org/docs/usage.html) page for an introduction on how to use it.
+To find out more on resolving dependencies and installing from source, please visit the Psycopg [installation page](https://www.psycopg.org/docs/install.html).
 
-For instance, to connect to a database named _database1_ on a locally running Postgres server as the user _user1_, and obtain data; try the following:
+## Basic Usage
 
-{% highlight python %}
+In oder to connect to a database, say perhaps one named _database1_, on a _locally running_ Postgres server, as the user _user1_; you could try:
 
->>> import psycopg2
+```python
+import psycopg2 as ps
 
-# Connecting to existing database *database1*
-
->>> conn=ps.connect("dbname=database1 user=user1 password=user1password host=localhost ")
+# Connecting to the database
+conn = ps.connect("dbname=database1 user=user1 password=user1password host=localhost")
 
 # Opening a cursor to perform database operations
+cur = conn.cursor()
 
->>> cur = conn.cursor()
+# Executing an SQL query
+cur.execute("SELECT * FROM table1;")
 
-# Executing a command
+# Assigning obtained data to the variable 'data'
+data = cur.fetchall()
 
->>> cur.execute("SELECT * FROM table1;")
+#Creating a table
+cur.execute("""
+            CREATE TABLE clients (
+                    Name text,
+                    Email text,
+                    Total_Purchases money,
+                    Date timestamp
+                );
+            """)
 
-# Save the data to a variable called 'data'
+# Adding a record
+cur.execute("INSERT INTO clients VALUES (%s, %s, %s, %s,)",
+            ("ACME Corp.", "info@acme.co", 10000, "01-01-2020"))
 
->>> data=cur.fetchall()
+# Saving the changes to the database
+conn.commit()
 
-{% endhighlight %}
+# Closing the connection to the database
+cur.close()
+conn.close()
+```
 
-You can explore these and more features of Psycopg2 using [this jupyter notebook](https://github.com/Tim-Abwao/Psycopg2-Basics/blob/master/PostgreSQL%20Basics%20with%20Psycopg2.ipynb).
+## Next Steps
+
+Now that you're familiar with some of psycopg's  features, please consider visiting the [Basic module usage](https://www.psycopg.org/docs/usage.html#) page in the official docs. 
+
+Psycopg's developers have done an excellent job of explaining how it works, and how to use it. Here are some of the topics covered:
+
+- Passing parameters to SQL queries
+- Adapting Python values to SQL types
+- Accessing PostgreSQL large objects
+- Server side cursors
+- Thread and process safety
+- Transactions control.
+
