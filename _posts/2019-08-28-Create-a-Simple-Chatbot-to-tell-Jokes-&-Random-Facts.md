@@ -1,10 +1,10 @@
 ---
 layout: post
 author: Abwao
-last_modified_at: 2020-05-27T23:46:00+03:00
+last_modified_at: 2020-05-28T13:19:00+03:00
 ---
 
-[*Rasa*](https://rasa.com/) is an [open source](https://opensource.com/resources/what-open-source) Python package with easy-to-use tools for building intelligent text and voice based chatbots.
+[*Rasa*](https://rasa.com/) is an [open source](https://opensource.com/resources/what-open-source) Python package with easy-to-use tools for building intelligent text and voice based *assistants*(chatbots).
 
 It features several *machine learning*, *natural language processing* and *natural language understanding* tools to produce smart, life-like chatbots.
 
@@ -26,7 +26,7 @@ Please visit *Rasa's* [step-by-step installation guide](https://rasa.com/docs/ra
 
 ## Getting Started
 
-The [*Rasa* Basics](https://rasa.com/docs/rasa/user-guide/rasa-tutorial/) tutorial demonstrates how to create an *assistant* (project), and introduces the necessary files and commands. If you're unfamiliar with *Rasa*, please take the time to go through it.
+The [*Rasa* Basics](https://rasa.com/docs/rasa/user-guide/rasa-tutorial/) tutorial demonstrates how to create an *assistant*, and introduces the necessary files and commands. If you're unfamiliar with *Rasa*, please take some time to go through it.
 
 ## Rasa Assistant to tell Jokes & Random Facts
 
@@ -41,7 +41,7 @@ $ rasa init --no-prompt
 
 ### 2. Add Custom Actions
 
-[Custom actions](https://rasa.com/docs/rasa/core/actions/#custom-actions) in *Rasa* are created as classes. They can be programmed to achieve specific desired outcomes
+[Custom actions](https://rasa.com/docs/rasa/core/actions/#custom-actions) in *Rasa* are created as classes. They can be programmed to achieve specific desired outcomes.
 
 Below are 3 custom actions that fetch joke and fact content from APIs. Include them in the **actions.py** file:
 
@@ -220,7 +220,7 @@ Create stories for the new intents and custom actions. Modify the **data/stories
 
 ### 5. Updating the Domain
 
-Amend the **domain.yml** to reflect all the changes:
+Amend the **domain.yml** file to reflect all the changes:
 
 ```yaml
 intents:
@@ -286,7 +286,7 @@ action_endpoint:
 ...
 ```
 
-Afterwards, open a terminal window, activate the virtual environment with rasa installed, and start the action server:
+Afterwards, open a new terminal tab or window, activate the virtual environment with rasa installed, and start the action server:
 
 ```bash
 $ source env/bin/activate
@@ -297,7 +297,9 @@ $ rasa run actions
 
 ### 7. Training the Chatbot
 
-You'll need to train the chatbot with the updated files in order to get an updated model. Head back to the terminal in which you initialised the project, and run:
+You'll need to train the chatbot with the updated files, so as to get a model that includes the added data in its predictions.
+
+Head back to the terminal in which you initialised the project, and run:
 
 ```bash
 $ rasa train
