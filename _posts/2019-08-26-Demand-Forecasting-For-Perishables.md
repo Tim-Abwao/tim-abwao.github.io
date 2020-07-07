@@ -1,30 +1,46 @@
 ---
 layout: post
 author: Abwao
-last_modified_at: 2020-04-21T12:48:00+03:00
+last_modified_at: 2020-07-07T13:27:00+03:00
 ---
-[Demand forecasting](https://en.wikipedia.org/wiki/Demand_forecasting) could be described as the use of [predictive analytics](https://en.wikipedia.org/wiki/Predictive_analytics) to determine the **expected demand** for products or services.
+[Demand forecasting][1] could be described as the use of [predictive analytics][2] to estimate the **expected demand** for goods and services. It is mostly applied in industries with **volatile products** to minimise, or potentially **eliminate losses**.
 
-It is mostly applied in industries with **volatile products**, and has the potential to minimise or even completely **eliminate losses** resulting from spoilt items.
+## Perishables & Their Problems
 
-## Perishables and their problems
+![Fresh produce][3]
 
-![Perishable products photo](/assets/images/articles/produce.jpg)<br>
-<sub>*Photo by [nrd](https://unsplash.com/@nicotitto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/groceries?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*</sub>
+(*Photo by [nrd][4] on [Unsplash][5]*)
 
-Perishables are products that have a rather short shelf-life: vegetables, fruits, milk, meat, fish, and the like. Some can stay fresh for only a few hours. This presents unique challenges to wholesellers and retailers dealing with them.
+Perishables are products that have a rather short shelf-life: vegetables, fruits, milk, meat, fish, and the like. Some can stay fresh for only a few hours. This presents unique challenges to wholesellers and retailers dealing in them.
 
-In everyday life, people tend to pick only 'crisp-looking' produce, leaving behind the 'wrinkled' and the 'fresh but not good enough' items. Then time acts on the latter two and shrinks their value. At times, entire batches go bad.
+In everyday life, people tend to pick only the 'crisp' produce, leaving behind the 'wrinkled' and the 'fresh, but not good enough' items. Time then acts on the latter two and shrinks their value. Losses ensue. At times, entire batches go bad.
 
-![](/assets/images/articles/badproduce.jpg)<br>
-<sub>*Photo by [FOODISM360](https://unsplash.com/@foodism360) on [Unsplash](https://unsplash.com/s/photos/rotten-vegetables?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*</sub>
+![Rotting produce][6]
 
-A common tactic employed to curb the resultant losses is the lowering of stock volumes to avoid leftovers. But this often badly backfires when customers repeatedly fail to get what they want, and take their business elsewhere.
+(*Photo by [FOODISM360][7] on [Unsplash][8]*)
 
-## Demand Forecasting to the rescue
+A common tactic employed to tackle the above described phenomenon is the lowering of stock volumes to reduce leftovers. But this often badly backfires when customers repeatedly fail to get what they want, and take their business elsewhere.
 
-Even with modern solutions such as advanced preservative packaging, cold-storage facilities, and the operation of in-house delicatessens to consume extra stock; considerable amounts of perishables still wind up as garbage. Is there a way to reliably tell the ideal inventory volume? Demand forecasting attempts to do just that.
+Even with high-tech and innovative solutions such as *advanced preservative packaging*, *cold-storage facilities*, and the operation of in-house delicatessens to consume surplus stock; considerable amounts of perishables still wind up as garbage.
 
-There are plenty of software services available today (e.g. [APO by SAP](https://blogs.sap.com/2015/09/27/sap-apo-general-overview/), Oracle® Demantra, [GDMH Streamline](https://gmdhsoftware.com/demand-planning-software?utm_source=capterra), [DynaSys](https://www.dys.com/demand-planning), etc) that engage tools such as Time Series Analysis, Machine Learning algorithms and Simulation models to predict just the right amount of perishable goods to stock. Some can even factor in expected ripples in the industry, and thus allow timely intervention.
+## Demand Forecasting to the Rescue
 
-If you'd like a case study of Demand Forecasting in action to optimise stocking, [this Kaggle competition](https://www.kaggle.com/c/favorita-grocery-sales-forecasting) might be a great place to start.
+There are plenty of software services available today (for instance, [APO by SAP][9], [Oracle SCP][10], [GDMH Streamline][11], [DynaSys][12], etc) that apply techniques such as *Time Series Analysis*, *Machine Learning Algorithms*, *Applied Statistics* and *Simulation* in an attempt to predict just the right amount of perishable goods to stock.
+
+Some of these tools can even factor in expected ripples in the industry, and thus allow timely intervention.
+
+If you'd like a case study of Demand Forecasting in action to optimise stocking, [this Kaggle competition][13] might be a great place to start.
+
+[1]: https://en.wikipedia.org/wiki/Demand_forecasting
+[2]: https://en.wikipedia.org/wiki/Predictive_analytics
+[3]: /assets/images/articles/produce.jpg "Fresh produce"
+[4]: https://unsplash.com/@nicotitto
+[5]: https://unsplash.com/photos/D6Tu_L3chLE
+[6]: /assets/images/articles/badproduce.jpg "Produce gradually going bad"
+[7]: https://unsplash.com/@foodism360
+[8]: https://unsplash.com/photos/zwxLqNMsFQk
+[9]: https://blogs.sap.com/2015/09/27/sap-apo-general-overview/
+[10]: https://www.oracle.com/applications/supply-chain-management/supply-chain-planning/ "Oracle Supply Chain Planning"
+[11]: https://gmdhsoftware.com/demand-planning-software
+[12]: https://www.dys.com/demand-planning
+[13]: https://www.kaggle.com/c/favorita-grocery-sales-forecasting
