@@ -1,42 +1,41 @@
 ---
 layout: post
 author: Abwao
-last_modified_at: 2020-05-13T21:05:00+03:00
+last_modified_at: 2020-07-08T23:20:00+03:00
 ---
-[Flask](https://flask.palletsprojects.com/en/1.1.x/) is a "**lightweight... web app framework**" for Python. It is designed to be simple and **basic**; making it easy to learn, while simultaneously allowing experienced web developers the freedom to integrate preferred features.
+[Flask][1] is a "**lightweight... web app framework**" for Python. It is designed to be simple and **basic**; making it easy to learn, while simultaneously allowing experienced web developers the freedom to integrate preferred features.
 
-![Flask logo](/assets/images/articles/logo-full.svg)<br>
-<sub>*Flask logo*</sub>
+![Flask logo][2]
 
 ## Installation
 
-Flask can be installed with:
+*Flask* can be installed with:
 
 ```bash
-$ pip install Flask
+pip install Flask
 ```
 
-The Flask [installation guide](https://flask.palletsprojects.com/en/1.1.x/installation/#installation) has more information on:
+The *Flask* [installation guide][3] has more information on:
 
-- working in virtual environments
+- working in *virtual environments*
 
-```bash
-$ python3 -m venv env
-$ source env/bin/activate
-$ pip install Flask
-```
+  ```bash
+  python3 -m venv env
+  source env/bin/activate
+  pip install Flask
+  ```
 
-- installing the latest unreleased version
+- installing the *latest* unreleased version
 
-```bash
-$ pip install -U https://github.com/pallets/flask/archive/master.tar.gz
-```
+  ```bash
+  pip install -U https://github.com/pallets/flask/archive/master.tar.gz
+  ```
 
-- and optional dependencies to improve functionality.
+- and [optional dependencies][4] to improve functionality.
 
 ## Getting Started
 
-[Flask's Quickstart](https://flask.palletsprojects.com/en/1.1.x/quickstart/#quickstart) wonderfully introduces its main features:
+[Flask's Quickstart][5] wonderfully introduces its main features:
 
 - Creating and running a basic app
 - Routing and URL building
@@ -46,24 +45,24 @@ $ pip install -U https://github.com/pallets/flask/archive/master.tar.gz
 
 It can help you get a simple web app up and running in a matter of minutes. This is also what this article is meant to help you achieve.
 
-[Flask's tutorial](https://flask.palletsprojects.com/en/1.1.x/tutorial/#tutorial) takes this a leap further, with a step-by-step guide to building a blog.
+[Flask's tutorial][6] takes this a leap further, with a step-by-step guide to building a blog.
 
-If you're completely new to web development, [MDN's Learn Web Development](https://developer.mozilla.org/en-US/docs/Learn) and [W3Schools](https://www.w3schools.com) could quickly bring you up to speed.
+If you're completely new to web development, [MDN's Learn Web Development][7] and [W3Schools][8] could quickly bring you up to speed.
 
-Flask can be used to make wonderful, dynamic websites and apps; but this requires some understanding of HTML, CSS and JavaScript.
+*Flask* can be used to make wonderful, dynamic websites and apps; but this requires some understanding of HTML, CSS and JavaScript.
 
 ## Building a Simple Flask App
 
-First, install Flask. It's good practice to work in a virtual environment:
+The first step is to install *Flask*. It's good practice to work in a virtual environment:
 
 ```bash
-$ python3 -m venv venv
-$ source venv/bin/activate
-$ pip install -U pip
-$ pip install Flask
+python3 -m venv venv
+source venv/bin/activate
+pip install -U pip
+pip install Flask
 ```
 
-### 1. App Structure
+### 1. Layout / Structure
 
 ```md
     A                               B
@@ -77,9 +76,9 @@ As a module                    As a Package
                                        /Fruits.html
 ```
 
-### 2. Running the App
+### 2. Example
 
-A simple Flask app looks something like this:
+A simple *Flask* app looks something like this:
 
 ```python
 from flask import Flask
@@ -96,24 +95,24 @@ if __name__ == '__main__':
 To run it, save the above code in a file (e.g. *myapp.py*), then use the command:
 
 ```bash
-$ python myapp.py
+python myapp.py
 ```
 
-By default, the flask server will be running locally at port 5000.
+By default, the [flask development server][9] will be running locally at port 5000.
 
-![Flask app running](/assets/images/articles/flaskrun.png)
+![Flask app running][10]
 
-If you browse to [localhost:5000/](http://127.0.0.1:5000/), you should see the text "Hello, World!".
+If you browse to <http://127.0.0.1:5000/>, you should see the text "Hello, World!".
 
-### 3. Including Static Files
+### 3. Including Assets
 
-In order to use local CSS, JavaScript and image files in Flask apps, they'll need to be placed in the **static** folder. This makes them accessible through Flask's **url_for()** method:
+In order to use CSS, JavaScript and image files stored within the app's folders; they'll need to be placed in a preset [static folder][11] (**/static** by default). This makes them accessible through Flask's [url_for()][12] method:
 
 ```python
 url_for('static', filename="style.css")
 ```
 
-Create a CSS file for this app using the code below (or write your own if you wish) and save it (e.g as *style.css*), adhering to one of the app structures above.
+Create a CSS file for this app using the code below (or write your own if you wish) and save it (e.g as *style.css*), adhering to one of the app layouts above.
 
 ```css
 body {
@@ -124,9 +123,9 @@ body {
 
 ### 4. Rendering Templates
 
-Writing code for entire webpages within Python could get messy, fast. Flask offers a fitting solution: the [Jinja2 HTML templating engine](https://jinja.palletsprojects.com/en/2.11.x/).
+Writing code for entire webpages within Python could get messy, fast. *Flask* offers a fitting solution: the [Jinja2 HTML templating engine][13].
 
-HTML templates to be rendered need only be placed in the **templates** folder, and flask's **render_template()** method will do the rest.
+HTML templates to be rendered need only be placed in the [templates folder][14] (**/templates** by default), and flask's [render_template()][15] method will do the rest.
 
 The templates can contain variables and expressions to evaluate. For instance:
 
@@ -175,7 +174,7 @@ To use it, save it (e.g. as *Fruits.html*), adhering to the app structure of you
 
 ### 5. Accessing Request Data
 
-Data submitted from HTML forms can be accessed using Flask's **request** object. For instance:
+Data submitted from HTML forms can be accessed from *Flask*'s [request object][16]. For instance:
 
 ```python
 request.method  # gives the current HTTP method ('GET', 'POST','PUT', ...)
@@ -221,12 +220,31 @@ Afterwards, restart the app.
 
 Result:
 
-![ACME groceries webpage](/assets/images/articles/flaskapp.png)
+![ACME groceries webpage][17]
 
-![ACME groceries webpage2](/assets/images/articles/flaskapp2.png)
+![ACME groceries webpage2][18]
 
 ## Next Steps
 
-A follow-up article soon to come will cover how to deploy your flask app.
+*Flask* offers a number of [deployment options][19]. If you'd like to challlenge yourself; try coming up with a great idea for a web app, build it, and then deploy it on [Heroku][20] - a popular choice.
 
-For now, challenge yourself: think of great ideas for web apps. Then pick one to start on.
+[1]: https://flask.palletsprojects.com/en/1.1.x/
+[2]: /assets/images/articles/logo-full.svg
+[3]: https://flask.palletsprojects.com/en/1.1.x/installation
+[4]: https://flask.palletsprojects.com/en/1.1.x/installation/#optional-dependencies
+[5]: https://flask.palletsprojects.com/en/1.1.x/quickstart
+[6]: https://flask.palletsprojects.com/en/1.1.x/tutorial
+[7]: https://developer.mozilla.org/en-US/docs/Learn
+[8]: https://www.w3schools.com
+[9]: https://flask.palletsprojects.com/en/1.1.x/server/
+[10]: /assets/images/articles/flaskrun.png
+[11]: https://flask.palletsprojects.com/en/1.1.x/api/#flask.Flask.static_folder
+[12]: https://flask.palletsprojects.com/en/1.1.x/quickstart/#url-building
+[13]: https://jinja.palletsprojects.com/en/2.11.x/
+[14]: https://flask.palletsprojects.com/en/1.1.x/api/#flask.Flask.template_folder
+[15]: https://flask.palletsprojects.com/en/1.1.x/api/#flask.render_template
+[16]: https://flask.palletsprojects.com/en/1.1.x/api/#flask.request
+[17]: /assets/images/articles/flaskapp.png
+[18]: /assets/images/articles/flaskapp2.png
+[19]: https://flask.palletsprojects.com/en/1.1.x/deploying/
+[20]: https://devcenter.heroku.com/articles/getting-started-with-python?singlepage=true
