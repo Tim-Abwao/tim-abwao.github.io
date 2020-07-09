@@ -3,45 +3,46 @@ layout: post
 author: Abwao
 last_modified_at: 2020-05-26T21:18:00+03:00
 ---
-[*spaCy*](https://spacy.io/) is a **powerful**, **feature-rich**, open source **Natural Language Processing (NLP)** Python package built by [Explosion AI](https://explosion.ai/).
+[*spaCy*][1] is a **powerful**, **feature-rich**, open source [Natural Language Processing (NLP)][2] Python package built by [Explosion][3]. Some of *Explosion*'s fascinating tools are demonstrated [here][4].
 
-It is excellent for quickly processing large volumes of text, and picking out useful information; for instance the entities (people/places/organisations/etc) present. It also has wonderful text visualisation tools, demonstrated [here](https://explosion.ai/demos/).
+*spaCy* is excellent for quickly processing large volumes of text data, and picking out useful information. For instance, performing [sentiment analysis][5] on extensive social media records, and extracting the affiliated [named entities][6] (people, places, organisations, etc).
 
-![displacy demo](/assets/images/articles/displacy.png)<br>
-<sub> *spaCy*'s Named Entity Visualiser <a href="https://explosion.ai/demos/displacy-ent">displaCy</a> in action*</sub>
+![displacy demo][7]
+
+(*spaCy*'s **Named Entity Visualiser**, [displaCy][8] in action)
 
 ## Linguistic Features
 
-Some of *spaCy*'s [main features](https://spacy.io/usage/spacy-101#features) include:
+Some of *spaCy*'s [main features][9] include:
 
 - **Tokenization:** splitting text into pieces (i.e words, numbers, punctuation marks, etc) termed 'tokens'.
 
-- **Part-of-Speech Tagging:** classifying the tokens according to their *syntactic functions*, as nouns/verbs/conjunctions/determiners/etc.
+- **Part-of-Speech Tagging:** classifying the tokens according to their *syntactic functions*, as nouns, verbs, conjunctions, determiners, etc.
 
-- **Named Entity Recognition:** getting the names, places, organisations, dates, events, landmark structures, nationalities, languages, etc. in the text. (Please see [Named Entities](https://spacy.io/api/annotation#named-entities))
+- **Named Entity Recognition:** getting the people, places, organisations, dates, events, landmark structures, nationalities, languages, etc. in the text. (Please see [Named Entities][10])
 
-- **Sentiment Analysis:** gives the positivity/negativity score for a phrase/sentence/document.
+- **Sentiment Analysis:** getting the *positivity* or *negativity* score for a phrase, sentence, or entire document.
 
-- **Lemmatization:** getting the root/base form of the tokens, without inflections for tense/plural/case/gender/ etc. This allows words like 'was' and 'be' to be interpreted as similar.
+- **Lemmatization:** getting the *root form* of the tokens, *without inflections* for tense, plural, case, gender,  etc. This allows words like 'was' and 'be' to be interpreted as similar.
 
-- **Dependency Parsing:** getting the grammatical structure i.e relationships between the tokens in terms of 'subject' or 'object' in the given contexts.
+- **Dependency Parsing:** getting the *grammatical structure* i.e the relationships between the tokens in terms of 'subject' or 'object' in the given contexts.
 
-- **Sentence Boundary Detection:** getting the sentences in the text (grouping together tokens that make up individual sentences by identifying where sentences begin and end).
+- **Sentence Boundary Detection:** getting the sentences in the text (grouping together tokens that make up individual sentences, by identifying where sentences begin and end).
 
 ## Getting Started
 
 A straight-forward way to install *spaCy* would be:
 
 ```bash
-$ pip install -U spacy
+pip install -U spacy
 ```
 
-More options, such as installing from source, can be found at [*spaCy*'s usage guide](https://spacy.io/usage).
+More options, such as installing from source, can be found at [*spaCy*'s usage guide][11].
 
-*spaCy* offers [pretrained model](https://spacy.io/models):
+*spaCy* offers [pretrained models][12]:
 
 - **Core models:** ready to use for predicting named entities, part-of-speech tags and syntactic dependencies. Can be fine-tuned to better fit a case.
-- **Starter models:** base models with pretrained weights for use in Transfer learning.
+- **Starter models:** base models with pretrained weights for use in [Transfer learning][13].
 
 ## Basic Usage
 
@@ -57,7 +58,7 @@ More options, such as installing from source, can be found at [*spaCy*'s usage g
 #<class 'spacy.tokens.span.Span'>
 ```
 
-### Using a pretrained model
+## Using a Pretrained Model
 
 ```bash
 # To install the small English core model
@@ -91,4 +92,19 @@ hill hill NOUN NN pobj xxxx True False
 
 ## Next Steps
 
-*spaCy* has its very own [Advanced NLP with *spaCy* course](https://course.spacy.io), which *exlains* and *demonstrates* its features far more elaborately. It includes *coding sections* for an engaging learning experience. It is offered free of charge. I've tried it... and it's awesome. Please consider checking it out.
+*spaCy* has its very own [Advanced NLP with *spaCy* course][14], which *explains* and *demonstrates* its features far more elaborately. It also includes *coding sections* for an engaging learning experience. It is offered free of charge. I've tried it... and it's awesome. Please consider checking it out.
+
+[1]: https://spacy.io/
+[2]: https://en.wikipedia.org/wiki/Natural_language_processing
+[3]: https://explosion.ai/
+[4]: https://explosion.ai/software#demos
+[5]: https://en.wikipedia.org/wiki/Sentiment_analysis
+[6]: https://en.wikipedia.org/wiki/Named_entity
+[7]: /assets/images/articles/displacy.png
+[8]: https://explosion.ai/demos/displacy-ent
+[9]: https://spacy.io/usage/spacy-101#features
+[10]: https://spacy.io/api/annotation#named-entities
+[11]: https://spacy.io/usage
+[12]: https://spacy.io/models
+[13]: https://spacy.io/models
+[14]: https://course.spacy.io
