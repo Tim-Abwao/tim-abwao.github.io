@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Tim Abwao | Portfolio
+im_path: "/assets/images/toolkit/"
 ---
 <style type="text/css">
 	body {
@@ -9,58 +10,40 @@ title: Tim Abwao | Portfolio
 	}
 
 	h1 {
-		margin: 2%;
 		padding: 2%;
 		font-weight: bold;
 	}
 
 	.projects {
 		display: grid;
-		grid-template-columns: auto auto auto;
+		grid-template-columns: repeat(3, 1fr);
+		grid-auto-rows: minmax(270px, auto);
+		gap: 50px;
+		margin: 5%;
 	}
 
-	.project-link {
-		max-width: 400px;
-		height: 280px;
-		margin: 7%;
-		padding: 7%;
-		box-shadow: 10px 25px 25px rgba(0, 0, 0, 0.5);
-		box-sizing: border-box;
-		color: #777;
-		background: rgba(255, 255, 212, 0.3);
-	}
-
-	.project-link:hover {
-		color: #222;
+	.projects a:hover {
 		text-decoration: none;
-		background: rgba(255, 255, 212, 0.45);
+		opacity: 0.8;
+		box-shadow: 10px 8px 18px rgba(0, 0, 0, 0.7);
 	}
 
-	.project-title {
-		font-weight: bold;
-		text-decoration: none;
+	.project-info {
+		padding: 30px;
 		color: #111;
 	}
 
 	.skill-container {
-		background-size: cover;
-		height: 1250px;
-	}
-
-	.skills {
-		display: grid;
-		grid-template-columns: auto auto auto auto;
 		margin: 5%;
-		max-width: 1080px;
-		font-family: Helvetica, sans-serif;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-auto-rows: minmax(120px, auto);
+		gap: 40px;
+		background-size: cover;
 	}
 
 	.skill-icon {
-		box-shadow: 10px 10px 15px grey;
-		border-radius: 20px;
 		width: 120px;
-		height: 120px;
-		background-color: white;
 	}
 
 	.skill-icon:hover {
@@ -69,15 +52,11 @@ title: Tim Abwao | Portfolio
 
 	@media only screen and (max-width: 1024px) {
 		.projects {
-			float: none;
 			display: grid;
-			grid-template-columns: auto auto;
-			text-align: center;
+			grid-template-columns: 1fr 1fr;
+			grid-auto-rows: minmax(270px);
 		}
 
-		.skill-container {
-			height: 1150px;
-		}
 	}
 
 	@media only screen and (max-width: 768px) {
@@ -87,47 +66,26 @@ title: Tim Abwao | Portfolio
 		}
 
 		.projects {
-			float: none;
-			display: grid;
-			grid-template-columns: auto;
+			grid-template-columns: 70%;
 		}
 
-		.project-title {
-			font-size: 1.25em;
+		.skill-container {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	@media only screen and (max-width: 500px) {
+		.projects {
+			grid-template-columns: 90%;
 		}
 
-		.skills {
-			display: grid;
-			grid-template-columns: auto auto auto;
-			margin-left: 5%;
+		.skill-container {
+			grid-template-columns: 1fr 1fr;
 		}
 
 		.skill-icon {
-			width: 90;
-			height: 90;
+			width: 100px;
 		}
-
-		.skill-container {
-			height: 1500px;
-		}
-	}
-
-	@media only screen and (max-width: 620px) {
-		.skills {
-			display: grid;
-			grid-template-columns: auto auto;
-		}
-
-		.skill-container {
-			height: 2150px;
-		}
-	}
-
-	@media only screen and (max-width: 420px) {
-		.skill-container {
-			height: 2000px;
-		}
-
 	}
 </style>
 </head>
@@ -139,26 +97,53 @@ title: Tim Abwao | Portfolio
 		<hr>
 		<div class="projects">
 			{% for project in site.data.projects %}
-			<a class="project-link" href="{{ project.link }}">
-				<div>
-					<h3 class="project-title">{{ project.title }}</h3>
+			<a class="project-link"
+				style="background: center / cover no-repeat url('{{ page.im_path | append: project.wallpaper }}');"
+				href="{{ project.link }}">
+				<div class="project-info">
+					<h3>{{ project.title }}</h3>
 					<p> {{ project.summary }}</p>
-
 				</div>
 			</a>
 			{% endfor %}
 		</div>
 
-		<div class="skill-container">
-			<h1 style="margin-left: 5%;">Tools & Platforms:</h1>
-			<hr>
-			<div class="skills">
-				{% for tool in site.data.toolkit %}
-				<div style="margin: 5%;">
+		<div style="margin: 5%;">
+			<h1>Tools & Platforms</h1>
+			<h2>Data Analysis & Visualization</h2>
+			<div class="skill-container">
+				{% for tool in site.data.toolkit['Data Analysis'] %}
+				<div>
 					<figure>
 						<a href="{{ tool.link }}"><img class="skill-icon"
 								src="{{ tool.icon | prepend: '/assets/images/toolkit/'}}" alt="{{ tool.icon }}"></a>
 						<figcaption style="margin: 5% 10%;"><strong>{{ tool.name }}</strong></figcaption>
+					</figure>
+				</div>
+				{% endfor %}
+			</div>
+
+			<h2>Programming Languages and Platforms</h2>
+			<div class="skill-container">
+				{% for tool in site.data.toolkit['Programming and Platforms'] %}
+				<div>
+					<figure>
+						<a href="{{ tool.link }}"><img class="skill-icon"
+								src="{{ tool.icon | prepend: '/assets/images/toolkit/'}}" alt="{{ tool.icon }}"></a>
+						<figcaption style="margin: 5% 10%;"><strong>{{ tool.name }}</strong></figcaption>
+					</figure>
+				</div>
+				{% endfor %}
+			</div>
+
+			<h2>Web Development</h2>
+			<div class="skill-container">
+				{% for tool in site.data.toolkit['Web Development'] %}
+				<div>
+					<figure>
+						<a href="{{ tool.link }}"><img class="skill-icon"
+								src="{{ tool.icon | prepend: '/assets/images/toolkit/'}}" alt="{{ tool.icon }}"></a>
+						<figcaption style="margin: 5% 10%;"></figcaption><strong>{{ tool.name }}</strong></figcaption>
 					</figure>
 				</div>
 				{% endfor %}
