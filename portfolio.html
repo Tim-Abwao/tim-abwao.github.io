@@ -5,13 +5,20 @@ im_path: "/assets/images/toolkit/"
 ---
 <style type="text/css">
 	body {
-		background: rgba(119, 199, 211, 0.7) url(/assets/images/portfolio_background_large.jpg) no-repeat fixed;
+		background: rgba(245, 245, 220, 0.7) url(/assets/images/portfolio_background.jpg);
 		background-size: cover;
 	}
 
-	h1 {
-		padding: 2%;
-		font-weight: bold;
+	h1,
+	h2 {
+		font-weight: bolder;
+		margin: 5%;
+		margin-top: 9%;
+
+	}
+
+	h2 {
+		margin-left: 20%;
 	}
 
 	.projects {
@@ -19,18 +26,27 @@ im_path: "/assets/images/toolkit/"
 		grid-template-columns: repeat(3, 1fr);
 		grid-auto-rows: minmax(270px, auto);
 		gap: 50px;
-		margin: 5%;
+		margin: 7%;
+	}
+
+	.projects a {
+		box-shadow: 12px 10px 15px rgba(0, 0, 0, 0.5);
 	}
 
 	.projects a:hover {
 		text-decoration: none;
 		opacity: 0.8;
-		box-shadow: 10px 8px 18px rgba(0, 0, 0, 0.7);
+		box-shadow: 20px 15px 30px rgba(0, 0, 0, 0.7);
 	}
 
 	.project-info {
 		padding: 30px;
 		color: #111;
+	}
+
+	.skills {
+		margin: 2% 7%;
+
 	}
 
 	.skill-container {
@@ -43,7 +59,8 @@ im_path: "/assets/images/toolkit/"
 	}
 
 	.skill-icon {
-		width: 120px;
+		max-width: 200px;
+		max-height: 100px;
 	}
 
 	.skill-icon:hover {
@@ -52,29 +69,25 @@ im_path: "/assets/images/toolkit/"
 
 	@media only screen and (max-width: 1024px) {
 		.projects {
-			display: grid;
 			grid-template-columns: 1fr 1fr;
 			grid-auto-rows: minmax(270px);
-		}
-
-	}
-
-	@media only screen and (max-width: 768px) {
-		body {
-			background: rgba(119, 199, 211, 0.7) url(/assets/images/portfolio_background.jpg) no-repeat fixed;
-			background-size: cover;
-		}
-
-		.projects {
-			grid-template-columns: 70%;
 		}
 
 		.skill-container {
 			grid-template-columns: repeat(3, 1fr);
 		}
+
+		.skill-icon {
+			max-width: 170px;
+			max-height: 80px;
+		}
 	}
 
-	@media only screen and (max-width: 500px) {
+	.navbar {
+		color: #111;
+	}
+
+	@media only screen and (max-width: 740px) {
 		.projects {
 			grid-template-columns: 90%;
 		}
@@ -84,7 +97,7 @@ im_path: "/assets/images/toolkit/"
 		}
 
 		.skill-icon {
-			width: 100px;
+			max-width: 125px;
 		}
 	}
 </style>
@@ -93,8 +106,7 @@ im_path: "/assets/images/toolkit/"
 <body>
 	<div class="content">
 		{% include nav.html %}
-		<h1>GitHub Projects:</h1>
-		<hr>
+		<h1>GitHub Projects</h1>
 		<div class="projects">
 			{% for project in site.data.projects %}
 			<a class="project-link"
@@ -108,11 +120,24 @@ im_path: "/assets/images/toolkit/"
 			{% endfor %}
 		</div>
 
-		<div style="margin: 5%;">
-			<h1>Tools & Platforms</h1>
+		<h1>Tools & Platforms</h1>
+		<div class="skills">
 			<h2>Data Analysis & Visualization</h2>
 			<div class="skill-container">
 				{% for tool in site.data.toolkit['Data Analysis'] %}
+				<div>
+					<figure>
+						<a href="{{ tool.link }}"><img class="skill-icon"
+								src="{{ tool.icon | prepend: '/assets/images/toolkit/'}}" alt="{{ tool.icon }}"></a>
+						<figcaption style="margin: 5% 10%;"><strong>{{ tool.name }}</strong></figcaption>
+					</figure>
+				</div>
+				{% endfor %}
+			</div>
+
+			<h2>Machine Learning</h2>
+			<div class="skill-container">
+				{% for tool in site.data.toolkit['Machine Learning'] %}
 				<div>
 					<figure>
 						<a href="{{ tool.link }}"><img class="skill-icon"
