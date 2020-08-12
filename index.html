@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Tim Abwao | Aspiring Data Scientist
+feat_posts: [2, 3, 4]
 ---
 <style type="text/css">
     body {
@@ -11,17 +12,32 @@ title: Tim Abwao | Aspiring Data Scientist
     .headline {
         font-size: 1.8em;
         font-weight: bold;
+        margin: 12% 15%;
+        text-align: center
     }
 
     .featured {
-        color: rgba(0, 0, 0, 0.3);
-        font-size: 20px;
-        font-weight: bold;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        width: 50%;
+        margin: auto;
+        font-weight: 600;
+        font-style: oblique;
     }
 
-    .featured:hover {
+    .featured p {
+        font-size: 1.7em;
+        font-weight: bolder;
+        overflow-wrap: anywhere;
+    }
+
+    .featured a {
+        color: rgba(0, 0, 0, 0.4);
+    }
+
+    .featured a:hover {
+        color: rgba(0, 0, 0, 0.8);
         text-decoration: none;
-        color: beige;
     }
 
     @media only screen and (max-width: 1024px) {
@@ -31,7 +47,11 @@ title: Tim Abwao | Aspiring Data Scientist
         }
 
         .headline {
-            margin: 40% 5%;
+            margin: 34% 10%;
+        }
+
+        .featured {
+            width: 60%;
         }
     }
 
@@ -42,8 +62,16 @@ title: Tim Abwao | Aspiring Data Scientist
         }
 
         .headline {
-            margin: 10% 5%;
+            margin: 25% 7%;
             font-size: 1.5em;
+        }
+
+        .featured {
+            width: 80%;
+        }
+
+        .featured p {
+            font-size: 1.4em;
         }
 
     }
@@ -53,20 +81,19 @@ title: Tim Abwao | Aspiring Data Scientist
 <body>
     <div class="content">
         {% include nav.html %}
-        <div style="margin: 12% 15%; text-align: center;">
+        <div>
             <p class="headline"><em>A blog to share experiences from my experiments & adventures as I work
                     towards being a good Data Scientist</em></p>
         </div>
 
-        <div style="margin: 5% auto; justify-content: center; display: grid; grid-template-columns: auto auto;">
-            <h2 style="margin: 10% 17%; font-weight: bolder;"><em>Featured articles</em></h2>
-            <div style="margin: 5%; ">
-                <a class="featured" href="{{ site.posts[2].url}}"><em>{{ site.posts[2].title}}</em></a>
-                <br>
+        <div class='featured'>
+            <div>
+                <p>Featured articles</p>
+            </div>
+            <div>
+                {% for post in page.feat_posts%}
+                <a href="{{ site.posts[post].url}}"><em>{{ site.posts[post].title}}</em></a>
                 <hr>
-                <a class="featured" href="{{ site.posts[3].url}}"><em>{{ site.posts[3].title}}</em></a>
-                <br>
-                <hr>
-                <a class="featured" href="{{ site.posts[5].url}}"><em>{{ site.posts[5].title}}</em></a>
+                {% endfor %}
             </div>
         </div>
