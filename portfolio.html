@@ -67,6 +67,12 @@ im_path: "/assets/images/toolkit/"
 		opacity: 0.5;
 	}
 
+	figcaption {
+		font: bold 0.9em serif;
+		margin: 5%;
+		padding-left: 17%;
+	}
+
 	@media only screen and (max-width: 1024px) {
 		.projects {
 			grid-template-columns: 1fr 1fr;
@@ -129,7 +135,7 @@ im_path: "/assets/images/toolkit/"
 					<figure>
 						<a href="{{ tool.link }}"><img class="skill-icon"
 								src="{{ tool.icon | prepend: '/assets/images/toolkit/'}}" alt="{{ tool.icon }}"></a>
-						<figcaption style="margin: 5% 10%;"><strong>{{ tool.name }}</strong></figcaption>
+						<figcaption> {{ tool.name }} </figcaption>
 					</figure>
 				</div>
 				{% endfor %}
@@ -142,7 +148,7 @@ im_path: "/assets/images/toolkit/"
 					<figure>
 						<a href="{{ tool.link }}"><img class="skill-icon"
 								src="{{ tool.icon | prepend: '/assets/images/toolkit/'}}" alt="{{ tool.icon }}"></a>
-						<figcaption style="margin: 5% 10%;"><strong>{{ tool.name }}</strong></figcaption>
+						<figcaption> {{ tool.name }} </figcaption>
 					</figure>
 				</div>
 				{% endfor %}
@@ -155,7 +161,7 @@ im_path: "/assets/images/toolkit/"
 					<figure>
 						<a href="{{ tool.link }}"><img class="skill-icon"
 								src="{{ tool.icon | prepend: '/assets/images/toolkit/'}}" alt="{{ tool.icon }}"></a>
-						<figcaption style="margin: 5% 10%;"><strong>{{ tool.name }}</strong></figcaption>
+						<figcaption> {{ tool.name }} </figcaption>
 					</figure>
 				</div>
 				{% endfor %}
@@ -168,7 +174,7 @@ im_path: "/assets/images/toolkit/"
 					<figure>
 						<a href="{{ tool.link }}"><img class="skill-icon"
 								src="{{ tool.icon | prepend: '/assets/images/toolkit/'}}" alt="{{ tool.icon }}"></a>
-						<figcaption style="margin: 5% 10%;"></figcaption><strong>{{ tool.name }}</strong></figcaption>
+						<figcaption> {{ tool.name }} </figcaption>
 					</figure>
 				</div>
 				{% endfor %}
