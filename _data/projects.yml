@@ -16,5 +16,5 @@
   wallpaper: "pg.jpg"
 - title: "Text mining with spaCy<sup>&copy</sup> NLP"
   link: "https://github.com/Tim-Abwao/text-mining-spacy"
-  summary: "A Python script to extract useful information from documents in hundreds of file formats, using the spaCy<sup>&reg;</sup> Natural Language Processing library."
+  summary: "A Python app to extract useful information from documents in various typical file formats, using the spaCy<sup>&reg;</sup> Natural Language Processing library."
   wallpaper: "sp.jpg"
