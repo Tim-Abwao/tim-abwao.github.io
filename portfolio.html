@@ -5,7 +5,7 @@ im_path: "/assets/images/toolkit/"
 ---
 <style type="text/css">
 	body {
-		background-image: url(/assets/images/portfolio_background.jpg);
+		background: rgba(243, 252, 167, 0.3) url(/assets/images/portfolio_background.jpg);
 		background-size: 100%;
 	}
 
@@ -13,7 +13,7 @@ im_path: "/assets/images/toolkit/"
 	h2 {
 		font-weight: bolder;
 		margin: 5%;
-		margin-top: 9%;
+		margin-top: 7%;
 
 	}
 
@@ -40,8 +40,12 @@ im_path: "/assets/images/toolkit/"
 	}
 
 	.project-info {
-		padding: 7%;
+		padding: 4% 9%;
 		color: #111;
+	}
+
+	.project-info p {
+		font-style: oblique;
 	}
 
 	.skills {
@@ -128,7 +132,7 @@ im_path: "/assets/images/toolkit/"
 
 		<h1>Tools & Platforms</h1>
 		<div class="skills">
-			<h2>Data Analysis & Visualization</h2>
+			<h2>Data Wrangling, Data Analysis & Visualization</h2>
 			<div class="skill-container">
 				{% for tool in site.data.toolkit['Data Analysis'] %}
 				<div>
@@ -154,7 +158,7 @@ im_path: "/assets/images/toolkit/"
 				{% endfor %}
 			</div>
 
-			<h2>Programming Languages and Platforms</h2>
+			<h2>Programming & Software Development</h2>
 			<div class="skill-container">
 				{% for tool in site.data.toolkit['Programming and Platforms'] %}
 				<div>
