@@ -1,59 +1,57 @@
 ---
 layout: post
 author: Abwao
-last_modified_at: 2020-07-08T23:20:00+03:00
+last_modified_at: 2020-09-03T16:50:00+03:00
 ---
-[Flask][1] is a "**lightweight... web app framework**" for Python. It is designed to be simple and **basic**; making it easy to learn, while simultaneously allowing experienced web developers the freedom to integrate preferred features.
+[Flask][1] is a "*lightweight... web app framework*" in Python. It is designed to be *simple* & *basic*; making it easy to learn, while simultaneously allowing experienced web developers the freedom to integrate their preferred features.
 
 ![Flask logo][2]
 
 ## Installation
 
-*Flask* can be installed with:
+*Flask* can be installed using `pip`:
 
 ```bash
 pip install Flask
 ```
 
-The *Flask* [installation guide][3] has more information on:
+The *Flask* [installation guide][3] outlines how to:
 
-- working in *virtual environments*
+- work in a *virtual environment*
 
   ```bash
-  python3 -m venv env
-  source env/bin/activate
+  python3 -m venv venv
+  source venv/bin/activate
   pip install Flask
   ```
 
-- installing the *latest* unreleased version
+- install the latest *unreleased* version
 
   ```bash
   pip install -U https://github.com/pallets/flask/archive/master.tar.gz
   ```
 
-- and [optional dependencies][4] to improve functionality.
+- include [optional dependencies][4] to improve functionality.
 
 ## Getting Started
 
-[Flask's Quickstart][5] wonderfully introduces its main features:
+The [Quickstart][5] guide introduces *Flask*  by briefly explaining its main features:
 
-- Creating and running a basic app
-- Routing and URL building
+- Creating and running apps
+- Routing & URL building
 - Including static assets
 - Rendering HTML templates
 - Handling HTTP requests, among others.
 
-It can help you get a simple web app up and running in a matter of minutes. This is also what this article is meant to help you achieve.
+It  can help you get a simple web app up and running in a matter of minutes.
 
-[Flask's tutorial][6] takes this a leap further, with a step-by-step guide to building a blog.
+[Flask's tutorial][6] provides a step-by-step guide to building a basic blog; where users can register, log in and create, edit or delete posts. It also describes how to package the blog (a *Flask* app) for distribution.
 
-If you're completely new to web development, [MDN's Learn Web Development][7] and [W3Schools][8] could quickly bring you up to speed.
-
-*Flask* can be used to make wonderful, dynamic websites and apps; but this requires some understanding of HTML, CSS and JavaScript.
+If you're completely new to web development, [MDN's Learn Web Development][7] and [W3Schools][8] could quickly bring you up to speed. *Flask* can be used to make wonderful, dynamic websites and apps; but this requires some understanding of HTML, CSS and JavaScript.
 
 ## Building a Simple Flask App
 
-The first step is to install *Flask*. It's good practice to work in a virtual environment:
+### 1. Install *Flask* in a virtual environment
 
 ```bash
 python3 -m venv venv
@@ -62,10 +60,9 @@ pip install -U pip
 pip install Flask
 ```
 
-### 1. Layout / Structure
+You can structure your app as a *module*, or as a *package* as shown below:
 
 ```md
-    A                               B
 As a module                    As a Package
 -----------------             ---------------------
 /myapp.py                     /myapp
@@ -76,7 +73,7 @@ As a module                    As a Package
                                        /Fruits.html
 ```
 
-### 2. Example
+### 2. Run a basic *Flask* application
 
 A simple *Flask* app looks something like this:
 
@@ -84,35 +81,33 @@ A simple *Flask* app looks something like this:
 from flask import Flask
 app = Flask(__name__)
 
+
 @app.route('/')
 def hello_world():
     return 'Hello, World!'
-
-if __name__ == '__main__':
-    app.run()
 ```
 
-To run it, save the above code in a file (e.g. *myapp.py*), then use the command:
+To run it, save the above code in a file (e.g. *myapp.py*), then use the commands:
 
 ```bash
-python myapp.py
+export FLASK_APP=myapp
+export FLASK_ENV=development
+flask run
 ```
 
-By default, the [flask development server][9] will be running locally at port 5000.
+By default, the [Flask development server][9] will be running locally at port 5000. If you browse to <http://127.0.0.1:5000/>, you should see the text "Hello, World!".
 
 ![Flask app running][10]
 
-If you browse to <http://127.0.0.1:5000/>, you should see the text "Hello, World!".
+### 3. Include static assets
 
-### 3. Including Assets
-
-In order to use CSS, JavaScript and image files stored within the app's folders; they'll need to be placed in a preset [static folder][11] (**/static** by default). This makes them accessible through Flask's [url_for()][12] method:
+In order for *Flask* to serve local CSS files, JavaScript files, images or any other files; they'll need to be placed in a [static folder][11] (**/static** by default). This makes them available at the URL "*/static*", and through *Flask*'s [url_for()][12] method:
 
 ```python
 url_for('static', filename="style.css")
 ```
 
-Create a CSS file for this app using the code below (or write your own if you wish) and save it (e.g as *style.css*), adhering to one of the app layouts above.
+Create a CSS file using the code below, or write your own if you wish, and save it in a *static* folder adhering to one of the app layouts above (e.g as */static/style.css*).
 
 ```css
 body {
@@ -121,11 +116,9 @@ body {
 }
 ```
 
-### 4. Rendering Templates
+### 4. Add a HTML template
 
-Writing code for entire webpages within Python could get messy, fast. *Flask* offers a fitting solution: the [Jinja2 HTML templating engine][13].
-
-HTML templates to be rendered need only be placed in the [templates folder][14] (**/templates** by default), and flask's [render_template()][15] method will do the rest.
+Writing code for entire webpages within the app's script could get messy, fast. *Flask* offers a fitting solution: the [Jinja2 HTML templating engine][13]. Templates to be rendered need only be placed in the [templates folder][14] (**/templates** by default), and Flask's [render_template()][15] method will do the rest.
 
 The templates can contain variables and expressions to evaluate. For instance:
 
@@ -140,7 +133,7 @@ The templates can contain variables and expressions to evaluate. For instance:
 Here's a sample template:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href=" {% raw %}{{ url_for('static', filename='style.css')}}{% endraw %}">
@@ -170,11 +163,11 @@ Here's a sample template:
 </html>
 ```
 
-To use it, save it (e.g. as *Fruits.html*), adhering to the app structure of your choice.
+To use it, save it in a *templates* folder according to the app layout of your choice (e.g. as */templates/Fruits.html*).
 
-### 5. Accessing Request Data
+### 5. Process requests
 
-Data submitted from HTML forms can be accessed from *Flask*'s [request object][16]. For instance:
+Data submitted from forms in the app is accessible through *Flask*'s [request object][16]. For instance:
 
 ```python
 request.method  # gives the current HTTP method ('GET', 'POST','PUT', ...)
@@ -182,20 +175,28 @@ request.form  # gives the form data as a dictionary
 request.form['Key']  # gets data from the element named 'Key'
 ```
 
+Form data from POST requests is commonly handled as follows:
+
+```python
+@app.route('/some_url', methods=["GET", "POST"])
+def some_url():
+    if request.method == 'POST':
+    # Extract and process the form data
+```
+
 ### 6. Conclusion
 
-After preparing all the necessary files, the final step is to modify the *myapp.py* script to integrate them into the app:
+The final step is to update the *myapp.py* script to integrate all the above modifications.
 
 ```python
 from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
-fruits=["Mangoes", "Apples", "Cherries", "Strawberries", "Pears"]
+fruits = ["Mangoes", "Apples", "Cherries", "Strawberries", "Pears"]
 @app.route('/')
 def index():
     return render_template("Fruits.html", title="ACME Fruit Store",
-                           text="Select fruits:",
-                           fruits=fruits)
+                           text="Select fruits:", fruits=fruits)
 
 
 @app.route('/checkout', methods=["GET", "POST"])
@@ -207,13 +208,15 @@ def checkout():
                 basket.append(request.form[item])
             except KeyError:
                 pass
-
+        if len(basket) == 0:
+            basket = ['No fruits selected.']
         return render_template('Fruits.html', selection = basket)
 
     return redirect(url_for('index'))
-if __name__ == '__main__':
-    app.run(debug=True)
 
+
+if __name__ == '__main__':
+    app.run()
 ```
 
 Afterwards, restart the app.
@@ -226,7 +229,7 @@ Result:
 
 ## Next Steps
 
-*Flask* offers a number of [deployment options][19]. If you'd like to challlenge yourself; try coming up with a great idea for a web app, build it, and then deploy it on [Heroku][20] - a popular choice.
+*Flask* offers a number of [deployment options][19]. If you'd like to challenge yourself; try coming up with a great idea for a web app, build it, and then deploy it on [Heroku][20] - a popular choice.
 
 [1]: https://flask.palletsprojects.com/en/1.1.x/
 [2]: /assets/images/articles/logo-full.svg
