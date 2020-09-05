@@ -4,167 +4,69 @@ author: Abwao
 last_modified_at: 2020-05-28T13:19:00+03:00
 ---
 
-[*Rasa*](https://rasa.com/) is an [open source](https://opensource.com/resources/what-open-source) Python package with easy-to-use tools for building intelligent text and voice based *assistants*(chatbots).
+[*Rasa*][1] is an [open source][2] Python package that provides easy-to-use tools for building intelligent text and voice based *assistants*(chatbots).
 
-It features several *machine learning*, *natural language processing* and *natural language understanding* tools to produce smart, life-like chatbots.
-
-## Installation
-
-```bash
-# Installing the Python development environment
-$ sudo apt update
-$ sudo apt install python3-dev python3-pip
-# Creating a virtual environment
-$ python3 -m venv env
-$ source env/bin/activate
-$ pip install -U pip
-# Installing Rasa
-$ pip install rasa
-```
-
-Please visit *Rasa's* [step-by-step installation guide](https://rasa.com/docs/rasa/user-guide/installation/#installation-guide) for help on how to install it in *macOS*, *Windows* or from source.
+![rasa logo](/assets/images/articles/rasa-logo.svg)
 
 ## Getting Started
 
-The [*Rasa* Basics](https://rasa.com/docs/rasa/user-guide/rasa-tutorial/) tutorial demonstrates how to create an *assistant*, and introduces the necessary files and commands. If you're unfamiliar with *Rasa*, please take some time to go through it.
-
-## Rasa Assistant to tell Jokes & Random Facts
-
-### 1. Install Rasa
-
-After installing *Rasa* (preferably in a virtual environment as shown above), initiate the project (assistant) to get the default files:
+You can install *Rasa* using `pip`:
 
 ```bash
-$ mkdir chatbot; cd chatbot
-$ rasa init --no-prompt
+python3 -m venv venv
+source venv/bin/activate
+pip install rasa
 ```
 
-### 2. Add Custom Actions
+If this doesn't work, you might be missing some dependencies (only Python 3.6 and 3.7 are currently supported):
 
-[Custom actions](https://rasa.com/docs/rasa/core/actions/#custom-actions) in *Rasa* are created as classes. They can be programmed to achieve specific desired outcomes.
-
-Below are 3 custom actions that fetch joke and fact content from APIs. Include them in the **actions.py** file:
-
-```python
-from typing import Any, Text, Dict, List
-from rasa_sdk import Action, Tracker
-from rasa_sdk.executor import CollectingDispatcher
-from urllib.request import urlopen
-from datetime import date
-from ast import literal_eval
-
-
-class ActionGetMathFact(Action):
-
-    def name(self) -> Text:
-        return "get_math_fact"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        # get message from numbersapi
-        fact = urlopen('http://numbersapi.com/random/trivia').read()
-        # send fact as message
-        dispatcher.utter_message(fact.decode('utf-8'))
-        return []
-
-
-class ActionGetDateFact(Action):
-
-    def name(self) -> Text:
-        return "get_date_fact"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        # get day and month
-        day = date.strftime(date.today(), '%m/%d')
-        # get message from numbersapi
-        day_fact = urlopen('http://numbersapi.com/' + day + '/date').read()
-        # send fact as message
-        dispatcher.utter_message(day_fact.decode('utf-8'))
-        return []
-
-
-class ActionGetJoke(Action):
-
-    def name(self) -> Text:
-        return "get_joke"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        # get joke from the jokes api
-        joke = urlopen('https://official-joke-api.appspot.com/random_joke')
-        # convert 'string dict' to dict using ast
-        joke = literal_eval(joke.read().decode('utf-8'))
-        joke = ' ..... '.join([joke['setup'], joke['punchline']])
-        dispatcher.utter_message(joke)
-        return []
+```bash
+sudo apt update
+sudo apt install python3-dev
 ```
 
-### 3. Updating Intents
+For *Windows* and *macOS* users, please refer to the [step-by-step installation guide][3].
 
-Amend the **data/nlu.md** file as follows to add new intents for the custom actions:
+## Jokes & Random Facts Chatbot
+
+### 1. Create the project directory and install Rasa
+
+```bash
+mkdir chatbot
+cd chatbot
+python3 -m venv venv
+source venv/bin/activate
+pip install rasa
+```
+
+### 2. Initialize the project
+
+```bash
+rasa init --no-prompt
+```
+
+This creates all the necessary files, and trains a simple chatbot you can interact with right away in your terminal with:
+
+```bash
+rasa shell
+```
+
+### 3. Update intents
+
+*Intents* are the things you expect users will say. Add the following *intents* to the file **data/nlu.md**:  
 
 ```markdown
-## intent:greet
-- hey
-- hello
-- hi
-- good morning
-- good evening
-- hey there
-
-## intent:goodbye
-- bye
-- goodbye
-- see you around
-- see you later
-
-## intent:mood_great
-- perfect
-- very good
-- great
-- amazing
-- wonderful
-- I am feeling very good
-- I am great
-- I'm good
-- I'm fine, thanks
-- Fine, thank you
-- I am okay
-- ok
-
-## intent:mood_unhappy
-- sad
-- very sad
-- unhappy
-- bad
-- very bad
-- awful
-- terrible
-- not very good
-- extremely sad
-- so sad
-- depressed
-- down
-
-## intent:bot_challenge
-- are you a bot?
-- are you a human?
-- am I talking to a bot?
-- am I talking to a human?
-
 ## intent:math_facts
 - random math fact
 - Mathematical facts
 - Facts from math
 - maths facts
-- mathematics
 
 ## intent:jokes
 - tell me a joke
 - tell me something funny
 - hilarious joke
-- jokes
+- funny jokes
 
 ## intent:history
 - Historical event
@@ -172,9 +74,9 @@ Amend the **data/nlu.md** file as follows to add new intents for the custom acti
 - History
 ```
 
-### 4. Updating Stories
+### 4. Update stories
 
-Create stories for the new intents and custom actions. Modify the **data/stories.md** file as follows:
+A *story* is an example of how conversations would flow between a user and the chatbot. First, modify the *happy path* and *sad path* stories in **data/stories.md** as follows:
 
 ```markdown
 ## happy path
@@ -190,15 +92,11 @@ Create stories for the new intents and custom actions. Modify the **data/stories
 * mood_unhappy
   - utter_cheer_up
   - utter_choose_item
+```
 
-## say goodbye
-* goodbye
-  - utter_goodbye
+Afterwards, add these stories for the new intents:
 
-## bot challenge
-* bot_challenge
-  - utter_iamabot
-
+```markdown
 ## tell joke
 * jokes
   - get_joke
@@ -216,11 +114,67 @@ Create stories for the new intents and custom actions. Modify the **data/stories
   - get_math_fact
   - get_math_fact
   - utter_next
-  ```
+```
 
-### 5. Updating the Domain
+### 5. Add Custom Actions
 
-Amend the **domain.yml** file to reflect all the changes:
+*Actions* are things the chatbot can perform in response to user input. We'll need to define [custom actions][4] to fetch the fact & joke content. Custom actions are created as Python classes.
+
+Add the following to the **actions.py** file:
+
+```python
+from typing import Any, Text, Dict, List
+from rasa_sdk import Action, Tracker
+from rasa_sdk.executor import CollectingDispatcher
+import requests
+from datetime import date
+
+
+class ActionGetMathFact(Action):
+
+    def name(self) -> Text:
+        return "get_math_fact"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        """Get a random math fact and utter it as a response."""
+        fact = requests.get('http://numbersapi.com/random/trivia')
+        dispatcher.utter_message(fact.text)
+        return []
+
+
+class ActionGetDateFact(Action):
+
+    def name(self) -> Text:
+        return "get_date_fact"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        """Get a random fact about current day and utter it as a response."""
+        today = date.strftime(date.today(), '%m/%d')
+        day_fact = requests.get(f'http://numbersapi.com/{today}/date')
+        dispatcher.utter_message(day_fact.text)
+        return []
+
+
+class ActionGetJoke(Action):
+
+    def name(self) -> Text:
+        return "get_joke"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        """Get a joke and utter it as a respose."""
+        joke = (requests.get('https://official-joke-api.appspot.com/random_joke')
+                        .json())
+        joke_text = f"{joke['setup']}...  {joke['punchline']}."
+        dispatcher.utter_message(joke_text)
+        return []
+```
+
+### 6. Update the domain
+
+The domain defines the chatbot's world - all that it knows and can do. Amend the **domain.yml** file to reflect the above additions:
 
 ```yaml
 intents:
@@ -240,11 +194,14 @@ responses:
   - text: "Hey! How are you?"
 
   utter_cheer_up:
-  - text: "Oh no! I'm sorry to hear that."
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
 
   utter_happy:
-  - text: "Awesome!"
-  - text: "That's great!"
+  - text: "Great, carry on!"
 
   utter_goodbye:
   - text: "Bye"
@@ -275,9 +232,17 @@ session_config:
   carry_over_slots_to_new_session: true
 ```
 
-### 6. Running the Action Server
+### 7. Train the chatbot
 
-First, un-comment the action endpoint in the **endpoints.yml** file:
+The *assistant* has to be re-trained with the updated files, in order to obtain a model that includes the added features.
+
+```bash
+rasa train
+```
+
+### 8. Run the action server
+
+First, you'll need to un-comment the *action_endpoint* in the **endpoints.yml** file. Delete the leading `#` in the two lines to get:
 
 ```yml
 ...
@@ -286,37 +251,33 @@ action_endpoint:
 ...
 ```
 
-Afterwards, open a new terminal tab or window, activate the virtual environment with rasa installed, and start the action server:
+Afterwards, open a new terminal tab or window at the project folder, activate the virtual environment, and start the action server:
 
 ```bash
-$ source env/bin/activate
-$ rasa run actions
+source venv/bin/activate
+rasa run actions
 ```
 
-![Rasa action server](/assets/images/articles/rasa_actions.png)
+![Rasa action server](/assets/images/articles/rasa-actions.gif)
 
-### 7. Training the Chatbot
+### 9. Try out your assistant
 
-You'll need to train the chatbot with the updated files, so as to get a model that includes the added data in its predictions.
-
-Head back to the terminal in which you initialised the project, and run:
+Launch the chatbot, and say hey...
 
 ```bash
-$ rasa train
+rasa shell
 ```
 
-### 8. Talking to Your Chatbot
+![Rasa Shell](/assets/images/articles/rasa-shell.gif)
 
-Launch the chatbot in the command-line interface, and say hello...
+## Next Steps
 
-```bash
-$ rasa shell
-```
+At its current state, the chatbot will probably give some surprising responses. It needs further training. And there are so many of *Rasa's* features that haven't been touched on in this simple exercise, which could greatly improve it.
 
-![Rasa Shell](/assets/images/articles/rasa_shell.png)
+If you'd like to keep going, the [Building Assistants][5] tutorial provides a comprehensive guide to building FAQ and contextual-conversation chatbots. Also, it would be a great idea to peruse *Rasa's* well curated documentation; you'll discover more amazing things it can do.
 
-# Conclusion
-
-There are so many of *Rasa's* features that haven't been touched on in this simple exercise. If you'd like to keep going, the [Building Assistants](https://rasa.com/docs/rasa/user-guide/building-assistants/) tutorial provides a comprehensive guide to building FAQ and contextual chatbots.
-
-Also, it would be a great idea to peruse *Rasa's* well curated documentation; you'll discover more amazing things that it can do.
+[1]: https://rasa.com/
+[2]: https://opensource.com/resources/what-open-source
+[3]: https://rasa.com/docs/rasa/user-guide/installation/#step-by-step-installation-guide
+[4]: https://rasa.com/docs/rasa/core/actions/#custom-actions
+[5]: https://rasa.com/docs/rasa/user-guide/building-assistants/
