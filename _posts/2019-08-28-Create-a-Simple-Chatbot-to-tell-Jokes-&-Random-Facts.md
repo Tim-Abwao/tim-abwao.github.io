@@ -1,24 +1,26 @@
 ---
 layout: post
 author: Abwao
-last_modified_at: 2020-05-28T13:19:00+03:00
+last_modified_at: 2020-09-17T18:00:00+03:00
 ---
 
 [*Rasa*][1] is an [open source][2] Python package that provides easy-to-use tools for building intelligent text and voice based *assistants*(chatbots).
 
-![rasa logo](/assets/images/articles/rasa-logo.svg)
+[![rasa logo](/assets/images/articles/rasa-logo.svg)][1]
 
 ## Getting Started
 
 You can install *Rasa* using `pip`:
 
+>**Note**: *Rasa* Open Source 2.0.0rc1 (release candidate 1) was recently made available. This article will be updated again when the stable version 2.0 is released.
+
 ```bash
 python3 -m venv venv
 source venv/bin/activate
-pip install rasa
+pip install rasa==1.10.12  # stable legacy version
 ```
 
-If this doesn't work, you might be missing some dependencies (only Python 3.6 and 3.7 are currently supported):
+If this doesn't work, you might be missing some dependencies:
 
 ```bash
 sudo apt update
@@ -36,7 +38,7 @@ mkdir chatbot
 cd chatbot
 python3 -m venv venv
 source venv/bin/activate
-pip install rasa
+pip install rasa==1.10.12
 ```
 
 ### 2. Initialize the project
@@ -94,7 +96,7 @@ A *story* is an example of how conversations would flow between a user and the c
   - utter_choose_item
 ```
 
-Afterwards, add these stories for the new intents:
+Afterwards, add these stories for the new *intents*:
 
 ```markdown
 ## tell joke
@@ -213,11 +215,11 @@ responses:
   - text: "Could I interest you in ..."
     buttons:
     - title: "Random math fact"
-      payload: "/math_facts"
+      payload: "Mathematical facts"
     - title: "Hillarious joke"
-      payload: "/jokes"
+      payload: "hilarious jokes"
     - title: "Fact about today"
-      payload: "/history"
+      payload: "Today in history"
 
   utter_next:
   - text: 'Enter "jokes", "maths" or "history" for more.'
@@ -276,8 +278,8 @@ At its current state, the chatbot will probably give some surprising responses. 
 
 If you'd like to keep going, the [Building Assistants][5] tutorial provides a comprehensive guide to building FAQ and contextual-conversation chatbots. Also, it would be a great idea to peruse *Rasa's* well curated documentation; you'll discover more amazing things it can do.
 
-[1]: https://rasa.com/
+[1]: https://legacy-docs-v1.rasa.com
 [2]: https://opensource.com/resources/what-open-source
-[3]: https://rasa.com/docs/rasa/user-guide/installation/#step-by-step-installation-guide
-[4]: https://rasa.com/docs/rasa/core/actions/#custom-actions
-[5]: https://rasa.com/docs/rasa/user-guide/building-assistants/
+[3]: https://legacy-docs-v1.rasa.com/user-guide/installation/#step-by-step-installation-guide
+[4]: https://legacy-docs-v1.rasa.com/core/actions/#custom-actions
+[5]: https://legacy-docs-v1.rasa.com/user-guide/building-assistants/#tutorial-building-assistants
