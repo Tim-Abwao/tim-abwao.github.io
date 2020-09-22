@@ -11,11 +11,11 @@ Data Analysis:
   - name: " "
     icon: "Plotly_Dash_logo.png"
     link: "https://plotly.com"
-  - name: "Seaborn"
-    icon: "seaborn.png"
+  - name: " "
+    icon: "seaborn-logo.svg"
     link: "https://seaborn.pydata.org"
   - name: " "
-    icon: "matplotlib.png"
+    icon: "matplotlib.svg"
     link: "https://matplotlib.org"
   - name: " "
     icon: "tableau.png"
@@ -74,7 +74,7 @@ Programming and Platforms:
     link: "https://www.heroku.com/"
 
 Web Development:
-  - name: "Flask"
+  - name: " "
     icon: "flask-icon.png"
     link: "flask.palletsprojects.com"
   - name: " "
