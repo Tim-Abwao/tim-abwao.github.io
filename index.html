@@ -10,11 +10,13 @@ feat_posts: [0, 3, 5]
     }
 
     .headline {
-        font-size: 1.8em;
-        font-weight: bold;
-        margin: 12% 15%;
-        text-align: center
+        font-size: 2.1em;
+        font-style: oblique;
+        font-weight: bolder;
+        margin: 9% 12%;
+        text-align: left;
     }
+    
 
     .featured {
         display: grid;
@@ -62,8 +64,8 @@ feat_posts: [0, 3, 5]
         }
 
         .headline {
-            margin: 25% 7%;
-            font-size: 1.5em;
+            margin: 40% 10%;
+            font-size: 1.8em;
         }
 
         .featured {
@@ -81,9 +83,9 @@ feat_posts: [0, 3, 5]
 <body>
     <div class="content">
         {% include nav.html %}
-        <div>
-            <p class="headline"><em>A blog to share experiences from my experiments & adventures as I work
-                    towards being a good Data Scientist</em></p>
+        <div class="headline">
+            <p>Lessons and experiences</p>
+            <p style="margin-left: 18%; font-size: 0.8em;">from experiments & adventures in my Data Science journey</p>   
         </div>
 
         <div class='featured'>
