@@ -76,7 +76,7 @@ Programming and Platforms:
 Web Development:
   - name: " "
     icon: "flask-icon.png"
-    link: "flask.palletsprojects.com"
+    link: "https://flask.palletsprojects.com"
   - name: " "
     icon: "jekyll.png"
     link: "https://jekyllrb.com"
