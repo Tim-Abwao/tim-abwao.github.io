@@ -4,3 +4,13 @@ plugins:
   - jekyll-seo-tag
 
 permalink: pretty
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Abwao"
+      css_file: "post"

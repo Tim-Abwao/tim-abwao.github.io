@@ -1,6 +1,4 @@
 ---
-layout: post
-author: Abwao
 last_modified_at: 2020-07-07T13:27:00+03:00
 ---
 [Demand forecasting][1] could be described as the use of [predictive analytics][2] to estimate the **expected demand** for goods and services. It is mostly applied in industries with **volatile products** to minimise, or potentially **eliminate losses**.

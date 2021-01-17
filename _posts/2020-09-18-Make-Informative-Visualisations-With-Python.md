@@ -1,6 +1,4 @@
 ---
-layout: post
-author: Abwao
 last_modified_at: 2020-11-17T03:00:50+00:00
 ---
 
