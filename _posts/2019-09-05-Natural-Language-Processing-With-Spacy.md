@@ -1,6 +1,4 @@
 ---
-layout: post
-author: Abwao
 last_modified_at: 2020-05-26T21:18:00+03:00
 ---
 [*spaCy*][1] is a **powerful**, **feature-rich**, open source [Natural Language Processing (NLP)][2] Python package built by [Explosion][3]. Some of *Explosion*'s fascinating tools are demonstrated [here][4].

@@ -1,6 +1,4 @@
 ---
-layout: post
-author: Abwao
 last_modified_at: 2020-09-03T16:50:00+03:00
 ---
 [Flask][1] is a "*lightweight... web app framework*" in Python. It is designed to be *simple* & *basic*; making it easy to learn, while simultaneously allowing experienced web developers the freedom to integrate their preferred features.
