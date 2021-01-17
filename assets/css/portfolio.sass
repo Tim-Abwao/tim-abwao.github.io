@@ -1,0 +1,80 @@
+---
+---
+body
+  background: center / 100% rgba(243, 252, 210, 0.5) url(/assets/images/portfolio_background.jpg)
+
+h1,
+h2
+  font-weight: bolder
+  margin: 2% 5%
+
+h2
+  margin-left: 20%
+
+.projects
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  grid-auto-rows: minmax(250px, auto)
+  gap: 50px
+  margin: 2% 5% 7%
+
+  a
+    box-shadow: 12px 10px 15px rgba(0, 0, 0, 0.5)
+
+  a:hover
+    text-decoration: none
+    opacity: 0.8
+    box-shadow: 20px 15px 30px rgba(0, 0, 0, 0.7)
+
+.project-info
+  padding: 4% 9%
+  color: #111
+
+  p
+    font-style: oblique
+
+.skill-container
+  margin: 2% 7%
+
+.skill-category
+  margin: 5%
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  grid-auto-rows: minmax(120px, auto)
+  gap: 40px
+  background-size: cover
+
+.skill-icon
+  font: bold 0.9em serif
+  text-align: center
+
+  img
+    max-width: 200px
+    max-height: 100px
+
+  img:hover 
+    opacity: 0.5
+
+@media only screen and (max-width: 1024px)
+  .projects
+    grid-template-columns: 1fr 1fr
+    grid-auto-rows: minmax(270px)
+
+  .skill-category
+    grid-template-columns: repeat(3, 1fr)
+
+  .skill-icon
+    img
+      max-width: 170px
+      max-height: 80px
+
+@media only screen and (max-width: 740px)
+  .projects
+    grid-template-columns: 90%
+
+  .skill-category
+    grid-template-columns: 1fr 1fr
+
+  .skill-icon
+    img
+      max-width: 125px

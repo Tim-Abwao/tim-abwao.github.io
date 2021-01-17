@@ -1,101 +1,24 @@
 ---
 layout: default
 title: Tim Abwao | Aspiring Data Scientist
+css_file: home
 feat_posts: [0, 3, 5]
 ---
-<style type="text/css">
-    body {
-        background: rgba(124, 80, 74, 0.3) url(/assets/images/home_background.jpg) no-repeat;
-        background-size: cover;
-    }
 
-    .headline {
-        font-size: 2.1em;
-        font-style: oblique;
-        font-weight: bolder;
-        margin: 9% 12%;
-        text-align: left;
-    }
-    
+{% include nav.html %}
 
-    .featured {
-        display: grid;
-        grid-template-columns: 40% 60%;
-        width: 50%;
-        margin: auto;
-        font-weight: 600;
-        font-style: oblique;
-    }
+<div class="headline">
+    <p>Lessons and experiences</p>
+    <p style="margin-left: 18%; font-size: 0.9em;">from experiments & adventures in my Data Science journey</p>
+</div>
 
-    .featured p {
-        font-size: 1.7em;
-        font-weight: bolder;
-        overflow-wrap: anywhere;
-    }
-
-    .featured a {
-        color: rgba(0, 0, 0, 0.4);
-    }
-
-    .featured a:hover {
-        color: rgba(0, 0, 0, 0.8);
-        text-decoration: none;
-    }
-
-    @media only screen and (max-width: 1024px) {
-        body {
-            background: rgba(124, 80, 74, 0.3) url(/assets/images/home_background_medium.jpg) no-repeat;
-            background-size: cover;
-        }
-
-        .headline {
-            margin: 34% 10%;
-        }
-
-        .featured {
-            width: 60%;
-        }
-    }
-
-    @media only screen and (max-width: 420px) {
-        body {
-            background: rgba(124, 80, 74, 0.3) url(/assets/images/home_background_small.jpg) no-repeat;
-            background-size: cover;
-        }
-
-        .headline {
-            margin: 40% 10%;
-            font-size: 1.8em;
-        }
-
-        .featured {
-            width: 80%;
-        }
-
-        .featured p {
-            font-size: 1.4em;
-        }
-
-    }
-</style>
-</head>
-
-<body>
-    <div class="content">
-        {% include nav.html %}
-        <div class="headline">
-            <p>Lessons and experiences</p>
-            <p style="margin-left: 18%; font-size: 0.8em;">from experiments & adventures in my Data Science journey</p>   
-        </div>
-
-        <div class='featured'>
-            <div>
-                <p>Featured articles</p>
-            </div>
-            <div>
-                {% for post in page.feat_posts%}
-                <a href="{{ site.posts[post].url}}"><em>{{ site.posts[post].title}}</em></a>
-                <hr>
-                {% endfor %}
-            </div>
-        </div>
+<div class='featured'>
+    <div>
+        <p>Featured articles</p>
+    </div>
+    <div>
+        {% for post in page.feat_posts%}
+        <a href="{{ site.posts[post].url}}"><em>{{ site.posts[post].title}}</em></a>
+        <hr>
+        {% endfor %}
+    </div>

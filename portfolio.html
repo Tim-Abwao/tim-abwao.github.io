@@ -1,182 +1,39 @@
 ---
 layout: default
 title: Tim Abwao | Portfolio
+css_file: portfolio
 im_path: "/assets/images/toolkit/"
 ---
-<style type="text/css">
-	body {
-		background: rgba(243, 252, 210, 0.5) url(/assets/images/portfolio_background.jpg);
-		background-size: 100%;
-	}
 
-	h1,
-	h2 {
-		font-weight: bolder;
-		margin: 2% 5%;
-	}
+{% include nav.html %}
 
-	h2 {
-		margin-left: 20%;
-	}
-
-	.projects {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		grid-auto-rows: minmax(250px, auto);
-		gap: 50px;
-		margin: 2% 5% 7%;
-	}
-
-	.projects a {
-		box-shadow: 12px 10px 15px rgba(0, 0, 0, 0.5);
-	}
-
-	.projects a:hover {
-		text-decoration: none;
-		opacity: 0.8;
-		box-shadow: 20px 15px 30px rgba(0, 0, 0, 0.7);
-	}
-
-	.project-info {
-		padding: 4% 9%;
-		color: #111;
-	}
-
-	.project-info p {
-		font-style: oblique;
-	}
-
-	.skills {
-		margin: 2% 7%;
-
-	}
-
-	.skill-container {
-		margin: 5%;
-		display: grid;
-		grid-template-columns: repeat(4, 1fr);
-		grid-auto-rows: minmax(120px, auto);
-		gap: 40px;
-		background-size: cover;
-	}
-
-	.skill-item {
-    	font: bold 0.9em serif;
-		text-align: center;
-	}
-	.skill-icon {
-		max-width: 200px;
-		max-height: 100px;
-	}
-
-	.skill-icon:hover {
-		opacity: 0.5;
-	}
-
-	@media only screen and (max-width: 1024px) {
-		.projects {
-			grid-template-columns: 1fr 1fr;
-			grid-auto-rows: minmax(270px);
-		}
-
-		.skill-container {
-			grid-template-columns: repeat(3, 1fr);
-		}
-
-		.skill-icon {
-			max-width: 170px;
-			max-height: 80px;
-		}
-	}
-
-	.navbar {
-		color: #111;
-	}
-
-	@media only screen and (max-width: 740px) {
-		.projects {
-			grid-template-columns: 90%;
-		}
-
-		.skill-container {
-			grid-template-columns: 1fr 1fr;
-		}
-
-		.skill-icon {
-			max-width: 125px;
-		}
-	}
-</style>
-</head>
-
-<body>
-	<div class="content">
-		{% include nav.html %}
-		<h1>GitHub Projects</h1>
-		<div class="projects">
-			{% for project in site.data.projects %}
-			<a class="project-link"
-				style="background: center / cover no-repeat url('{{ page.im_path | append: project.wallpaper }}');"
-				href="{{ project.link }}">
-				<div class="project-info">
-					<h3>{{ project.title }}</h3>
-					<p> {{ project.summary }}</p>
-				</div>
-			</a>
-			{% endfor %}
+<h1>GitHub Projects</h1>
+<div class="projects">
+	{% for project in site.data.projects %}
+	<a style="background: center / cover no-repeat url('{{ page.im_path | append: project.wallpaper }}');"
+		href="{{ project.link }}">
+		<div class="project-info">
+			<h3>{{ project.title }}</h3>
+			<p> {{ project.summary }}</p>
 		</div>
+	</a>
+	{% endfor %}
+</div>
 
-		<h1>Tools & Platforms</h1>
-		<div class="skills">
-			<h2>Data Wrangling, Data Analysis & Visualization</h2>
-			<div class="skill-container">
-				{% for tool in site.data.toolkit['Data Analysis'] %}
-				<div class="skill-item">
-					<figure>
-						<a href="{{ tool.link }}"><img class="skill-icon"
-								src="{{ tool.icon | prepend: '/assets/images/toolkit/'}}" alt="{{ tool.icon }}"></a>
-						<figcaption> {{ tool.name }} </figcaption>
-					</figure>
-				</div>
-				{% endfor %}
-			</div>
-
-			<h2>Machine Learning</h2>
-			<div class="skill-container">
-				{% for tool in site.data.toolkit['Machine Learning'] %}
-				<div class="skill-item">
-					<figure>
-						<a href="{{ tool.link }}"><img class="skill-icon"
-								src="{{ tool.icon | prepend: '/assets/images/toolkit/'}}" alt="{{ tool.icon }}"></a>
-						<figcaption> {{ tool.name }} </figcaption>
-					</figure>
-				</div>
-				{% endfor %}
-			</div>
-
-			<h2>Programming & Software Development</h2>
-			<div class="skill-container">
-				{% for tool in site.data.toolkit['Programming and Platforms'] %}
-				<div class="skill-item">
-					<figure>
-						<a href="{{ tool.link }}"><img class="skill-icon"
-								src="{{ tool.icon | prepend: '/assets/images/toolkit/'}}" alt="{{ tool.icon }}"></a>
-						<figcaption> {{ tool.name }} </figcaption>
-					</figure>
-				</div>
-				{% endfor %}
-			</div>
-
-			<h2>Web Development</h2>
-			<div class="skill-container">
-				{% for tool in site.data.toolkit['Web Development'] %}
-				<div class="skill-item">
-					<figure>
-						<a href="{{ tool.link }}"><img class="skill-icon"
-								src="{{ tool.icon | prepend: '/assets/images/toolkit/'}}" alt="{{ tool.icon }}"></a>
-						<figcaption> {{ tool.name }} </figcaption>
-					</figure>
-				</div>
-				{% endfor %}
-			</div>
+<h1>Tools & Platforms</h1>
+<div class="skill-container">
+	{% for tool_set in site.data.toolkit %}
+	<h2> {{ tool_set.category }}</h2>
+	<div class="skill-category">
+		{% for tool in tool_set['items'] %}
+		<div class="skill-icon">
+			<figure>
+				<a href="{{ tool.link }}">
+					<img src="{{ tool.icon | prepend: '/assets/images/toolkit/'}}" alt="{{ tool.icon }}">
+				</a>
+				<figcaption> {{ tool.name }} </figcaption>
+			</figure>
 		</div>
+		{% endfor %}
+	</div>
+	{% endfor %}

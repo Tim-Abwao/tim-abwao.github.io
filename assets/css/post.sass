@@ -1,0 +1,38 @@
+---
+---
+body
+  background: center / cover rgb(228, 226, 226) url(/assets/images/blog_background_camel_lg.jpg) no-repeat fixed
+  font-size: 1.24em
+  margin: 7%
+
+h1
+  text-align: center
+
+iframe
+  width: 700px
+  height: 500px
+  overflow-x: auto
+
+@media only screen and (min-width: 1024px)
+  body
+    max-width: 60%
+    margin: 5% 10%
+
+@media only screen and (max-width: 768px)
+  body
+    background: center / cover rgb(228, 226, 226) url(/assets/images/blog_background_camel.jpg) no-repeat fixed
+    max-width: 90%
+  img
+    width: 520px
+
+@media only screen and (max-width: 420px)
+  body
+    font-size: 1.15em
+    max-width: 100%
+
+  img
+    width: 310px
+
+  iframe
+    width: 400px
+    height: 300px
