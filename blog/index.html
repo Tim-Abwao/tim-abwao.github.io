@@ -1,0 +1,31 @@
+---
+layout: default
+title: Tim Abwao | Data Science Blog
+css_file: blog
+---
+
+{% include nav.html %}
+
+<div class="post-list">
+	{% for post in paginator.posts %}
+	<div style="margin-bottom: 5%">
+		<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+		<span class="excerpt">{{ post.excerpt }}</span>
+	</div>
+	{% endfor %}
+</div>
+
+<!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous">
+      Previous
+    </a>
+  {% endif %}
+  <span class="page_number">
+    Page {{ paginator.page }} of {{ paginator.total_pages }}
+  </span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+  {% endif %}
+</div>
