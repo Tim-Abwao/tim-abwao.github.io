@@ -22,4 +22,13 @@ layout: default
 	</p>
 
 	{{ content }}
+
+	{% if page.tags.size > 0 %}
+		<div class="tags">
+			<span>Tags: </span>
+			{% for tag in page.tags %}
+			<a href="/tags#{{ tag }}">&#65119;{{ tag }}</a>
+			{% endfor %}
+		</div>
+	{% endif %}
 </div>
