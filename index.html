@@ -16,9 +16,23 @@ feat_posts: [0, 3, 5]
     <div>
         <p>Featured articles</p>
     </div>
+
     <div>
         {% for post in page.feat_posts%}
         <a href="{{ site.posts[post].url}}"><em>{{ site.posts[post].title}}</em></a>
         <hr>
         {% endfor %}
     </div>
+
+    <div>
+        <p>Tags</p>
+    </div>
+
+    <div>
+        {% assign tags_sorted = site.tags | sort %}
+        {% for tag in tags_sorted %}
+        <a href="tags#{{ tag[0] }}">#{{ tag[0] }} </a>
+        {% endfor %}
+    </div>
+
+</div>

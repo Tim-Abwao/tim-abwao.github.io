@@ -1,4 +1,5 @@
 ---
+tags: python databases sql
 last_modified_at: 2020-09-04T17:58:00+03:00
 ---
 [PostgreSQL][1] is a *reliable*, *high-performance* open-source [object-relational database management system][2]. It can hold databases as large as 32TB, with virtually unlimited rows.

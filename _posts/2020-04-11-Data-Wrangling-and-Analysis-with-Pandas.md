@@ -1,4 +1,5 @@
 ---
+tags: data-wrangling python pandas
 last_modified_at: 2020-11-25T14:18:00+03:00
 ---
 *pandas* is a "*fast*, *powerful*, *flexible* and *easy to use* open source data analysis and manipulation tool..." - *[pandas home page][1]*. It's primary data structures, *Series* and *DataFrames*, are equipped with numerous methods, to conveniently handle everyday data wrangling tasks:

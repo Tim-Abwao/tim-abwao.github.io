@@ -17,9 +17,23 @@ body
   a:hover
     opacity: 0.4
 
-.excerpt
+  p
+    font-size: 0.9em
+    font-style: oblique
+    margin-bottom: 1%
+
+.post-item
+  margin-bottom: 5%
+
+  a
+    color: slategray
+
+.tags
   font-size: 0.9em
   font-style: oblique
+
+  span
+    font-weight: bold
 
 .pagination
   justify-content: center
@@ -38,3 +52,7 @@ body
 
   .excerpt
     font-size: 0.8em
+
+@media only screen and (max-width: 1024px)
+  .post-item
+    margin-bottom: 8%
