@@ -1,3 +1,7 @@
+- title: "Automated Exploratory Data Analysis (auto_eda)"
+  link: "https://github.com/Tim-Abwao/auto-eda"
+  summary: "A simple Python program to automatically analyse data, and generate an EDA report in Word '.docx' format."
+  wallpaper: 'ae.jpg'
 - title: "COVID-19 in Africa Dashboard"
   link: "https://github.com/Tim-Abwao/covid19-in-africa/tree/dashboard"
   summary: "An interactive dashboard that tracks Coronavirus cases in Africa. Based on data from the Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE)."
