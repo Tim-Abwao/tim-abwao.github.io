@@ -1,6 +1,6 @@
 ---
 tags: python statistics probability
-last_modified_at: 2021-04-15T21:24:00+00:00
+last_modified_at: 2021-04-16T20:55:00+00:00
 img_path: /assets/images/articles/probability-distributions/
 ---
 
@@ -70,12 +70,14 @@ You should now be able to run the example code blocks.
 
 ## 1. Using the `random` module
 
-The [random][random] module is part of the *Python Standard Library*, and is thus readily available. It contains functions that can generate random samples from probability distributions:
+The [random][random] module is part of the *Python Standard Library*, and is thus readily available. It contains functions that can generate random samples from probability distributions.
+
+The functions return a *single* `float` value, making it necessary to use looping techniques (a [list comprehension][list_comp] in this case) to get a sample of desired size.
 
 ### 1.1 Normal Distribution
 
 ```python
-random_normal = [random.gauss(mu=0, sigma=1) for _ in range(1000)]
+random_normal = [random.gauss(mu=0, sigma=1) for _ in range(SAMPLE_SIZE)]
 plot(random_normal, title='Normal Sample (from $random$)')
 ```
 
@@ -111,16 +113,19 @@ Other [available options][random_functions] include:
 - `random.paretovariate(alpha)`
 - `random.weibullvariate(alpha, beta)`
 
+[list_comp]: https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions
 [random]: https://docs.python.org/3/library/random.html
 [random_functions]: https://docs.python.org/3/library/random.html#real-valued-distributions
 
 ## 2. Using `numpy.random`
 
-[NumPy][numpy] is a third-party package - it has to be [installed][numpy_install].
-
 *NumPy* is much beloved in *Python* because it provides objects that enable *fast operations on arrays*. See [What is Numpy?][numpy_intro] for more details.
 
+[NumPy][numpy] is a third-party package - it has to be [installed][numpy_install].
+
 The [numpy.random][numpy_random] sub-package contains functions that can generate random samples from probability distributions.
+
+The functions return a [numpy.ndarray][numpy_ndarray], which has numerous useful [attributes][numpy_attributes] and [methods][numpy_methods].
 
 ### 2.1 Normal Distribution
 
@@ -128,7 +133,7 @@ The [numpy.random][numpy_random] sub-package contains functions that can generat
 rng = np.random.default_rng(12345)
 
 # loc is the mean, scale is the standard deviation
-random_normal = np.random.normal(loc=0, scale=1, size=SAMPLE_SIZE)
+random_normal = rng.normal(loc=0, scale=1, size=SAMPLE_SIZE)
 plot(random_normal, title='Normal Sample (from $numpy.random$)')
 ```
 
@@ -162,12 +167,15 @@ Please see [Random Generator: Distributions][numpy_dist] for more available opti
 [numpy_intro]: https://numpy.org/doc/stable/user/whatisnumpy.html
 [numpy_random]: https://numpy.org/doc/stable/reference/random/index.html
 [numpy_dist]: https://numpy.org/doc/stable/reference/random/generator.html#distributions
+[numpy_ndarray]: https://numpy.org/doc/stable/reference/arrays.ndarray.html
+[numpy_attributes]: https://numpy.org/doc/stable/reference/arrays.ndarray.html#array-attributes
+[numpy_methods]: https://numpy.org/doc/stable/reference/arrays.ndarray.html#array-methods
 
 ## 3. Using `scipy.stats`
 
-[SciPy][scipy] is also a third-party package that has to be [installed][scipy_install]. It is tightly knit with [NumPy][numpy].
+The [SciPy library][scipy_lib] is also a third-party package, and it has to be [installed][scipy_install]. It is tightly knit with [NumPy][numpy], which is a part of the [SciPy ecosystem][scipy].
 
-The [scipy.stats][scipy_stats] sub-package contains functions that can generate random samples from probability distributions.
+The [scipy.stats][scipy_stats] sub-package contains functions that can generate random samples from probability distributions. These functions too return [numpy.ndarray][numpy_ndarray]s.
 
 ### 3.1 Normal Distribution
 
@@ -203,6 +211,7 @@ plot(random_exponential, title='Exponential Sample (from $scipy.stats$)')
 
 Please see [Statistical functions][scipy_stats] for more available options:
 
-[scipy]: https://docs.scipy.org/doc/scipy/reference/index.html
+[scipy]: https://scipy.org/index.html
+[scipy_lib]: https://docs.scipy.org/doc/scipy/reference/index.html
 [scipy_install]: https://scipy.org/install.html
 [scipy_stats]: https://docs.scipy.org/doc/scipy/reference/stats.html
