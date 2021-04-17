@@ -32,10 +32,10 @@ If you'd like a case study of Demand Forecasting in action to optimise stocking,
 
 [1]: https://en.wikipedia.org/wiki/Demand_forecasting
 [2]: https://en.wikipedia.org/wiki/Predictive_analytics
-[3]: /assets/images/articles/produce.jpg "Fresh produce"
+[3]: /assets/images/articles/demand-forecasting/produce.jpg "Fresh produce"
 [4]: https://unsplash.com/@nicotitto
 [5]: https://unsplash.com/photos/D6Tu_L3chLE
-[6]: /assets/images/articles/badproduce.jpg "Produce gradually going bad"
+[6]: /assets/images/articles/demand-forecasting/badproduce.jpg "Produce gradually going bad"
 [7]: https://unsplash.com/@foodism360
 [8]: https://unsplash.com/photos/zwxLqNMsFQk
 [9]: https://blogs.sap.com/2015/09/27/sap-apo-general-overview/

@@ -24,7 +24,7 @@ sns.pairplot(iris_data, hue='species', kind='reg')
 
 In a [Jupyter notebook][3] with the [matplotlib inline back-end][4], the output will be displayed as follows:
 
-![seaborn graph](/assets/images/articles/seaborn-pairplot.png)
+![seaborn graph](/assets/images/articles/data-viz/seaborn-pairplot.png)
 
 The above example demonstrates *Seaborn's* close integration with [pandas][5]. The data supplied is a *pandas DataFrame*:
 
@@ -52,7 +52,7 @@ Suppose we were interested in comparing the range of values for each of the colu
 sns.violinplot(data=iris_data)
 ```
 
-![seaborn violinplot](/assets/images/articles/seaborn-violinplot.png)
+![seaborn violinplot](/assets/images/articles/data-viz/seaborn-violinplot.png)
 
 Since *seaborn* is built on top of *Matplotlib*, you can customise its graphs using *Matplotlib's* methods and parameters:
 
@@ -63,7 +63,7 @@ ax.set_ylabel('Length in $cm$', size=12)
 ax.set_xlabel('Iris flower dimensions', size=12)
 ```
 
-![seaborn violinplot with labels](/assets/images/articles/seaborn-violinplot-detailed.png)
+![seaborn violinplot with labels](/assets/images/articles/data-viz/seaborn-violinplot-detailed.png)
 
 For more on *seaborn*, please visit its [official documentation][1] and [example gallery][14]
 
@@ -75,7 +75,7 @@ The [pandas plotting API][6] allows you to quickly create graphs from within *pa
 iris_data.plot.scatter(x='petal_width', y='sepal_width')
 ```
 
-![pandas scatterplot](/assets/images/articles/pandas-scatterplot.png)
+![pandas scatterplot](/assets/images/articles/data-viz/pandas-scatterplot.png)
 
 If we wish to produce a scatterplot with a different color for each iris species, we have to map *species* values to acceptable color input values. (In *seaborn*, there's a convenient *hue* parameter that does this implicitly)
 
@@ -85,7 +85,7 @@ iris_data['colors'] = iris_data['species'].apply(color_dict.get)
 iris_data.plot.scatter(x='petal_width', y='sepal_width', c='colors')
 ```
 
-![pandas scatterplot color-coded](/assets/images/articles/pandas-scatterplot-colored.png)
+![pandas scatterplot color-coded](/assets/images/articles/data-viz/pandas-scatterplot-colored.png)
 
 You can also specify the type of graph to plot by passing any of the following as the `kind` parameter of the `.plot` method:
 
@@ -105,7 +105,7 @@ You can also specify the type of graph to plot by passing any of the following a
 iris_data.plot(kind='hist', alpha=0.5)
 ```
 
-![pandas histogram](/assets/images/articles/pandas-hist.png)
+![pandas histogram](/assets/images/articles/data-viz/pandas-hist.png)
 
 [Andrew curves][15] made easy:
 
@@ -114,7 +114,7 @@ from pandas.plotting import andrews_curves
 andrews_curves(iris_data, 'species')
 ```
 
-![pandas andrewcurves](/assets/images/articles/pandas-andrewcurves.png)
+![pandas andrewcurves](/assets/images/articles/data-viz/pandas-andrewcurves.png)
 
 [![matplotlib logo](/assets/images/toolkit/matplotlib.svg)][2]
 
@@ -141,11 +141,11 @@ for ax, species in zip(axes, ['setosa', 'versicolor', 'virginica']):
     ax.spines['right'].set_visible(False)
 ```
 
-![matplotlib subplots](/assets/images/articles/matplotlib-subplots.png)
+![matplotlib subplots](/assets/images/articles/data-viz/matplotlib-subplots.png)
 
 ## 2. Interactive graphs
 
-[![plotly logo](/assets/images/articles/plotly-logo.svg)][9]
+[![plotly logo](/assets/images/articles/data-viz/plotly-logo.svg)][9]
 
 [plotly.py][9] enables you to create spectacular interactive graphs that can easily be integrated into dashboard apps and websites. *plotly.py* is built on top of the [plotly.js][10] *JavaScript* graphing library.
 
@@ -159,7 +159,7 @@ fig = px.scatter(data, x='petal_width', y='sepal_width', color='species')
 fig.show()
 ```
 
-<iframe title="plotly scatter plot" src='/assets/images/articles/plotly-scatter.html'></iframe>
+<iframe title="plotly scatter plot" src='/assets/images/articles/data-viz/plotly-scatter.html'></iframe>
 
 Here's an example from its [basic chart example gallery][16]. Try clicking on the inner levels:
 
@@ -171,7 +171,7 @@ fig = px.sunburst(df, path=['day', 'time', 'sex'], values='total_bill')
 fig.show()
 ```
 
-<iframe title="plotly scatter plot" src='/assets/images/articles/plotly-sunburst.html'></iframe>
+<iframe title="plotly scatter plot" src='/assets/images/articles/data-viz/plotly-sunburst.html'></iframe>
 
 ## Next Steps
 

@@ -268,7 +268,7 @@ Result:
 *Flask* offers a number of [deployment options][19]. If you'd like to challenge yourself; try coming up with a great idea for a web app, build it, and then deploy it on [Heroku][20] - a popular choice.
 
 [1]: https://flask.palletsprojects.com/en/1.1.x/
-[2]: /assets/images/articles/logo-full.svg
+[2]: /assets/images/articles/flask-webapp/logo-full.svg
 [3]: https://flask.palletsprojects.com/en/1.1.x/installation
 [4]: https://flask.palletsprojects.com/en/1.1.x/installation/#optional-dependencies
 [5]: https://flask.palletsprojects.com/en/1.1.x/quickstart
@@ -276,14 +276,14 @@ Result:
 [7]: https://developer.mozilla.org/en-US/docs/Learn
 [8]: https://www.w3schools.com
 [9]: https://flask.palletsprojects.com/en/1.1.x/server/
-[10]: /assets/images/articles/flaskrun.png
+[10]: /assets/images/articles/flask-webapp/flaskrun.png
 [11]: https://flask.palletsprojects.com/en/1.1.x/api/#flask.Flask.static_folder
 [12]: https://flask.palletsprojects.com/en/1.1.x/quickstart/#url-building
 [13]: https://jinja.palletsprojects.com/en/2.11.x/
 [14]: https://flask.palletsprojects.com/en/1.1.x/api/#flask.Flask.template_folder
 [15]: https://flask.palletsprojects.com/en/1.1.x/api/#flask.render_template
 [16]: https://flask.palletsprojects.com/en/1.1.x/api/#flask.request
-[17]: /assets/images/articles/flask-demo.gif
+[17]: /assets/images/articles/flask-webapp/flask-demo.gif
 [18]: https://github.com/Tim-Abwao/blog-projects/tree/master/basic-flask-app
 [19]: https://flask.palletsprojects.com/en/1.1.x/deploying/
 [20]: https://devcenter.heroku.com/articles/getting-started-with-python?singlepage=true
