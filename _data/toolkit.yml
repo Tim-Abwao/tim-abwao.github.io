@@ -13,7 +13,7 @@
       icon: "Plotly_Dash_logo.png"
       link: "https://plotly.com"
     - name: " "
-      icon: "seaborn-logo.svg"
+      icon: "seaborn-logo.png"
       link: "https://seaborn.pydata.org"
     - name: " "
       icon: "matplotlib.svg"

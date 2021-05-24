@@ -9,7 +9,7 @@ You can make things drastically easier for youself by choosing the right tools. 
 
 ## 1. Static Graphs
 
-[![seaborn logo](/assets/images/toolkit/seaborn-logo.svg)][1]
+[![seaborn logo](/assets/images/toolkit/seaborn-logo.png)][1]
 
 [Seaborn][1] is great for creating elegant statistical graphs with just a few lines of code. It provides a *high-level interface* to the ubiquitous [Matplotlib][2] plotting library.
 
