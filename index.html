@@ -2,37 +2,45 @@
 layout: default
 title: Tim Abwao | Aspiring Data Scientist
 css_file: home
-feat_posts: [0, 1, 4]
+feat_posts: [1, 4, 5]
 ---
 
 {% include nav.html %}
 
-<div class="headline">
-    <p>Lessons and experiences</p>
-    <p style="margin-left: 18%; font-size: 0.9em;">from experiments & adventures in my Data Science journey</p>
+<div class="profile">
+    <img class="profile-photo" src="assets/images/profile.jpg">
+    <h1 class="profile-name">Timothy Abwao</h1>
+    <p class="profile-roles">Data Analyst • Aspiring Data Scientist</p>
 </div>
 
-<div class='featured'>
-    <div>
-        <p>Featured articles</p>
-    </div>
+<blockquote>“When you have eliminated all which is impossible, then whatever remains, however improbable, must be the
+    truth.”</blockquote>
+<cite>— Sir Arthur Conan Doyle</cite>
 
-    <div>
-        {% for post in page.feat_posts%}
-        <a href="{{ site.posts[post].url}}"><em>{{ site.posts[post].title}}</em></a>
-        <hr>
-        {% endfor %}
-    </div>
+<div class="featured-articles">
+    <h4>Featured:</h4>
+    <div id="featured-articles-carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <a href="{{ site.posts[0].url}}">{{ site.posts[0].title}}</a>
+            </div>
 
-    <div>
-        <p>Tags</p>
-    </div>
+            {% for post in page.feat_posts%}
+            <div class="carousel-item">
+                <div class="">
+                    <a href="{{ site.posts[post].url}}">{{ site.posts[post].title}}</a>
+                </div>
+            </div>
+            {% endfor %}
 
-    <div>
-        {% assign tags_sorted = site.tags | sort %}
-        {% for tag in tags_sorted %}
-        <a href="tags#{{ tag[0] }}">#{{ tag[0] }} </a>
-        {% endfor %}
+            <a class="carousel-control-prev" href="#featured-articles-carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#featured-articles-carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
     </div>
-
 </div>

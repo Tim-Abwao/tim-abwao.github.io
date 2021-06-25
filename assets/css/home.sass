@@ -1,27 +1,29 @@
 ---
 ---
 body
-  background: center / cover rgba(124, 80, 74, 0.3) url(/assets/images/home_background.jpg) no-repeat
+  background-image: linear-gradient(white, silver)
+  text-align: center
 
-.headline
-  font-size: 1.4em
-  font-style: oblique
+.profile
+  margin: 5vh auto 10vh
+
+.profile-photo
+  border-radius: 50%
+  height: 160px
+  width: 160px
+
+.profile-name
   font-weight: bolder
-  margin: 9% 12%
-  text-align: left
 
-.featured
-  display: grid
-  grid-template-columns: 40% 60%
-  width: 50%
-  margin: auto
-  font-weight: 600
-  font-style: oblique
+.profile-roles
+  font-family: Courier New, Courier, monospace
 
-p
-  font-size: 1.7em
-  font-weight: bolder
-  overflow-wrap: anywhere
+.featured-articles
+  margin: 3% auto
+  width: 60%
+
+.featured-articles a
+  font: 1.2em Garamond, serif
 
 a
   color: rgba(0, 0, 0, 0.4)
@@ -30,27 +32,33 @@ a:hover
   color: rgba(0, 0, 0, 0.8)
   text-decoration: none
 
+blockquote
+  font: oblique 0.9em Verdana, serif
+
+cite
+  font: 0.8em Garamond, serif
+
 @media only screen and (max-width: 1024px)
   body
-    background: center / cover rgba(124, 80, 74, 0.3) url(/assets/images/home_background_medium.jpg) no-repeat
+    background-image: linear-gradient(white, silver)
+    margin: auto 5%
 
-  .headline
-    margin: 34% 10%
+  .profile
+    margin: 15vh auto
 
-  .featured
-    width: 60%
+  .featured-articles
+    margin: 8% auto
+    width: 80%
 
 @media only screen and (max-width: 420px)
   body
-    background: rgba(124, 80, 74, 0.3) url(/assets/images/home_background_small.jpg) no-repeat
-    background-size: cover
+    background-image: linear-gradient(white, silver)
 
-  .headline
-    margin: 40% 10%
-    font-size: 1.5em
+  .profile
+    margin: 7vh auto 15vh
 
-  .featured
-    width: 80%
+  .profile-roles
+    font-size: 0.75em
 
-  p
-    font-size: 1.4em
+  .featured-articles
+    width: 90%
