@@ -10,10 +10,9 @@ im_path: "/assets/images/toolkit/"
 <h1>GitHub Projects</h1>
 <div class="projects">
 	{% for project in site.data.projects %}
-	<a style="background: center / cover no-repeat url('{{ page.im_path | append: project.wallpaper }}');"
-		href="{{ project.link }}">
-		<div class="project-info">
-			<h3>{{ project.title }}</h3>
+	<a href="{{ project.link }}" style="background: center / cover no-repeat url('{{ page.im_path | append: project.wallpaper }}');">
+		<div class="project-item">
+			<h4>{{ project.title }}</h4>
 			<p> {{ project.summary }}</p>
 		</div>
 	</a>
