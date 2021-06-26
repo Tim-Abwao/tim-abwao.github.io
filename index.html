@@ -22,12 +22,14 @@ feat_posts: [1, 4, 5]
     <div id="featured-articles-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <a href="{{ site.posts[0].url}}">{{ site.posts[0].title}}</a>
+                <div class="article-link">
+                    <a href="{{ site.posts[0].url}}">{{ site.posts[0].title}}</a>
+                </div>
             </div>
 
             {% for post in page.feat_posts%}
             <div class="carousel-item">
-                <div class="">
+                <div class="article-link">
                     <a href="{{ site.posts[post].url}}">{{ site.posts[post].title}}</a>
                 </div>
             </div>
