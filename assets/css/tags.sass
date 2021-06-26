@@ -3,17 +3,19 @@
 body
   background: top / 100% rgb(200, 230, 200) url("/assets/images/tags_background_wide.jpg")
   margin: 3% 8%
-  font-style: oblique
+
+h1
+  margin-left: 15%
+
+.tag-container
+  font: oblique 0.95em Georgia, serif
 
   a
-    color: #222
+    color: #333
 
   a:hover
     text-decoration: underline
     color: #444
-
-h1
-  margin-left: 15%
 
 .tag-link
   font-weight: 800
@@ -27,3 +29,10 @@ h1
 @media screen and ( max-width: 800px)
   body
     background: top / 100% rgb(200, 230, 200) url("/assets/images/tags_background.jpg")
+
+  h1
+    text-align: center
+    margin: 5% auto
+
+  .article-link
+    margin-left: 7%
