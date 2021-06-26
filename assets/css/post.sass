@@ -3,38 +3,60 @@
 @import syntax-highlight-default
 
 body
-  margin: 7%
+  margin: 5% 10%
   font-size: 1.24em
   background: center / cover rgb(228, 226, 226) url(/assets/images/blog_background_camel_lg.jpg) no-repeat fixed
 
 h1
   text-align: center
 
-iframe
-  width: 700px
-  height: 500px
+.post-header
+  span
+    font-style: oblique
+
+.post-body, h1
+  max-width: 70%
+  a
+    color: steelblue
+
+  img
+    max-width: 100%
+
+.post-iframe
   overflow-x: auto
 
-@media only screen and (min-width: 1024px)
-  body
-    max-width: 60%
-    margin: 5% 10%
+  iframe
+    width: 100%
+    height: 500px
+
+.language-plaintext
+  color: #222
+  border: 1px solid #b1aeae
+  border-radius: 4px
+  background-color: #dfdbdb
+  padding: 1px 3px
+
+@media only screen and (max-width: 1024px)
+  .post-body, h1
+    max-width: 80%
 
 @media only screen and (max-width: 768px)
   body
     background: center / cover rgb(228, 226, 226) url(/assets/images/blog_background_camel.jpg) no-repeat fixed
+    font-size: 0.95em
+
+  .post-body, h1
     max-width: 90%
-  img
-    width: 520px
+
+  .post-iframe
+    iframe
+      width: 500px
+      height: 400px
 
 @media only screen and (max-width: 420px)
   body
-    font-size: 1.15em
+    margin: 7%
+    font-size: 1.1em
+
+  .post-body, h1
     max-width: 100%
-
-  img
-    width: 310px
-
-  iframe
-    width: 400px
-    height: 300px

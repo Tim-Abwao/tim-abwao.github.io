@@ -159,7 +159,9 @@ fig = px.scatter(data, x='petal_width', y='sepal_width', color='species')
 fig.show()
 ```
 
-<iframe title="plotly scatter plot" src='/assets/images/articles/data-viz/plotly-scatter.html'></iframe>
+<div class="post-iframe">
+    <iframe title="plotly scatter plot" src='/assets/images/articles/data-viz/plotly-scatter.html'></iframe>
+</div>
 
 Here's an example from its [basic chart example gallery][16]. Try clicking on the inner levels:
 
@@ -171,7 +173,9 @@ fig = px.sunburst(df, path=['day', 'time', 'sex'], values='total_bill')
 fig.show()
 ```
 
-<iframe title="plotly scatter plot" src='/assets/images/articles/data-viz/plotly-sunburst.html'></iframe>
+<div class="post-iframe">
+    <iframe title="plotly scatter plot" src='/assets/images/articles/data-viz/plotly-sunburst.html'></iframe>
+</div>
 
 ## Next Steps
 
