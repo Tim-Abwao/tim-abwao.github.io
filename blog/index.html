@@ -8,7 +8,7 @@ css_file: blog
 
 <div class="post-list">
 	{% for post in paginator.posts %}
-	<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+	<h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
 	<div class="post-item">
 
 		{{ post.excerpt }}
@@ -39,4 +39,12 @@ css_file: blog
 	{% if paginator.next_page %}
 	<a href="{{ paginator.next_page_path }}" class="next">Next page </a>
 	{% endif %}
+</div>
+
+<!-- Tag list -->
+<div class="tags">
+	{% assign tags_sorted = site.tags | sort %}
+	{% for tag in tags_sorted %}
+	<a href="/tags#{{ tag[0] }}">#{{ tag[0] }} </a>
+	{% endfor %}
 </div>

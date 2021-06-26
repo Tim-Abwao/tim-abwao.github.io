@@ -1,13 +1,11 @@
 ---
 ---
 body
-  background: #ECDFD4 url(/assets/images/blog_background.jpg)
+  background: linear-gradient(ivory, #ffffcce0, lightyellow)
 
 .post-list
-  max-width: 60%
-  padding: 4%
-  margin: 1% 5%
-  font-size: 1.3em
+  max-width: 50%
+  margin: 1% 10%
 
   a
     text-decoration: none
@@ -18,7 +16,6 @@ body
     opacity: 0.4
 
   p
-    font-size: 0.9em
     font-style: oblique
     margin-bottom: 1%
 
@@ -29,8 +26,12 @@ body
     color: slategray
 
 .tags
-  font-size: 0.9em
-  font-style: oblique
+  margin: 2% 10%
+  font: oblique bolder 0.9em Garamond, serif
+
+  a
+    color: slategray
+    padding: 5px
 
   span
     font-weight: bold
@@ -39,20 +40,19 @@ body
   justify-content: center
   margin: 2% auto
 
-  span,
   a
     margin: 2%
+    color: steelblue
+    text-decoration: underline dotted 1px
 
 .page_number
+  margin: 2%
   font-style: oblique
 
 @media only screen and (max-width: 1024px)
   .post-list
     max-width: 90%
+    margin: 4% 10%
 
-  .excerpt
-    font-size: 0.8em
-
-@media only screen and (max-width: 1024px)
   .post-item
     margin-bottom: 8%
