@@ -1,16 +1,25 @@
 ---
 ---
 body
-  background: linear-gradient(#eaeafb, #fcfcfc,#e6e6fa)
+  background: linear-gradient(#eaeafb, #f4f4f4,#e6e6fa)
 
 .personal-info
-  margin: 4% 12%
+  margin: 3% 10% 10%
   color: #444
   font: oblique 1.1em Georgia, serif
   max-width: 60%
 
+@media only screen and (max-width: 1024px)
+  body
+    margin: 4%
+  
+  .personal-info
+    margin: 8% 10%
+    max-width: 70%
+
 @media only screen and (max-width: 500px)
 
   .personal-info
+    font-size: 1em
     max-width: 100%
-    margin: 10%
+    margin: 12% 8% 16%
