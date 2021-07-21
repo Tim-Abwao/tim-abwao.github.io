@@ -1,6 +1,6 @@
 ---
 tags: python databases sql
-last_modified_at: 2020-09-04T17:58:00+03:00
+last_modified_at: 2021-07-21T11:57:00+03:00
 ---
 [PostgreSQL][1] is a *reliable*, *high-performance* open-source [object-relational database management system][2]. It can hold databases as large as 32TB, with virtually unlimited rows.
 
@@ -12,7 +12,7 @@ last_modified_at: 2020-09-04T17:58:00+03:00
 
 [Psycopg][5] is a *robust* Python adaptor for *PostgreSQL*. It enables you to create databases, run [SQL][6] queries, and accomplish pretty much every other task you'd wish to on *postgres* databases; from within Python programs.
 
-*Psycopg's* authors assert that it "_...was designed for heavily multi-threaded applications that create and destroy lots of cursors and make a large number of concurrent INSERTs or UPDATEs._" This is good news for any who have concerns about scalability.
+*Psycopg's* authors assert that it "*...was designed for heavily multi-threaded applications that create and destroy lots of cursors and make a large number of concurrent INSERTs or UPDATEs.*" This is good news for any who have concerns about scalability.
 
 Example use-cases:
 
@@ -45,28 +45,43 @@ should do the trick. If this fails, please refer to the [installation page][8].
 
 ## Basic Usage
 
-Connecting to database  _database1_, on a _locally running_ Postgres server, as the user _user1_:
+Connecting to database *"my_db"*, on a *locally running postgres*  server, as the user *"my_username"*:
 
 ```python
-import psycopg2 as ps
+from getpass import getpass
 
-conn = ps.connect("dbname=database1 user=user1 password=user1password host=localhost")
-cur = conn.cursor()
+import psycopg2
 
-cur.execute("""
-    CREATE TABLE clients (
-        id serial PRIMARY KEY,
-        Name text,
-        Email text,
-        Total_Purchases money,
-        Date timestamp
-    );"""
+# Establish a connection to the database
+conn = psycopg2.connect(
+    user="my_username",
+    dbname="my_db",
+    password=getpass(prompt="User password: "),
+    host="localhost"
 )
-cur.execute("INSERT INTO clients VALUES (%s, %s, %s, %s, %s)",
-            ("1234", "ACME Corp.", "info@acme.co", 10000, "01-01-2020"))
+cursor = conn.cursor()
 
+cursor.execute(
+    """
+    CREATE TABLE clients (
+        id              serial PRIMARY KEY,
+        name            text NOT NULL,
+        email           text NOT NULL,
+        total_purchases money NOT NULL,
+        date            timestamp NOT NULL
+    );
+    """
+)
+cursor.execute(
+    "INSERT INTO clients VALUES (%s, %s, %s, %s, %s)",
+    ("1234", "ACME Corp.", "info@acme.co", 10000, "01-01-2020")
+)
+
+# Persist changes
 conn.commit()
-cur.close()
+
+# Terminate the connection to the database
+cursor.close()
 conn.close()
 ```
 
@@ -81,6 +96,8 @@ Please consider visiting [Basic module usage][9] to learn more on:
 - Thread and process safety
 - Transaction control.
 
+**Tip:** If you'd like to perform [Object–relational mapping][10], check out [SQLAlchemy][11].
+
 [1]: https://www.postgresql.org
 [2]: https://database.guide/what-is-an-ordbms
 [3]: https://unsplash.com/photos/9hSejnboeTY
@@ -90,3 +107,5 @@ Please consider visiting [Basic module usage][9] to learn more on:
 [7]: https://www.psycopg.org/docs/install.html#quick-install
 [8]: https://www.psycopg.org/docs/install.html#build-prerequisites
 [9]: https://www.psycopg.org/docs/usage.html#
+[10]: https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping "ORM"
+[11]: https://www.sqlalchemy.org/
