@@ -1,24 +1,22 @@
 ---
 tags: python statistics probability
-last_modified_at: 2021-04-16T20:55:00+00:00
+last_modified_at: 2021-08-10T23:07:00+00:00
 img_path: /assets/images/articles/probability-distributions/
 ---
 
 A probability distribution is *"the mathematical function that gives the probabilities(likelihood) of occurrence of different possible outcomes for an experiment"* - [Wikipedia][prob_dist_wiki]
 
-This article demonstrates several ways to obtain random samples from some of the most popular probability distributions using *Python*. [This jupyter notebook][notebook] allows you to conveniently run the presented examples.
+Probability distributions have numerous applications, some of the foremost being modelling real-life phenomena and simulating hypothetical conditions or events.
 
-For brevity, we will focus on the *Normal*, *Uniform* and *Exponential* distributions. If you'd like to learn more about probability distributions, here are some resources that might interest you:
+If you'd like to learn more about probability distributions, here are some resources that might interest you:
 
 - [Probability concepts explained: probability distributions][linked_blog_1]
 - [Understanding Probability Distributions][linked_blog_2]
 - An extensive [list of probability distributions][dist_list_wiki].
 
-## Getting Started
+This article will focus on demonstrating several ways to obtain random samples from the **Normal**, **Uniform** and **Exponential** distributions. You can run the examples in [this demo jupyter notebook][notebook], courtesy of [Binder][binder].
 
-As earlier stated, you can run the examples in the [demo jupyter notebook][notebook] courtesy of [Binder][binder].
-
-Just in case you wish to run them locally;
+To get started locally:
 
 1. Create a virtual environment, and activate it:
 
@@ -40,7 +38,7 @@ Just in case you wish to run them locally;
     jupyter notebook
     ```
 
-4. Once a notebook is up and running, import the necessary packages and run the start-up code:
+4. Once a notebook is up and running, import the necessary packages, set the sample size and define the plotting function:
 
     ```python
     import seaborn as sns
@@ -51,14 +49,11 @@ Just in case you wish to run them locally;
     SAMPLE_SIZE = 1000
 
 
-    def plot(data, title=''):
-        """Plots a combined histogram and kernel-density-estimation plot.
-        """
+    def plot(data, title=""):
+        """Plots a histogram with a kernel-density-estimate."""
         fig = sns.displot(data, kde=True)
         fig.ax.set_title(title, size=14)
     ```
-
-You should now be able to run the example code blocks.
 
 [prob_dist_wiki]: https://en.wikipedia.org/wiki/Probability_distribution
 [notebook]: https://mybinder.org/v2/gh/Tim-Abwao/blog-projects/HEAD?filepath=sampling-from-probability-distributions%2FProbalility%20Distributions%20in%20Python.ipynb
@@ -70,7 +65,7 @@ You should now be able to run the example code blocks.
 
 ## 1. Using the `random` module
 
-The [random][random] module is part of the *Python Standard Library*, and is thus readily available. It contains functions that can generate random samples from probability distributions.
+The [random][random] module is part of the *Python Standard Library*, and is thus readily available. It contains functions that can generate random samples.
 
 The functions return a *single* `float` value, making it necessary to use looping techniques (a [list comprehension][list_comp] in this case) to get a sample of desired size.
 
@@ -101,8 +96,6 @@ plot(random_exponential, title='Exponential Sample (from $random$)')
 
 ![random exponential]({{ page.img_path | append: 'random_exponential.png' }})
 
-### 1.4 More
-
 Other [available options][random_functions] include:
 
 - `random.triangular(low, high, mode)`
@@ -123,9 +116,7 @@ Other [available options][random_functions] include:
 
 [NumPy][numpy] is a third-party package - it has to be [installed][numpy_install].
 
-The [numpy.random][numpy_random] sub-package contains functions that can generate random samples from probability distributions.
-
-The functions return a [numpy.ndarray][numpy_ndarray], which has numerous useful [attributes][numpy_attributes] and [methods][numpy_methods].
+The [numpy.random][numpy_random] sub-package contains functions that can generate random samples. These functions return a [numpy.ndarray][numpy_ndarray], which has numerous useful [attributes][numpy_attributes] and [methods][numpy_methods].
 
 ### 2.1 Normal Distribution
 
@@ -158,8 +149,6 @@ plot(random_exponential, title='Exponential Sample (from $numpy.random$)')
 
 ![numpy exponential]({{ page.img_path | append: 'numpy_exponential.png' }})
 
-### 2.4 More
-
 Please see [Random Generator: Distributions][numpy_dist] for more available options:
 
 [numpy]: https://numpy.org/doc/stable/user/index.html
@@ -173,9 +162,11 @@ Please see [Random Generator: Distributions][numpy_dist] for more available opti
 
 ## 3. Using `scipy.stats`
 
-The [SciPy library][scipy_lib] is also a third-party package, and it has to be [installed][scipy_install]. It is tightly knit with [NumPy][numpy], which is a part of the [SciPy ecosystem][scipy].
+The [SciPy library][scipy_lib] is also a third-party package, and has to be [installed][scipy_install].
 
-The [scipy.stats][scipy_stats] sub-package contains functions that can generate random samples from probability distributions. These functions too return [numpy.ndarray][numpy_ndarray]s.
+*SciPy* is tightly knit with *NumPy* — they are both included in the [SciPy ecosystem][scipy].
+
+The [scipy.stats][scipy_stats] sub-package contains functions that can generate random samples. These functions too return [numpy.ndarray][numpy_ndarray]s.
 
 ### 3.1 Normal Distribution
 
@@ -206,8 +197,6 @@ plot(random_exponential, title='Exponential Sample (from $scipy.stats$)')
 ```
 
 ![scipy exponential]({{ page.img_path | append: 'scipy_exponential.png' }})
-
-### 3.4 More
 
 Please see [Statistical functions][scipy_stats] for more available options:
 
