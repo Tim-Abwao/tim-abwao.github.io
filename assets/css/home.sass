@@ -1,87 +1,74 @@
 ---
 ---
+@import "base"
+
 body
   background: linear-gradient(white, silver)
+  font-size: 0.7em
   text-align: center
 
 .profile
-  margin: 0vh auto 3vh
+  margin: 6vh auto
+
+.profile-name
+  font: bold 1.8em Georgia, serif
+  margin-top: 4%
+
+.profile-roles
+  font: 0.9em Courier New, Courier, monospace
 
 .profile-photo
   border-radius: 50%
-  height: 150px
-  width: 150px
-
-.profile-name
-  font: bolder 1.6em Georgia, serif
-
-.profile-roles
-  font: 0.8em Courier New, Courier, monospace
+  height: 125px
+  width: 125px
 
 .quote
-  font: oblique 0.85em Georgia, serif
+  font-style: oblique
   margin: 10vh auto
+  max-width: 80%
 
   cite
     font: 0.8em Garamond, serif
 
 .featured-articles
-  margin: 3vh auto 1vh
-  width: 60%
+  margin: auto
+  max-width: 80%
 
-  a, h4
-    font: 1.1em Garamond, serif
+  h4
+    font-size: 1.2em
 
-a
-  color: rgba(0, 0, 0, 0.4)
+.article-link
+  font-size: 1.2em
+  max-width: 80%
+  margin: auto
+  padding: 1% 4%
 
-a:hover
-  color: rgba(0, 0, 0, 0.8)
-  text-decoration: none
-
-@media only screen and (max-width: 1024px)
+@media only screen and (min-width: 768px)
   body
-    background-image: linear-gradient(white, silver)
-    margin: auto 5%
+    font-size: 0.8em
 
   .profile
-    margin: 15vh auto
+    margin: 10vh auto
+
+  .profile-photo
+    border-radius: 50%
+    height: 150px
+    width: 150px
 
   .quote
     max-width: 70%
-    margin: 15% auto
 
   .featured-articles
     margin: 8% auto 2%
-    width: 80%
+    width: 70%
 
-@media only screen and (max-width: 420px)
-  body
-    background-image: linear-gradient(white, silver)
-
+@media only screen and (min-width: 1280px)
   .profile
-    margin: 6vh auto
-    font-size: 0.75em
+    margin: 0vh auto 3vh
 
   .profile-name
-    margin-top: 4%
-
-  .profile-photo
-    height: 125px
-    width: 125px
-
-  .quote
-    font-size: 0.75em
-    margin: 10vh auto
+    margin-top: 2%
 
   .featured-articles
-    width: 100%
-
-    h4
-      font-size: 1.1em
-
-  .article-link
-    max-width: 80%
-    text-align: center
-    margin: auto
-    font-size: 0.75em
+    margin: 3vh auto 1vh
+    width: 45%

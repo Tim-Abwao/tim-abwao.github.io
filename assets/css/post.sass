@@ -1,33 +1,31 @@
 ---
 ---
-@import syntax-highlight-default
+@import "base"
+@import "syntax-highlight-default"
 
 body
-  margin: 5% 10%
-  font-size: 1.24em
-  background: linear-gradient(#fff5ee, #eee, #fff0e6)
+  background: linear-gradient(#fff5ee, #fefeee, #fff0e6)
+  margin: 7%
 
-h1
-  text-align: center
+img
+  max-width: 100%
 
 .post-header
+  margin: 4%
+
   span
     font-style: oblique
 
-.post-body, h1
-  max-width: 70%
+.post-body
   a
     color: steelblue
-
-  img
-    max-width: 100%
 
 .post-iframe
   overflow-x: auto
 
   iframe
     width: 100%
-    height: 500px
+    height: 400px
 
 .language-plaintext
   color: #222
@@ -36,26 +34,32 @@ h1
   background-color: #dfdbdb
   padding: 1px 3px
 
-@media only screen and (max-width: 1024px)
-  .post-body, h1
-    max-width: 80%
-
-@media only screen and (max-width: 768px)
+@media only screen and (min-width: 768px)
   body
-    font-size: 0.95em
+    font-size: 0.97em
 
   .post-body, h1
     max-width: 90%
+
+@media only screen and (min-width: 1024px)
+  body
+    font-size: 1.1em
+    margin: 3% 7%
+
+  .post-header
+    margin: 2%
+
+  .post-body, h1
+    max-width: 80%
 
   .post-iframe
     iframe
       width: 500px
       height: 400px
 
-@media only screen and (max-width: 420px)
+@media only screen and (min-width: 1280px)
   body
-    margin: 7%
-    font-size: 1.1em
+    font-size: 1.2em
 
   .post-body, h1
-    max-width: 100%
+    max-width: 75%

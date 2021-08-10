@@ -1,5 +1,7 @@
 ---
 ---
+@import "base"
+
 body
   background: linear-gradient(45deg, #e6ffcc, #ffffe6, #e6fee6)
 
@@ -8,90 +10,57 @@ h1, h2
   font-weight: bolder
   margin: 2% 7%
 
-.projects
+.projects, .tools
+  font-size: 0.75em
+  margin: 7%
+
+  .card
+    margin-bottom: 10%
+
+.tool-category
   display: grid
-  grid-template-columns: repeat(3, 1fr)
-  gap: 7%
-  margin: 2% 10% 5%
-  font-size: 0.8em
-
-  a
-    box-shadow: 12px 10px 15px rgba(0, 0, 0, 0.5)
-
-  a:hover
-    text-decoration: none
-    opacity: 0.8
-    box-shadow: 20px 15px 30px rgba(0, 0, 0, 0.7)
-
-.project-item
-  padding: 8% 8% 4%
-  color: #111
-
-  p
-    font-style: oblique
-    margin-top: 4%
-
-.skill-container
-  margin: 2% 7%
-
-.skill-category
-  margin: 5%
-  display: grid
-  grid-template-columns: repeat(4, 1fr)
+  grid-template-columns: 1fr 1fr
   grid-auto-rows: minmax(120px, auto)
-  gap: 40px
-  background-size: cover
+  gap: 20px
 
-.skill-icon
-  font: bold 0.9em serif
+.tool-icon
+  font: bold 0.9em Georgia, serif
   text-align: center
 
   img
-    max-width: 200px
-    max-height: 100px
+    max-width: 110px
+    max-height: 90px
 
   img:hover
     opacity: 0.5
 
-@media only screen and (max-width: 1024px)
+@media only screen and (min-width: 768px)
   .projects
+    display: grid
     grid-template-columns: 1fr 1fr
-    grid-auto-rows: auto
-    margin: 2% 10% 14%
+    gap: 40px
 
-  .skill-category
+    .card
+      margin-bottom: 0%
+
+  .tool-category
     grid-template-columns: repeat(3, 1fr)
 
-  .skill-icon
-    img
-      max-width: 170px
-      max-height: 80px
-
-@media only screen and (max-width: 768px)
-  .projects
-    margin: 2% 5% 17%
-
-  .skill-icon
+  .tool-icon
     img
       max-width: 125px
 
-@media only screen and (max-width: 520px)
+@media only screen and (min-width: 1024px)
   .projects
-    grid-template-columns: 1fr
-    gap: 3%
-    margin: 5% 10% 50%
+    gap: 60px
 
-  .skill-category
-    grid-template-columns: 1fr 1fr
+  .tool-category
+    grid-template-columns: repeat(4, 1fr)
 
-  .skill-icon
-    img
-      max-width: 125px
+@media only screen and (min-width: 1280px)
+  .projects, .tools
+    margin: 2% 7% 5%
 
-@media only screen and (max-width: 320px)
   .projects
-    margin: 5% 10% 70%
-
-  .skill-icon
-    img
-      max-width: 100px
+    grid-template-columns: repeat(3, 1fr)
+    gap: 40px

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Tim Abwao | Aspiring Data Scientist
-css_file: home
+style: home.css
 feat_posts: [1, 4, 5]
 ---
 
@@ -21,7 +21,7 @@ feat_posts: [1, 4, 5]
 
 <div class="featured-articles">
     <h4>Featured:</h4>
-    <div id="featured-articles-carousel" class="carousel slide" data-ride="carousel">
+    <div id="featured-articles-carousel" class="carousel carousel-dark slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="article-link">
@@ -37,14 +37,16 @@ feat_posts: [1, 4, 5]
             </div>
             {% endfor %}
 
-            <a class="carousel-control-prev" href="#featured-articles-carousel" role="button" data-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#featured-articles-carousel"
+                data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#featured-articles-carousel" role="button" data-slide="next">
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#featured-articles-carousel"
+                data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </div>
 </div>

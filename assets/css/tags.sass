@@ -1,35 +1,28 @@
 ---
 ---
+@import "base"
+
 body
   background: linear-gradient(45deg, #faebd7, #fcf4e8, #f9e8d2)
-  margin: 3% 8%
 
 h1
-  margin-left: 10%
+  margin: 5% auto
+  text-align: center
+
+.article-link
+  margin-left: 7%
 
 .tag-container
-  font: oblique 0.95em Georgia, serif
-
-  a
-    color: #333
-
-  a:hover
-    text-decoration: underline
-    color: #444
+  font: oblique 0.9em Georgia, serif
+  margin: 3% 8%
 
 .tag-link
   font-weight: 800
 
-.tag-link:hover
-  text-decoration: none
-
-.article-link
-  margin-left: 5%
-
-@media screen and ( max-width: 800px)
+@media only screen and (min-width: 800px)
   h1
-    text-align: center
-    margin: 5% auto
+    margin: 2% 20%
+    text-align: left
 
   .article-link
-    margin-left: 7%
+    margin-left: 5%
