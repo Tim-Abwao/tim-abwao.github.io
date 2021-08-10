@@ -31,7 +31,7 @@
       icon: "sql.png"
       link: "https://en.wikipedia.org/wiki/SQL"
     - name: "PostgreSQL"
-      icon: "elephant.png"
+      icon: "postgres-logo.svg"
       link: "https://www.postgresql.org"
     - name: "MongoDB"
       icon: "mongodb-database@4x.png"
