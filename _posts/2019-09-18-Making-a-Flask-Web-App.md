@@ -1,5 +1,5 @@
 ---
-tags: python web-apps 
+tags: web-apps flask
 last_modified_at: 2021-01-24T13:40:00+03:00
 ---
 [Flask][1] is a "*lightweight... web app framework*" in Python. It is designed to be *simple* & *basic*; making it easy to learn, while simultaneously allowing experienced web developers the freedom to integrate the tools they prefer.

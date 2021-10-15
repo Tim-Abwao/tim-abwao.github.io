@@ -1,5 +1,5 @@
 ---
-tags: python statistics probability
+tags: probability scipy
 last_modified_at: 2021-08-10T23:07:00+00:00
 img_path: /assets/images/articles/probability-distributions/
 ---

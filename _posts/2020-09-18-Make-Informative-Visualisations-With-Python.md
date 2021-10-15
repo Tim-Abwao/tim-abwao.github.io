@@ -1,5 +1,5 @@
 ---
-tags: python data-viz
+tags: data-viz seaborn pandas matplotlib plotly
 last_modified_at: 2021-10-15T17:00:00+00:00
 img_path: /assets/images/articles/data-viz/
 ---

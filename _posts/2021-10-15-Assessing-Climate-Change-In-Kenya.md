@@ -1,5 +1,5 @@
 ---
-tags: dataviz time-series
+tags: data-viz plotly climate
 last_modified_at: 2021-10-15T16:32:00+03:00
 img_path: /assets/images/articles/kenya-climate
 ---
