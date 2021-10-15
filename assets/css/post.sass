@@ -5,7 +5,14 @@
 
 body
   background: linear-gradient(#fff5ee, #fefeee, #fff0e6)
-  margin: 7%
+  margin: 5%
+
+blockquote
+  border-radius: 4px
+  padding: 2%
+  margin: 2% 5%
+  background-color: #ddd
+  font-family: Garamond, serif
 
 img
   max-width: 100%
@@ -27,12 +34,9 @@ img
   a
     color: steelblue
 
-.post-iframe
-  overflow-x: auto
-
-  iframe
-    width: 100%
-    height: 400px
+.post-iframe, .post-iframe-wide
+  width: 100%
+  height: 400px
 
 .language-plaintext
   color: #222
@@ -48,6 +52,12 @@ img
   .post-body, h1
     max-width: 90%
 
+  .post-iframe
+    height: 620px
+
+  .post-iframe-wide
+    height: 410px
+
 @media only screen and (min-width: 1024px)
   body
     font-size: 1.1em
@@ -60,9 +70,12 @@ img
     max-width: 80%
 
   .post-iframe
-    iframe
-      width: 500px
-      height: 400px
+    width: 768px
+    height: 600px
+
+  .post-iframe-wide
+    width: 768px
+    height: 440px
 
 @media only screen and (min-width: 1280px)
   body
