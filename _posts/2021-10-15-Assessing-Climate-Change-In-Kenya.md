@@ -1,12 +1,12 @@
 ---
 tags: data-viz plotly climate
-last_modified_at: 2021-10-15T16:32:00+03:00
+last_modified_at: 2021-10-17T12:49:00+03:00
 img_path: /assets/images/articles/kenya-climate
 ---
 
-With the recent surge in floods and droughts, and the erratic rain pattern; it is quite evident that climate change is at work in Kenya.
+With the recent surge in floods and droughts, and the erratic rain patterns; it is quite evident that climate change is at work in Kenya.
 
-## Climate Change
+## What is Climate Change?
 
 Climate change is "a long-term shift in global or regional climate patterns"[^climate-change].
 
@@ -14,7 +14,7 @@ Climate is the average weather pattern in a given location over a long period of
 
 Climate change is mainly characterised by an increase in global temperatures, and is largely due to human activities such as the use of fossil fuels.
 
-This article investigates the degree of climate change in Kenya by analysing two indicators: *temperature* and *precipitation*.
+This article investigates the degree of climate change in Kenya by analysing two key indicators: *temperature* and *precipitation*.
 
 The data used in this exercise is obtained from the *World Bank Group's* [Climate Change Knowledge Portal][weather-data].
 
@@ -22,13 +22,12 @@ The data used in this exercise is obtained from the *World Bank Group's* [Climat
 
 ## Trends in Temperature
 
-The average temperature has risen from a low of *22.54°C* in 1917 to *25.43°C* in 2020, having peaked at *25.56°C* in 2009 and 2016.
+The average temperature has risen from a low of *22.54°C* in 1917 to *25.43°C* in 2020, having peaked at *25.56°C* in 2009 and 2016. A *3°C* increase is by no means trivial.
 
 <div>
     <iframe class="post-iframe-wide" title="temperature lineplot" src='{{ page.img_path }}/temp-plot.html'></iframe>
 </div>
 
-A *3°C* increase is by no means trivial; it strongly implies climate change.
 
 It is projected that Kenya's average temperature could reach *26.25°C* by 2039, and *29.25°C* by 2099.[^temp-projections]
 
