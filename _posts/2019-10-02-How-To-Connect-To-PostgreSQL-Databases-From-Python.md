@@ -1,6 +1,6 @@
 ---
 tags: databases sql postgres
-last_modified_at: 2021-07-21T11:57:00+03:00
+last_modified_at: 2021-11-07T20:32:00+03:00
 ---
 [PostgreSQL][1] is a *reliable*, *high-performance* open-source [object-relational database management system][2]. It can hold databases as large as 32TB, with virtually unlimited rows.
 
@@ -12,12 +12,14 @@ last_modified_at: 2021-07-21T11:57:00+03:00
 
 [Psycopg][5] is a *robust* Python adaptor for *PostgreSQL*. It enables you to create databases, run [SQL][6] queries, and accomplish pretty much every other task you'd wish to on *postgres* databases; from within Python programs.
 
-*Psycopg's* authors assert that it "*...was designed for heavily multi-threaded applications that create and destroy lots of cursors and make a large number of concurrent INSERTs or UPDATEs.*" This is good news for any who have concerns about scalability.
+*Psycopg "...was designed for heavily multi-threaded applications that create and destroy lots of cursors and make a large number of concurrent INSERTs or UPDATEs.*"[^1] This is good news for any who have concerns about scalability.
 
 Example use-cases:
 
 - Flask or django apps & websites using *Postgres* databases to persist user data.
 - Automated analysis & report-generating programs written in Python, sourcing data from and saving it to  *Postgres* databases.
+
+>**TIP:** If you'd like to perform [Object–relational mapping][10], check out [SQLAlchemy][11].
 
 ## Installation
 
@@ -96,7 +98,7 @@ Please consider visiting [Basic module usage][9] to learn more on:
 - Thread and process safety
 - Transaction control.
 
-**Tip:** If you'd like to perform [Object–relational mapping][10], check out [SQLAlchemy][11].
+[^1]: The Psycopg Team (2021). *"Psycopg 2.9.2 documentation"* <https://www.psycopg.org/docs/>.
 
 [1]: https://www.postgresql.org
 [2]: https://database.guide/what-is-an-ordbms
