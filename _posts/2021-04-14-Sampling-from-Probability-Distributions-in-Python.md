@@ -45,14 +45,30 @@ To get started locally:
     import random
     import numpy as np
     import scipy
+    from collections.abc import Collection
 
     SAMPLE_SIZE = 1000
 
 
-    def plot(data, title=""):
-        """Plots a histogram with a kernel-density-estimate."""
+    def plot(data: Collection, distribution: str, package: str) -> None:
+        """Plots a combined histogram and kernel-density-estimation plot.
+
+        Parameters
+        ----------
+        data: Collection
+            An array of numerical values.
+        distribution : str
+            The probability distribution being sampled from.
+        package : str
+            The package used to generate the sample.
+        """
         fig = sns.displot(data, kde=True)
-        fig.ax.set_title(title, size=14)
+        fig.ax.set_title(
+            f"{distribution.title()} Distribution Sample (from ${package.lower()}$)",
+            pad=16,
+            size=14,
+            weight=600,
+        )
     ```
 
 [prob_dist_wiki]: https://en.wikipedia.org/wiki/Probability_distribution
@@ -73,7 +89,7 @@ The functions return a *single* `float` value, making it necessary to use loopin
 
 ```python
 random_normal = [random.gauss(mu=0, sigma=1) for _ in range(SAMPLE_SIZE)]
-plot(random_normal, title='Normal Sample (from $random$)')
+plot(random_normal, distribution="Normal", package="random")
 ```
 
 ![random normal]({{ page.img_path | append: 'random_normal.png' }})
@@ -82,7 +98,7 @@ plot(random_normal, title='Normal Sample (from $random$)')
 
 ```python
 random_uniform = [random.uniform(a=0, b=1) for _ in range(SAMPLE_SIZE)]
-plot(random_uniform, title='Uniform Sample (from $random$)')
+plot(random_uniform, distribution="Uniform", package="random")
 ```
 
 ![random uniform]({{ page.img_path | append: 'random_uniform.png' }})
@@ -91,7 +107,7 @@ plot(random_uniform, title='Uniform Sample (from $random$)')
 
 ```python
 random_exponential = [random.expovariate(lambd=1) for _ in range(SAMPLE_SIZE)]
-plot(random_exponential, title='Exponential Sample (from $random$)')
+plot(random_exponential, distribution="Exponential", package="random")
 ```
 
 ![random exponential]({{ page.img_path | append: 'random_exponential.png' }})
@@ -125,7 +141,7 @@ rng = np.random.default_rng(12345)
 
 # loc is the mean, scale is the standard deviation
 random_normal = rng.normal(loc=0, scale=1, size=SAMPLE_SIZE)
-plot(random_normal, title='Normal Sample (from $numpy.random$)')
+plot(random_normal, distribution="Normal", package="numpy.random")
 ```
 
 ![numpy normal]({{ page.img_path | append: 'numpy_normal.png' }})
@@ -134,7 +150,7 @@ plot(random_normal, title='Normal Sample (from $numpy.random$)')
 
 ```python
 random_uniform = rng.uniform(low=0, high=1, size=SAMPLE_SIZE)
-plot(random_uniform, title='Uniform Sample (from $numpy.random$)')
+plot(random_uniform, distribution="Uniform", package="numpy.random")
 ```
 
 ![numpy uniform]({{ page.img_path | append: 'numpy_uniform.png' }})
@@ -144,7 +160,7 @@ plot(random_uniform, title='Uniform Sample (from $numpy.random$)')
 ```python
 # scale 𝛽 = 1/𝜆, 𝜆 is the non-zero expected mean
 random_exponential = rng.exponential(scale=1, size=SAMPLE_SIZE)
-plot(random_exponential, title='Exponential Sample (from $numpy.random$)')
+plot(random_exponential, distribution="Exponential", package="numpy.random")
 ```
 
 ![numpy exponential]({{ page.img_path | append: 'numpy_exponential.png' }})
@@ -173,7 +189,7 @@ The [scipy.stats][scipy_stats] sub-package contains functions that can generate 
 ```python
 # loc is the mean, scale is the standard deviation
 random_normal = scipy.stats.norm.rvs(loc=0, scale=1, size=SAMPLE_SIZE)
-plot(random_normal, title='Normal Sample (from $scipy.stats$)')
+plot(random_normal, distribution="Normal", package="scipy.stats")
 ```
 
 ![scipy normal]({{ page.img_path | append: 'scipy_normal.png' }})
@@ -183,7 +199,7 @@ plot(random_normal, title='Normal Sample (from $scipy.stats$)')
 ```python
 # loc is the lower boundary 𝑎, scale is the range 𝑏−𝑎
 random_uniform = scipy.stats.uniform.rvs(loc=0, scale=1, size=SAMPLE_SIZE)
-plot(random_uniform, title='Uniform Sample (from $scipy.stats$)')
+plot(random_uniform, distribution="Uniform", package="scipy.stats")
 ```
 
 ![scipy uniform]({{ page.img_path | append: 'scipy_uniform.png' }})
@@ -193,7 +209,7 @@ plot(random_uniform, title='Uniform Sample (from $scipy.stats$)')
 ```python
 # scale 𝛽 = 1/𝜆, 𝜆 is the non-zero expected mean
 random_exponential = scipy.stats.expon.rvs(scale=1, size=SAMPLE_SIZE)
-plot(random_exponential, title='Exponential Sample (from $scipy.stats$)')
+plot(random_exponential, distribution="Exponential", package="scipy.stats")
 ```
 
 ![scipy exponential]({{ page.img_path | append: 'scipy_exponential.png' }})
