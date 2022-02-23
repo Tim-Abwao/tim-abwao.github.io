@@ -98,13 +98,13 @@ In an interesting turn of events, the avarage annual rainfall has increased in t
 
 ## Conclusion
 
-There seem to be hardly any differences apparent when contrasting Kenya's climate in 1961-1990 to that in 1991-2020.
+There may seem to be hardly any differences when contrasting Kenya's climate in 1961-1990 to that in 1991-2020.
 
 <div>
     <iframe class="post-iframe" title="climate subplots" src='{{ page.img_path}}/climate-plot.html'></iframe>
 </div>
 
-However, a deeper look reveals that the monthly average temperature is consistently higher in 1991-2020 than in 1961-1990.
+However, a closer look reveals that the monthly average temperature is consistently higher in 1991-2020 than in 1961-1990.
 
 |      | 1961-1990 (°C) | 1991-2020 (°C) | Gain (°C) |
 | :--- | -------------: | -------------: | --------: |
@@ -121,7 +121,7 @@ However, a deeper look reveals that the monthly average temperature is consisten
 | Nov  |          24.54 |          25.08 |      0.54 |
 | Dec  |          24.54 |          25.03 |      0.49 |
 
-Additionally, the *October - December short-rain* season exhibits higher average rainfall now than in the past. And the months from *February* to *September* have had deflated average rainfall.
+Additionally, the *October - December short-rain* season exhibits higher average rainfall now than in the past.
 
 |      | 1961-1990 (mm) | 1991-2020 (mm) | Gain (mm) |
 | :--- | -------------: | -------------: | --------: |
