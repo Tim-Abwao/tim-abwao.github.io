@@ -7,9 +7,9 @@ It's always fascinating watching a well orchestrated production line at work ([H
 ![A doughnut production line](/assets/images/articles/scikit-learn-pipelines/production-line.jpg)
 *(Image by Neil T, [Wikimedia Commons][wiki-image])*
 
-Raw data is often messy, and needs to be pre-processed. Most models expect input data to be numeric, with no missing values. Some models require input data to be [normalized][normalize]. So far, that's three steps (*encoding categories*, *imputation* and *normalization*).
+Raw data is often messy, and needs to be pre-processed. Most models expect input data to be numeric, with no missing values. Some models require input data to be [normalized][normalize]. So far, that's three steps (*encoding categorical features*, *imputing blanks* and *normalization*).
 
-[Pipelines][pipeline] *"sequentially apply a list of transformations"*, with an *estimator(model)* or *transfomer* at the end. They allow you to pool all the pre-processing steps and a predictor into one object ‒ a production line of sorts.
+[Pipelines][pipeline] *"sequentially apply a list of transformations"*. They allow you to pool all the pre-processing steps and a predictor into one object ‒ a production line of sorts.
 
 Pipelines:
 
@@ -72,9 +72,7 @@ model_pipeline = make_pipeline(
 
 params = {"svr__C": np.logspace(1, 5, 5)}
 
-best_model_with_pipeline = GridSearchCV(
-    model_pipeline, param_grid=params, cv=5, n_jobs=4
-)
+best_model_with_pipeline = GridSearchCV(model_pipeline, param_grid=params, cv=5, n_jobs=4)
 best_model_with_pipeline.fit(X_train, y_train)
 best_model_with_pipeline.score(X_test, y_test)
 ```
