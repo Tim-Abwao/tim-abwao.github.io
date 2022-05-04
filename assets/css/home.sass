@@ -24,7 +24,7 @@ body
 
 .quote
   font-style: oblique
-  margin: 13vh auto 10vh
+  margin: 10vh auto
   max-width: 80%
 
   cite
@@ -34,21 +34,20 @@ body
   margin: auto
   max-width: 90%
 
-  h4
-    font-size: 1.2em
+.card
+  background: inherit
+  width: 90%
+  margin: 5% auto
 
-.article-link
-  font-size: 1.1em
-  max-width: 80%
-  margin: auto
-  padding: 1% 4%
+.card-title
+  font-size: 1.2em
 
 @media only screen and (min-width: 768px)
   body
     font-size: 0.8em
 
   .profile
-    margin: 10vh auto
+    margin: 5vh auto
 
   .profile-photo
     border-radius: 50%
@@ -56,14 +55,15 @@ body
     width: 150px
 
   .quote
-    margin: 15vh auto 12vh
+    margin: 8vh auto
     max-width: 70%
 
   .featured-articles
-    width: 70%
+    max-width: 85%
 
-  .article-link
-    font-size: 1.2em
+  .article-cards
+    display: grid
+    grid-template-columns: 1fr 1fr
 
 @media only screen and (min-width: 1280px)
   .profile
@@ -72,9 +72,5 @@ body
   .profile-name
     margin-top: 2%
 
-  .quote
-    margin: 11vh auto 10vh
-
   .featured-articles
-    margin: 3vh auto 1vh
-    width: 45%
+    max-width: 60%
