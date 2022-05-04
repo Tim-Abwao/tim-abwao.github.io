@@ -4,7 +4,7 @@ last_modified_at: 2021-11-05T18:35:00+03:00
 img_path: /assets/images/articles/kenya-climate
 ---
 
-With the recent surge in floods and droughts, and the erratic rain patterns; it is quite evident that climate change is at work in Kenya.
+With the recent surge in floods and droughts, and the erratic rain patterns witnessed throughout the country; it is quite evident that climate change is at work here. But, does historical data back this assertion?
 
 ## 1. Defining Climate Change
 
