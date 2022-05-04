@@ -11,13 +11,13 @@ layout: default
 	{% if page.last_modified_at %}
 	<span>Updated:
 		<time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">
-			{{ page.last_modified_at | date: "%b %-d, %Y" }}
+			{{ page.last_modified_at | date: "%b %-d, %Y" }} •
 		</time>
 	</span>
 	{% endif %}
 
 	{% if page.author %}
-	• <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+	<span itemprop="author" itemscope itemtype="http://schema.org/Person">
 		<span itemprop="name">{{ page.author }}</span>
 	</span>
 	{% endif %}
