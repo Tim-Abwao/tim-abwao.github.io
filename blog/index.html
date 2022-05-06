@@ -29,15 +29,13 @@ style: blog.css
 <!-- Pagination links -->
 <div class="pagination">
 	{% if paginator.previous_page %}
-	<a href="{{ paginator.previous_page_path }}" class="previous">
-		Previous page
-	</a>
+	<a href="{{ paginator.previous_page_path }}">&laquo; Previous</a>
 	{% endif %}
 	<span class="page_number">
 		Page {{ paginator.page }} of {{ paginator.total_pages }}
 	</span>
 	{% if paginator.next_page %}
-	<a href="{{ paginator.next_page_path }}" class="next">Next page </a>
+	<a href="{{ paginator.next_page_path }}">Next &raquo;</a>
 	{% endif %}
 </div>
 
