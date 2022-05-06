@@ -14,11 +14,10 @@ style: tags.css
         <h6 id="{{tag[0]}}">&#65119;{{ tag[0] }}</h6>
     </a>
     {% assign posts_sorted = tag[1] | sort: "title" %}
-    {% for post in posts_sorted %}
-    <div class="article-link">
-        &#8618; <a href="{{ post.url }}">{{ post.title }}</a><br>
-    </div>
-
-    {% endfor %}
+    <ul class="article-link">
+        {% for post in posts_sorted %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
     {% endfor %}
 </div>
