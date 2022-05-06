@@ -3,26 +3,26 @@
 @import "base"
 
 body
-  background: linear-gradient(45deg, #faebd7, #fcf4e8, #f9e8d2)
+  background: #ecf2f9
 
 h1
-  margin: 5% auto
   text-align: center
 
 .article-link
   margin-left: 7%
 
 .tag-container
-  font: oblique 0.9em Georgia, serif
-  margin: 3% 8%
+  font: 0.75em normal Courier New, Courier, monospace
+  margin: 5%
 
-.tag-link
-  font-weight: 800
-
-@media only screen and (min-width: 800px)
-  h1
-    margin: 2% 20%
-    text-align: left
+@media only screen and (min-width: 768px)
+  .tag-container
+    margin: 2% 8%
 
   .article-link
     margin-left: 5%
+
+@media only screen and (min-width: 1024px)
+  h1
+    text-align: left
+    margin-left: 15%
