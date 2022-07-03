@@ -33,44 +33,56 @@ Anyone with prior experience in a different platform (i.e. R, SQL, SAS, STATA) w
 ## Basic Usage
 
 ```python
->>> s = pd.Series(range(5))
->>> s
+>>> import pandas as pd
+>>> s = pd.Series(range(50))
+>>> s.head()
 0    0
 1    1
 2    2
 3    3
 4    4
 dtype: int64
->>> df = pd.DataFrame({'S': s, 'S-squared': s**2})
->>> df
-   S  S-squared
-0  0          0
-1  1          1
-2  2          4
-3  3          9
-4  4         16
->>> df[df['S-squared'] > 5]
-   S  S-squared
-3  3          9
-4  4         16
->>> df['S-cubed'] = df['S'] * df['S-squared']
->>> df
-   S  S-squared  S-cubed
-0  0          0        0
-1  1          1        1
-2  2          4        8
-3  3          9       27
-4  4         16       64
->>> df.describe()
-              S  S-squared   S-cubed
-count  5.000000   5.000000   5.00000
-mean   2.000000   6.000000  20.00000
-std    1.581139   6.595453  26.87936
-min    0.000000   0.000000   0.00000
-25%    1.000000   1.000000   1.00000
-50%    2.000000   4.000000   8.00000
-75%    3.000000   9.000000  27.00000
-max    4.000000  16.000000  64.00000
+>>> s2 = s * s - 2
+>>> s2.head()
+0    -2
+1    -1
+2     2
+3     7
+4    14
+dtype: int64
+>>> df = pd.DataFrame({"x": s, "x-cubed": s**3})
+>>> df.head()
+   x  x-cubed
+0  0        0
+1  1        1
+2  2        8
+3  3       27
+4  4       64
+>>> df["category"] = list("abcde") * 10
+>>> df.head()
+   x  x-cubed category
+0  0        0        a
+1  1        1        b
+2  2        8        c
+3  3       27        d
+4  4       64        e
+>>> df.groupby("category").mean()
+             x  x-cubed
+category               
+a         22.5  25312.5
+b         23.5  27518.5
+c         24.5  29865.5
+d         25.5  32359.5
+e         26.5  35006.5
+>>> df.groupby("category").agg(["count", "std", "skew"])
+             x                 x-cubed                        
+         count        std skew   count           std      skew
+category                                                      
+a           10  15.138252  0.0      10  31411.872424  1.277811
+b           10  15.138252  0.0      10  33548.118117  1.247907
+c           10  15.138252  0.0      10  35771.304549  1.218897
+d           10  15.138252  0.0      10  38081.803124  1.190780
+e           10  15.138252  0.0      10  40479.948483  1.163548
 ```
 
 ## Next Steps
