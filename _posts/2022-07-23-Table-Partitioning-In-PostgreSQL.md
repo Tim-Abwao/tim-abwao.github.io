@@ -70,7 +70,7 @@ CREATE TABLE covid_data_confirmed_rem1 PARTITION OF covid_data
 ...
 ```
 
-### Example
+## Example
 
 Let's carry out a simple experiment to gauge the practicality of partitioning. We'll execute the following transaction as a script ([create_tables.sql][table_script]), and load [sample data][sample]:
 
@@ -177,9 +177,8 @@ Had the data been massive, sequential scans would have taken significantly longe
 
 ## Further Reading
 
-- [Table Partitioning][postgres-pt] in *PostgreSQL* docs.
-- <https://en.wikipedia.org/wiki/Partition_(database)>
-- <https://en.wikipedia.org/wiki/Database_index>
+- [Table partitioning][postgres-pt] in *PostgreSQL* docs.
+- Database [partitioning][partition-wiki] and [indexing][idx-wiki] on *Wikipedia*.
 
 [bread-img-source]: https://unsplash.com/@yangchihshih
 [unsplash]: https://unsplash.com/
@@ -187,3 +186,5 @@ Had the data been massive, sequential scans would have taken significantly longe
 [table_script]: https://github.com/Tim-Abwao/blog-projects/blob/main/sql-table-partition/create_tables.sql
 [sample]: https://raw.githubusercontent.com/Tim-Abwao/blog-projects/main/sql-table-partition/time-series-data.csv
 [postgres-pt]: https://www.postgresql.org/docs/14/ddl-partitioning.html
+[partition-wiki]: https://en.wikipedia.org/wiki/Partition_(database)
+[idx-wiki]: https://en.wikipedia.org/wiki/Database_index
