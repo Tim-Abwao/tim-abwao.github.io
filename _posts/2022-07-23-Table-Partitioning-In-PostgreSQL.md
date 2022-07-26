@@ -1,3 +1,7 @@
+---
+tags: sql postgres
+---
+
 In database lingo, partitioning refers to the splitting of a table into smaller physical units. It helps speed up queries by reducing the amount of data to sift through, and enabling action on chunks rather than individual rows.
 
 ![Sliced bread](/assets/images/articles/sql-table-partitioning/bread.jpg)

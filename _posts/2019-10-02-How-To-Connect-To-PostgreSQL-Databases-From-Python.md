@@ -1,5 +1,5 @@
 ---
-tags: databases sql postgres
+tags: sql postgres
 last_modified_at: 2021-11-07T20:32:00+03:00
 ---
 [PostgreSQL][1] is a *reliable*, *high-performance* open-source [object-relational database management system][2]. It can hold databases as large as 32TB, with virtually unlimited rows.
