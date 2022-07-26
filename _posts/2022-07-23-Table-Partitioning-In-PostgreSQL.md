@@ -153,24 +153,30 @@ COPY 181687
 Though results varied across runs, the partitioned table generally took more time planning, but executed the test query much faster:
 
 ```sql
-covid19_data=> EXPLAIN ANALYZE SELECT * FROM covid_data_partitioned WHERE day BETWEEN '2020-12-24' AND '2020-12-02';
-                                     QUERY PLAN                                     
-------------------------------------------------------------------------------------
- Result  (cost=0.00..0.00 rows=0 width=0) (actual time=0.001..0.001 rows=0 loops=1)
-   One-Time Filter: false
- Planning Time: 0.062 ms
- Execution Time: 0.008 ms
-(4 rows)
+covid19_data=> EXPLAIN ANALYZE SELECT * FROM covid_data_partitioned WHERE day BETWEEN '2020-12-24' AND '2021-01-02';
+                                                                    QUERY PLAN                                                                     
+---------------------------------------------------------------------------------------------------------------------------------------------------
+ Append  (cost=0.00..792.22 rows=1990 width=21) (actual time=2.620..4.214 rows=1990 loops=1)
+   ->  Seq Scan on covid_data_2020q4 covid_data_partitioned_1  (cost=0.00..395.62 rows=1592 width=21) (actual time=2.619..2.784 rows=1592 loops=1)
+         Filter: ((day >= '2020-12-24'::date) AND (day <= '2021-01-02'::date))
+         Rows Removed by Filter: 16716
+   ->  Seq Scan on covid_data_2021q1 covid_data_partitioned_2  (cost=0.00..386.65 rows=398 width=21) (actual time=0.006..1.309 rows=398 loops=1)
+         Filter: ((day >= '2020-12-24'::date) AND (day <= '2021-01-02'::date))
+         Rows Removed by Filter: 17512
+ Planning Time: 2.382 ms
+ Execution Time: 4.374 ms
+(9 rows)
 
-covid19_data=> EXPLAIN ANALYZE SELECT * FROM covid_data WHERE day BETWEEN '2020-12-24' AND '2020-12-02';
-                                                QUERY PLAN                                                
-----------------------------------------------------------------------------------------------------------
- Seq Scan on covid_data  (cost=0.00..3922.30 rows=908 width=21) (actual time=9.159..9.159 rows=0 loops=1)
-   Filter: ((day >= '2020-12-24'::date) AND (day <= '2020-12-02'::date))
-   Rows Removed by Filter: 181687
- Planning Time: 0.052 ms
- Execution Time: 9.184 ms
+covid19_data=> EXPLAIN ANALYZE SELECT * FROM covid_data WHERE day BETWEEN '2020-12-24' AND '2021-01-02';
+                                                  QUERY PLAN                                                   
+---------------------------------------------------------------------------------------------------------------
+ Seq Scan on covid_data  (cost=0.00..3922.30 rows=1977 width=21) (actual time=8.178..16.421 rows=1990 loops=1)
+   Filter: ((day >= '2020-12-24'::date) AND (day <= '2021-01-02'::date))
+   Rows Removed by Filter: 179697
+ Planning Time: 0.328 ms
+ Execution Time: 16.511 ms
 (5 rows)
+
 ```
 
 Had the data been massive, sequential scans would have taken significantly longer, and the planning overhead in the partitioned table would have really paid off. Reminds me of a story about cutting a tree.
