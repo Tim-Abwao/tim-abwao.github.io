@@ -76,7 +76,11 @@ CREATE TABLE covid_data_confirmed_rem1 PARTITION OF covid_data
 
 ## Example
 
-Let's carry out a simple experiment to gauge the practicality of partitioning. We'll execute the following transaction as a script ([create_tables.sql][table_script]), and load [sample data][sample]:
+Let's carry out a simple experiment to gauge the practicality of partitioning.
+
+### 1. Creating a database and loading the data
+
+We'll execute the following transaction as a script ([create_tables.sql][table_script]), and load [sample data][sample]:
 
 ```sql
 BEGIN;
@@ -121,8 +125,6 @@ CREATE TABLE covid_data_2022q4 PARTITION OF covid_data_partitioned
 COMMIT;
 ```
 
-### 1. Creating a database and loading the data
-
 ```bash
 $ createdb covid19_data
 $ psql covid19_data 
@@ -154,36 +156,46 @@ COPY 181687
 
 ### 2. Evaluating performance
 
-Though results varied across runs, the partitioned table generally took more time planning, but executed the test query much faster:
+We'll use [`EXPLAIN ANALYZE`][explain-analyze] and a test query:
 
 ```sql
-covid19_data=> EXPLAIN ANALYZE SELECT * FROM covid_data_partitioned WHERE day BETWEEN '2020-12-24' AND '2021-01-02';
+covid19_data=> EXPLAIN ANALYZE SELECT * FROM covid_data_partitioned WHERE day BETWEEN '2021-12-24' AND '2022-01-02';
                                                                     QUERY PLAN                                                                     
 ---------------------------------------------------------------------------------------------------------------------------------------------------
- Append  (cost=0.00..792.22 rows=1990 width=21) (actual time=2.620..4.214 rows=1990 loops=1)
-   ->  Seq Scan on covid_data_2020q4 covid_data_partitioned_1  (cost=0.00..395.62 rows=1592 width=21) (actual time=2.619..2.784 rows=1592 loops=1)
-         Filter: ((day >= '2020-12-24'::date) AND (day <= '2021-01-02'::date))
+ Append  (cost=0.00..792.22 rows=1990 width=21) (actual time=3.801..6.207 rows=1990 loops=1)
+   ->  Seq Scan on covid_data_2021q4 covid_data_partitioned_1  (cost=0.00..395.62 rows=1592 width=21) (actual time=3.799..4.234 rows=1592 loops=1)
+         Filter: ((day >= '2021-12-24'::date) AND (day <= '2022-01-02'::date))
          Rows Removed by Filter: 16716
-   ->  Seq Scan on covid_data_2021q1 covid_data_partitioned_2  (cost=0.00..386.65 rows=398 width=21) (actual time=0.006..1.309 rows=398 loops=1)
-         Filter: ((day >= '2020-12-24'::date) AND (day <= '2021-01-02'::date))
+   ->  Seq Scan on covid_data_2022q1 covid_data_partitioned_2  (cost=0.00..386.65 rows=398 width=21) (actual time=0.003..1.694 rows=398 loops=1)
+         Filter: ((day >= '2021-12-24'::date) AND (day <= '2022-01-02'::date))
          Rows Removed by Filter: 17512
- Planning Time: 2.382 ms
- Execution Time: 4.374 ms
+ Planning Time: 0.297 ms
+ Execution Time: 6.386 ms
 (9 rows)
 
-covid19_data=> EXPLAIN ANALYZE SELECT * FROM covid_data WHERE day BETWEEN '2020-12-24' AND '2021-01-02';
-                                                  QUERY PLAN                                                   
----------------------------------------------------------------------------------------------------------------
- Seq Scan on covid_data  (cost=0.00..3922.30 rows=1977 width=21) (actual time=8.178..16.421 rows=1990 loops=1)
-   Filter: ((day >= '2020-12-24'::date) AND (day <= '2021-01-02'::date))
+covid19_data=> EXPLAIN ANALYZE SELECT * FROM covid_data WHERE day BETWEEN '2021-12-24' AND '2022-01-02';
+                                                   QUERY PLAN                                                   
+----------------------------------------------------------------------------------------------------------------
+ Seq Scan on covid_data  (cost=0.00..3922.30 rows=1989 width=21) (actual time=12.840..15.892 rows=1990 loops=1)
+   Filter: ((day >= '2021-12-24'::date) AND (day <= '2022-01-02'::date))
    Rows Removed by Filter: 179697
- Planning Time: 0.328 ms
- Execution Time: 16.511 ms
+ Planning Time: 0.138 ms
+ Execution Time: 15.985 ms
 (5 rows)
+
+covid19_data=> 
 
 ```
 
-Had the data been massive, sequential scans would have taken significantly longer, and the planning overhead in the partitioned table would have really paid off. Reminds me of a story about cutting a tree.
+### 3. Conclusion
+
+After 15 runs on each table, it becomes evident that even though partitioned tables generally spend more time planning, they more than pay up for it with markedly faster query execution:
+
+![query planning lineplot](/assets/images/articles/sql-table-partitioning/planning.png)
+
+![query execution lineplot](/assets/images/articles/sql-table-partitioning/executing.png)
+
+The larger the database, the greater the rewards partitioning bestows.
 
 ## Further Reading
 
@@ -195,6 +207,7 @@ Had the data been massive, sequential scans would have taken significantly longe
 [ssd]: https://en.wikipedia.org/wiki/Solid-state_drive
 [table_script]: https://github.com/Tim-Abwao/blog-projects/blob/main/sql-table-partition/create_tables.sql
 [sample]: https://raw.githubusercontent.com/Tim-Abwao/blog-projects/main/sql-table-partition/time-series-data.csv
+[explain-analyze]: https://www.postgresql.org/docs/14/using-explain.html#USING-EXPLAIN-ANALYZE
 [postgres-pt]: https://www.postgresql.org/docs/14/ddl-partitioning.html
 [partition-wiki]: https://en.wikipedia.org/wiki/Partition_(database)
 [idx-wiki]: https://en.wikipedia.org/wiki/Database_index
