@@ -1,24 +1,65 @@
+$light-font-color: #222
+$light-background-color: #eef2e6
+$dark-font-color: #f1f1f1
+$dark-background-color: #333
+
 body
   font-family: Georgia, 'Times New Roman', Times, serif
+.navbar-brand
+  letter-spacing: 1px
+  font: bold 1.4em Georgia, 'Times New Roman', Times, serif
+.navbar-brand
+@media (prefers-color-scheme: light)
+  @import "syntax-highlight-light"
+
+  body
+    background-color: $light-background-color
+    color: $light-font-color
+
+  blockquote
+    background-color: #ddd
+  a
+    color: #777
+
+  a:hover
+    color: #444
+
+  .highlight
+    pre
+      background-color: #f4f4f4
+@media (prefers-color-scheme: dark)
+  body
+    background-color: $dark-background-color
+    color: $dark-font-color
+
+  blockquote:
+    background-color: #555
+  a
+    color: #f1f1f1
+
+  @import pygments-github-dark
+  a:hover
+    color: #ddd
+  .navbar-brand, .nav-link
+    color: $dark-font-color !important
+  .navbar-toggler-icon
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='rgba%28220, 220, 220, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !important
+  .highlight
+    pre
+      background-color: #777
+  .card-body
+    background-color: #333
 
 h1,
 h2,
 h3
   margin-top: 2%
 
-a
-  color: rgba(0, 0, 0, 0.4)
-  text-decoration: none
-
-a:hover
-  color: rgba(0, 0, 0, 0.8)
-
 footer
   margin: 40px auto
   text-align: center
 
   a
-    color: #000
     margin: 15px
     font-size: 18px
     text-decoration: underline dotted 1px
@@ -32,7 +73,7 @@ footer
     max-width: 80%
 
 .navbar
-  background: inherit
+  // background: inherit
   font-size: 14px
   margin: 2% 4%
   text-align: center
