@@ -2,17 +2,21 @@
 ---
 @import "base"
 
-h1, h2
-  color: #000000bb
+h1, .tools h2
   font-weight: bolder
-  margin: 2% 7%
-
-.projects, .tools
-  font-size: 0.7em
+  font-size: 2em
   margin: 7%
 
-  .card
-    margin-bottom: 10%
+.projects, .tools
+  font-size: 0.75em
+  margin: 7%
+
+.card
+  margin-bottom: 10%
+
+  h2
+    text-align: center
+    font-size: 1.4em
 
 .tool-category
   display: grid
@@ -21,7 +25,6 @@ h1, h2
   gap: 20px
 
 .tool-icon
-  // font: bold 1.1em Georgia, serif
   text-align: center
 
   img
@@ -32,10 +35,16 @@ h1, h2
     opacity: 0.5
 
 @media only screen and (min-width: 768px)
-  .projects
+  h1
+    margin: 20px 5px
+
+  .tools h2
+    margin: 4%
+
+  .projects-container
     display: grid
     grid-template-columns: 1fr 1fr
-    gap: 40px
+    gap: 30px
 
     .card
       margin-bottom: 0%
@@ -50,17 +59,13 @@ h1, h2
 @media only screen and (min-width: 1024px)
   .projects, .tools
     font-size: 0.8em
-
-  .projects
-    gap: 60px
+    max-width: 80%
+    margin: 4% auto
 
   .tool-category
     grid-template-columns: repeat(4, 1fr)
 
 @media only screen and (min-width: 1280px)
-  .projects, .tools
-    margin: 2% 7% 5%
-
-  .projects
+  .projects-container
     grid-template-columns: repeat(3, 1fr)
-    gap: 40px
+
