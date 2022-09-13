@@ -3,27 +3,33 @@
 @import "base"
 
 body
-  font-size: 0.7em
+  font-size: 0.75em
   text-align: center
 
+blockquote
+  background-color: inherit
+
+h2, h3, h4
+  font-weight: bold
+
 .profile
-  margin: 6vh auto
-
-.profile-name
-  font: bold 1.4em Georgia, serif
-  margin-top: 4%
-
-.profile-roles
-  font: 0.9em Courier New, Courier, monospace
+  margin: 3vh auto
 
 .profile-photo
   border-radius: 50%
-  height: 125px
-  width: 125px
+  height: 120px
+  width: 120px
+
+.profile-name
+  font-size: 1.3em
+  margin-top: 4%
+
+.profile-roles
+  font-family: Courier New, Courier, monospace
 
 .quote
   font-style: oblique
-  margin: 10vh auto
+  margin: 6vh auto
   max-width: 80%
 
   cite
@@ -33,9 +39,13 @@ body
   margin: auto
   max-width: 90%
 
+  h3
+    font-size: 1.6em
+  h4
+    font: 1.4em
+
 .card
-  background: inherit
-  border-radius: 7px
+  border-radius: 5px
   width: 90%
   margin: 5% auto
 
@@ -46,19 +56,13 @@ body
   font-size: 1.2em
 
 @media only screen and (min-width: 768px)
-  body
-    font-size: 0.8em
-
-  .profile
-    margin: 5vh auto
 
   .profile-photo
-    border-radius: 50%
     height: 150px
     width: 150px
 
   .quote
-    margin: 8vh auto
+    margin: 3vh auto
     max-width: 70%
 
   .featured-articles
@@ -69,11 +73,14 @@ body
     grid-template-columns: 1fr 1fr
 
 @media only screen and (min-width: 1280px)
+  body
+    font-size: 0.85em
+
   .profile
     margin: 1vh auto 3vh
 
   .profile-name
-    margin-top: 2%
+    margin-top: 20px
 
   .featured-articles
     max-width: 60%

@@ -3,11 +3,12 @@ layout: default
 title: Tim Abwao | Data Analyst • Data Scientist
 style: home.css
 feat_posts: [0, 1, 2, 3]
+im_path: "/assets/images/toolkit/"
 ---
 
 <div class="profile">
-    <img class="profile-photo" src="assets/images/profile.jpg">
-    <h1 class="profile-name">Timothy Abwao</h1>
+    <img class="profile-photo" src="assets/images/profile.jpg" alt="profile-photo">
+    <h2 class="profile-name">Timothy Abwao</h2>
     <p class="profile-roles">Data Analyst • Data Scientist</p>
 </div>
 
@@ -18,12 +19,12 @@ feat_posts: [0, 1, 2, 3]
 </div>
 
 <div class="featured-articles">
-    <h6>Featured Articles:</h6>
+    <h3>Featured Articles:</h3>
     <div class="article-cards">
         {% for post in page.feat_posts %}
         <div class="card border-secondary">
             <div class="card-body">
-                <h6 class="card-title">{{ site.posts[post].title }}</h6>
+                <h4 class="card-title">{{ site.posts[post].title }}</h4>
                 <p class="card-text">{{ site.posts[post].excerpt }}</p>
                 <a href="{{ site.posts[post].url }}" class="btn btn-outline-secondary btn-sm">View Article</a>
             </div>
