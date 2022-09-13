@@ -17,3 +17,17 @@ defaults:
       layout: "post"
       author: "Abwao"
       style: "post.css"
+
+# For SEO
+logo: /assets/images/logo.png
+social:
+  name: Timothy Abwao
+  links:
+    - https://ke.linkedin.com/in/timothy-abwao
+    - https://github.com/Tim-Abwao
+    - https://twitter.com/timoam
+    - https://www.kaggle.com/timothyabwao
+    - https://www.hackerrank.com/abwaomusungu
+twitter:
+  username: TimoAM
+  card: summary
