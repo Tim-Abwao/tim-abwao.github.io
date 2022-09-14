@@ -1,4 +1,5 @@
 ---
+description: Visualizing Kenya's temperature and precipitation data to detect climate change.
 tags: data-viz plotly climate
 last_modified_at: 2022-07-01T16:50:00+03:00
 img_path: /assets/images/articles/kenya-climate

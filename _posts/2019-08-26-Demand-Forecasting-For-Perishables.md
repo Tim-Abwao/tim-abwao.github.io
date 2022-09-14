@@ -1,4 +1,5 @@
 ---
+description: A brief introduction of the benefits of demand forecasting for perishables.
 tags: forecasting agriculture
 last_modified_at: 2020-07-07T13:27:00+03:00
 ---

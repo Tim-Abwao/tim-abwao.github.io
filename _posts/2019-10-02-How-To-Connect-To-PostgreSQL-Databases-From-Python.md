@@ -1,4 +1,5 @@
 ---
+description: Demo of how to connect to postgresql databases using psycopg2.
 tags: sql postgres
 last_modified_at: 2021-11-07T20:32:00+03:00
 ---

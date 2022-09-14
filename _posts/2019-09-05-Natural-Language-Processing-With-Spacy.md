@@ -1,4 +1,5 @@
 ---
+description: A glance at some of spaCy's natural language processing features.
 tags: nlp spacy
 last_modified_at: 2020-05-26T21:18:00+03:00
 ---

@@ -1,4 +1,5 @@
 ---
+description: A glance at Python pandas' data manipulation features.
 tags: data-wrangling pandas
 last_modified_at: 2020-11-25T14:18:00+03:00
 ---

@@ -1,4 +1,5 @@
 ---
+description: Demonstrating how to create partitioned tables in postgresql databases.
 tags: sql postgres
 ---
 

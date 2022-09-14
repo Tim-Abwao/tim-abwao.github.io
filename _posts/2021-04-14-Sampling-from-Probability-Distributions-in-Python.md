@@ -1,4 +1,5 @@
 ---
+description: Generating samples from probability distributions using NumPy, SciPy and random.
 tags: probability scipy
 last_modified_at: 2022-08-02T02:55:00+00:00
 img_path: /assets/images/articles/probability-distributions/

@@ -1,4 +1,5 @@
 ---
+description: Beginners guide on building a basic Flask web app.
 tags: web-apps flask
 last_modified_at: 2022-07-05T15:52:00+03:00
 ---

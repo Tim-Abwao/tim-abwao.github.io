@@ -1,4 +1,5 @@
 ---
+description: How to easily plot informative graphs using seaborn, pandas, matplotlib and plotly.
 tags: data-viz seaborn pandas matplotlib plotly
 last_modified_at: 2022-07-04T12:28:00+00:00
 img_path: /assets/images/articles/data-viz/

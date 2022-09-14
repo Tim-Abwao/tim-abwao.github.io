@@ -1,4 +1,5 @@
 ---
+description: Demonstrating the power of scikit-learn pipelines.
 tags: machine-learning scikit-learn
 ---
 
