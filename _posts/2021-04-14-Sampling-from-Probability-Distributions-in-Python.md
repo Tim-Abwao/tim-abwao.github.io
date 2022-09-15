@@ -11,7 +11,8 @@ Probability distributions are chiefly employed in modelling real-life phenomena 
 
 ![falling dice]({{ page.img_path | append: 'dice.jpg' }})
 
-*(Photo by [Riho Kroll][dice-source] on [Unsplash][dice-unsplash])*
+Photo by [Riho Kroll][dice-source] on [Unsplash][dice-unsplash]
+{: .caption }
 
 If you'd like to learn more about probability distributions, here are some resources that might interest you:
 
@@ -30,7 +31,7 @@ This article presents 3 tools that can be used to generate random samples from p
 
 ### I. random
 
-The [random][random] module is part of the *Python Standard Library*, and so is readily available. Its functions return a single value. Thus, if you wish to create a sample of desired size **_n_**, you'll need to use looping techniques e.g. a *list comprehension*.
+The [random][random] module is part of the *Python Standard Library*, and so is readily available. Its functions return a single value. Thus, if you wish to create a sample of desired size ***n***, you'll need to use looping techniques e.g. a *list comprehension*.
 
 [random]: https://docs.python.org/3/library/random.html#real-valued-distributions
 

@@ -7,7 +7,8 @@ last_modified_at: 2021-11-07T20:32:00+03:00
 
 ![Elaphant](/assets/images/articles/elephant.jpg)
 
-(*Photo by [Zoë Reeve][3] on [Unsplash][4]*)
+Photo by [Zoë Reeve][3] on [Unsplash][4]
+{:.caption}
 
 ## Psycopg2 - Python's Vessel into Postgres
 

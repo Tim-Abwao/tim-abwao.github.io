@@ -9,7 +9,8 @@ last_modified_at: 2020-05-26T21:18:00+03:00
 
 ![displacy demo][7]
 
-(*spaCy*'s **Named Entity Visualiser**, [displaCy][8] in action)
+*spaCy*'s **Named Entity Visualiser** [displaCy][8] in action
+{:.caption}
 
 ## Linguistic Features
 

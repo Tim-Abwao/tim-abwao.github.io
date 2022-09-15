@@ -6,7 +6,9 @@ tags: machine-learning scikit-learn
 It's always fascinating watching a well orchestrated production line at work ([How It's Made][how-made]). Raw materials go in, *magic happens*, and something wonderful comes out the other end. Such elegant efficiency can, and does exist in *machine learning* too.
 
 ![A doughnut production line](/assets/images/articles/scikit-learn-pipelines/production-line.jpg)
-*(Image by Neil T, [Wikimedia Commons][wiki-image])*
+
+Image by Neil T, [Wikimedia Commons][wiki-image]
+{: .caption}
 
 Raw data is often messy, and needs to be pre-processed. Most models expect input data to be numeric, with no missing values. Some models require input data to be [normalized][normalize]. So far, that's three steps (*encoding categorical features*, *imputing blanks* and *normalization*).
 

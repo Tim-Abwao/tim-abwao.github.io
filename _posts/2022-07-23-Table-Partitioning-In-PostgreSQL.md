@@ -7,7 +7,8 @@ In database lingo, partitioning refers to the splitting of a table into smaller 
 
 ![Sliced bread](/assets/images/articles/sql-table-partitioning/bread.jpg)
 
-*(Photo by [Young Shih][bread-img-source] on [Unsplash][unsplash])*
+Photo by [Young Shih][bread-img-source] on [Unsplash][unsplash]
+{:.caption}
 
 Partitioning is typically applied when the volume of data involved is considerably large. A common tactic is to place frequently used partitions in high-speed [SSD][ssd]s, while relegating stale data to cheaper (and hence slower) storage media.
 

@@ -9,7 +9,8 @@ last_modified_at: 2020-07-07T13:27:00+03:00
 
 ![Fresh produce][3]
 
-(*Photo by [nrd][4] on [Unsplash][5]*)
+Photo by [nrd][4] on [Unsplash][5]
+{:.caption}
 
 Perishables are products that have a rather short shelf-life: vegetables, fruits, milk, meat, fish, and the like. Some can stay fresh for only a few hours. This presents unique challenges to wholesellers and retailers dealing in them.
 
@@ -17,7 +18,8 @@ In everyday life, people tend to pick only the 'crisp' produce, leaving behind t
 
 ![Rotting produce][6]
 
-(*Photo by [FOODISM360][7] on [Unsplash][8]*)
+Photo by [FOODISM360][7] on [Unsplash][8]
+{:.caption}
 
 A common tactic employed to tackle the above described phenomenon is the lowering of stock volumes to reduce leftovers. But this often badly backfires when customers repeatedly fail to get what they want, and take their business elsewhere.
 
