@@ -191,7 +191,7 @@ covid19_data=>
 
 ### 3. Conclusion
 
-After 16 runs on each table, it becomes evident that even though partitioned tables generally spend more time planning, they more than pay up for it with markedly faster query execution:
+After 16 runs on each table, it becomes evident that even though partitioned tables generally spend a bit more time planning, they more than make up for it with markedly faster query execution:
 
 ![query planning lineplot](/assets/images/articles/sql-table-partitioning/planning.png)
 
