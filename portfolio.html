@@ -10,7 +10,8 @@ style: portfolio.css
 	<div class="projects-container">
 		{% for project in site.data.analytics-projects %}
 		<div class="card">
-			<img src="/assets/images/analytics-projects/{{ project.wallpaper }}" class="card-img-top" alt="...">
+			<img src="/assets/images/analytics-projects/{{ project.wallpaper }}" class="card-img-top"
+				alt="{{ project.title }}">
 			<div class="card-body">
 				<h2 class="card-title">{{ project.title }}</h2>
 				<p class="card-text">{{ project.summary }}</p>
@@ -25,7 +26,7 @@ style: portfolio.css
 	<div class="projects-container">
 		{% for project in site.data.github-projects %}
 		<div class="card">
-			<img src="/assets/images/github-projects/{{ project.wallpaper }}" class="card-img-top" alt="...">
+			<img src="/assets/images/github-projects/{{ project.wallpaper }}" class="card-img-top" alt="{{ project.title }}">
 			<div class="card-body">
 				<h2 class="card-title">{{ project.title }}</h2>
 				<p class="card-text">{{ project.summary }}</p>
