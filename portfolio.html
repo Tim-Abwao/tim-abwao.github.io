@@ -3,15 +3,29 @@ layout: default
 title: Tim Abwao | Portfolio
 description: A gallery of data science projects I've built, and the tools I use
 style: portfolio.css
-im_path: "/assets/images/toolkit/"
 ---
 
 <div class="projects">
+	<h1>Data Analysis Projects</h1>
+	<div class="projects-container">
+		{% for project in site.data.analytics-projects %}
+		<div class="card">
+			<img src="/assets/images/analytics-projects/{{ project.wallpaper }}" class="card-img-top" alt="...">
+			<div class="card-body">
+				<h2 class="card-title">{{ project.title }}</h2>
+				<p class="card-text">{{ project.summary }}</p>
+				<a href="{{ project.link }}" class="btn btn btn-outline-primary btn-sm">View Project</a>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+
 	<h1>GitHub Projects</h1>
 	<div class="projects-container">
-		{% for project in site.data.projects %}
+		{% for project in site.data.github-projects %}
 		<div class="card">
-			<img src="{{ page.im_path | append: project.wallpaper }}" class="card-img-top" alt="...">
+			<img src="/assets/images/github-projects/{{ project.wallpaper }}" class="card-img-top" alt="...">
 			<div class="card-body">
 				<h2 class="card-title">{{ project.title }}</h2>
 				<p class="card-text">{{ project.summary }}</p>
@@ -32,7 +46,7 @@ im_path: "/assets/images/toolkit/"
 			<div class="tool-icon">
 				<figure>
 					<a href="{{ tool.link }}">
-						<img src="{{ tool.icon | prepend: '/assets/images/toolkit/'}}" alt="{{ tool.icon }}">
+						<img src="/assets/images/toolkit/{{ tool.icon }}" alt="{{ tool.icon }}">
 					</a>
 					<figcaption> {{ tool.name }} </figcaption>
 				</figure>
