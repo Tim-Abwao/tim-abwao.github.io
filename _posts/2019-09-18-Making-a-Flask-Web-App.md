@@ -175,7 +175,7 @@ Afterwards, navigate your browser to <http://127.0.0.1:5000> to interact with th
 
 ## Next Steps
 
-*Flask* offers a number of [deployment options][flask-deploy]. You could try coming up with a great idea for a web app, build it, and then deploy it on [Heroku][heroku] - a popular choice.
+*Flask* offers a number of [deployment options][flask-deploy]. You could try coming up with a great idea for a web app, build it, and then deploy it.
 
 [flask]: https://flask.palletsprojects.com/
 [micro]: https://flask.palletsprojects.com/en/2.1.x/foreword/#what-does-micro-mean
@@ -194,6 +194,5 @@ Afterwards, navigate your browser to <http://127.0.0.1:5000> to interact with th
 [templates-folder]: https://flask.palletsprojects.com/en/2.1.x/api/#flask.Flask.template_folder
 [app-screencast]: /assets/images/articles/flask-webapp/flask-demo.gif
 [github-link]: https://github.com/Tim-Abwao/blog-projects/tree/main/basic-flask-app
-[heroku]: https://devcenter.heroku.com/articles/getting-started-with-python?singlepage=true
 [@ja ma]: https://unsplash.com/@ja_ma
 [unsplash-img-link]: https://unsplash.com/photos/-gOUx23DNks
