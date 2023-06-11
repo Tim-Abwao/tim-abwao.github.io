@@ -2,17 +2,15 @@
 ---
 
 body
-  font-size: 0.75em
+  font-size: 0.9em
   text-align: center
-
-blockquote
-  background-color: inherit
 
 h2, h3, h4
   font-weight: bold
 
 .profile
-  margin: 3vh auto
+  margin: 4vh auto
+  max-width: 85%
 
 .profile-photo
   border-radius: 50%
@@ -20,23 +18,23 @@ h2, h3, h4
   width: 120px
 
 .profile-name
-  font-size: 1.3em
+  font-size: 1.1em
   margin-top: 4%
 
 .profile-roles
   font-family: 'Courier New', Courier, monospace
 
-.quote
+.intro
   font-style: oblique
-  margin: 6vh auto
-  max-width: 80%
+  font-size: 1.24em
+  margin: 5vh auto
 
-  cite
-    font: 0.8em Garamond, serif
+  p
+    margin: 5px auto
 
 .featured-articles
   margin: auto
-  max-width: 90%
+  max-width: 95%
 
   h3
     font-size: 1.6em
@@ -44,25 +42,28 @@ h2, h3, h4
     font: 1.4em
 
 .card
-  border-radius: 5px
   width: 90%
   margin: 5% auto
 
-.btn-outline-secondary
-  border-radius: 5px
+.btn-secondary
+  border-radius: 6px
 
 .card-title
   font-size: 1.2em
 
 @media only screen and (min-width: 768px)
+  .profile
+    display: grid
+    grid-template-columns: 1fr 1fr
+    margin: 6vh auto
+    max-width: 70%
 
   .profile-photo
     height: 150px
     width: 150px
 
-  .quote
-    margin: 3vh auto
-    max-width: 70%
+  .intro
+    margin: auto
 
   .featured-articles
     max-width: 85%
@@ -72,14 +73,10 @@ h2, h3, h4
     grid-template-columns: 1fr 1fr
 
 @media only screen and (min-width: 1280px)
-  body
-    font-size: 0.85em
 
   .profile
-    margin: 1vh auto 3vh
-
-  .profile-name
-    margin-top: 20px
+    margin: 10vh auto 7vh
+    max-width: 55%
 
   .featured-articles
     max-width: 60%

@@ -8,17 +8,19 @@ im_path: "/assets/images/toolkit/"
 ---
 
 <div class="profile">
-    <img class="profile-photo" src="assets/images/profile.jpg" alt="profile-photo">
-    <h2 class="profile-name">Timothy Abwao</h2>
-    <p class="profile-roles">Data Analyst • Data Scientist</p>
-</div>
+    <div class="profile-card">
+        <img class="profile-photo" src="assets/images/profile.jpg" alt="profile-photo">
+        <h2 class="profile-name">Timothy Abwao</h2>
+        <p class="profile-roles">Data Analyst • Data Scientist</p>
+    </div>
 
-<div class="quote">
-    <blockquote>“When you have eliminated all which is impossible, then whatever remains, however improbable, must be
-        the truth.”</blockquote>
-    <cite>— Sir Arthur Conan Doyle</cite>
+    <div class="intro">
+        <p>Generating value from data through comprehensive Exploratory Data Analysis and Predictive
+            Analytics.</p>
+        <p>I seek to understand and explain; to unravel mysteries. This helps in asking the right questions, and inpires
+            innovative solutions. </p>
+    </div>
 </div>
-
 <div class="featured-articles">
     <h3>Featured Articles:</h3>
     <div class="article-cards">
@@ -27,7 +29,7 @@ im_path: "/assets/images/toolkit/"
             <div class="card-body">
                 <h4 class="card-title">{{ site.posts[post].title }}</h4>
                 <p class="card-text">{{ site.posts[post].excerpt }}</p>
-                <a href="{{ site.posts[post].url }}" class="btn btn-outline-secondary btn-sm">View Article</a>
+                <a href="{{ site.posts[post].url }}" class="btn btn-secondary btn-sm">View Article</a>
             </div>
         </div>
         {% endfor %}
