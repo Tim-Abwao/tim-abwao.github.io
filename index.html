@@ -25,9 +25,10 @@ im_path: "/assets/images/toolkit/"
         {% for post in page.feat_posts %}
         <div class="card border-secondary">
             <div class="card-body">
-                <h4 class="card-title">{{ site.posts[post].title }}</h4>
+                <a href="{{ site.posts[post].url }}">
+                    <h4 class="card-title">{{ site.posts[post].title }}</h4>
+                </a>
                 <p class="card-text">{{ site.posts[post].excerpt }}</p>
-                <a href="{{ site.posts[post].url }}" class="btn btn-secondary btn-sm">View Article</a>
             </div>
         </div>
         {% endfor %}
