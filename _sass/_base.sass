@@ -7,7 +7,6 @@ body
   font-family: Georgia, 'Times New Roman', Times, serif
 
 a
-  color: #0077b3
   text-decoration: none
 
 a:hover
@@ -64,9 +63,12 @@ footer
 @media (prefers-color-scheme: light)
   @import "pygments-vs-light"
 
-  body,
+  body
     background-color: $light-background-color
     color: $light-font-color
+
+  a, .btn-outline-primary
+    color: #3040f1
 
   blockquote
     background-color: #ddd
@@ -98,6 +100,9 @@ footer
   body
     background-color: $dark-background-color
     color: $dark-font-color
+
+  a, .btn-outline-primary
+    color: #5599e4
 
   blockquote
     background-color: #444
