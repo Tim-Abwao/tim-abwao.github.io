@@ -8,11 +8,32 @@ h1
   list-style-type: "↪"
 
 .tag-container
-  font: normal 0.8em 'Courier New', Courier, monospace
-  margin: 5%
+  font: normal 0.9em 'Courier New', Courier, monospace
+  margin: 2%
 
 .tags a
-  padding: 5px
+  border-width: 1px
+  border-radius: 4px
+  border-style: solid
+  display: inline-block
+  padding: 2px 4px
+  margin-block: 4px
+
+@media (prefers-color-scheme: light)
+  .tags
+    a
+      border-color: #3040f1
+    a:hover
+      border-color: #1e7409
+      color: #1e7409
+
+@media (prefers-color-scheme: dark)
+  .tags
+    a
+      border-color: #5599e4
+    a:hover
+      border-color: #2cb30b
+      color: #2cb30b
 
 @media only screen and (min-width: 768px)
   h2
@@ -20,7 +41,7 @@ h1
 
   .tag-container
     margin: 2% auto
-    max-width: 70%
+    max-width: 80%
 
 @media only screen and (min-width: 1024px)
   .tag-container

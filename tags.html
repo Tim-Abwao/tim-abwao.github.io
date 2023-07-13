@@ -10,7 +10,7 @@ style: tags.css
     <div class="tags">
         {% assign tags_sorted = site.tags | sort %}
         {% for tag in tags_sorted %}
-        <a href="/tags#{{ tag[0] }}">#{{ tag[0] }} </a>
+        <a href="/tags#{{ tag[0] }}">#{{ tag[0] }}</a>
         {% endfor %}
     </div>
 
