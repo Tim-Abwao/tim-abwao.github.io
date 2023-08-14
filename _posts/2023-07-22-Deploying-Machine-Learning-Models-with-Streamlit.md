@@ -76,8 +76,8 @@ Let's start by creating a simple model to deploy:
 >>> model = RandomForestClassifier(random_state=2)
 >>> model.fit(X_train, y_train)
 RandomForestClassifier(random_state=2)
->>> print(f"Accuracy: {model.score(X_test, y_test):2%}")
-Accuracy: 97.368421%
+>>> print(f"Accuracy: {model.score(X_test, y_test):.2%}")
+Accuracy: 97.37%
 >>> import joblib
 >>> joblib.dump(model, "model.gz")  # save model to file
 ['model.gz']
@@ -156,7 +156,9 @@ $ streamlit run streamlit_app.py
 
 ![Screencast of the demo streamlit app](/assets/images/articles/streamlit-demo/screencast.gif)
 
-After confirming that everything works as expected, we can then deploy the app to the [Streamlit Community Cloud][st-com-cloud] to make it available online. This typically involves:
+The [code for this demo app][demo-code] is available on GitHub.
+
+After confirming that everything works as expected, we can deploy the app to the [Streamlit Community Cloud][st-com-cloud] to make it available online. This typically involves:
 
 - Signing up for a *Streamlit Community Cloud* account
 - Logging in to <https://share.streamlit.io/>
@@ -165,5 +167,6 @@ After confirming that everything works as expected, we can then deploy the app t
 
 The [getting started guide][st-com-get-started] has all you need to know.
 
+[demo-code]: https://github.com/Tim-Abwao/streamlit-demo-app
 [st-com-cloud]: https://docs.streamlit.io/streamlit-community-cloud
 [st-com-get-started]: https://docs.streamlit.io/streamlit-community-cloud/get-started
