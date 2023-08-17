@@ -5,9 +5,6 @@ body
   font-size: 15px
   text-align: center
 
-h2, h3, h4
-  font-weight: 600
-
 .profile
   margin: 4vh auto
   max-width: 85%
@@ -18,12 +15,12 @@ h2, h3, h4
   width: 120px
 
 .profile-name
-  font-size: 1.3em
+  font-size: 1.2em
   margin-top: 4%
 
 .intro
   font-style: italic
-  font-size: 1.2em
+  font-size: 1.25em
   margin: 5vh auto
 
 .featured-articles
@@ -32,18 +29,16 @@ h2, h3, h4
 
   h3
     font-size: 1.6em
-  h4
-    font: 1.2em
 
 .card
   width: 90%
   margin: 5% auto
 
-.btn-secondary
-  border-radius: 6px
-
 .card-title
   font-size: 1.2em
+
+.btn-secondary
+  border-radius: 6px
 
 @media only screen and (min-width: 768px)
   .profile
@@ -57,7 +52,6 @@ h2, h3, h4
     width: 150px
 
   .intro
-    font-size: 1.25em
     margin: auto
 
   .featured-articles
@@ -66,6 +60,10 @@ h2, h3, h4
   .article-cards
     display: grid
     grid-template-columns: 1fr 1fr
+
+@media only screen and (min-width: 1024px)
+  .featured-articles
+    max-width: 75%
 
 @media only screen and (min-width: 1280px)
   .profile

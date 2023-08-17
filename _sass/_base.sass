@@ -13,14 +13,8 @@ a
 a:hover
   color: slategray
 
-.navbar-brand
-  letter-spacing: 1px
-  font: 'Spectral', serif
-
-h1,
-h2,
-h3
-  margin-top: 2%
+h1, h2, h3, h4
+  font-weight: 600
 
 footer
   margin: 40px auto
@@ -39,10 +33,17 @@ footer
     margin: 15px auto
     max-width: 80%
 
+.content
+  min-height: calc(100vh - 180px)
+
 .navbar
   font-size: 14px
   margin: 2% 4%
   text-align: center
+
+.navbar-brand
+  letter-spacing: 1px
+  font: 'Spectral', serif
 
 .nav-item
   padding: 1% 5%
@@ -57,9 +58,6 @@ footer
   img
     width: 32px
     height: 32px
-
-.content
-  min-height: calc(100vh - 180px)
 
 @media (prefers-color-scheme: light)
   @import "pygments-vs-light"
