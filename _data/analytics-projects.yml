@@ -7,7 +7,7 @@
   summary: "Assessing ratings & reviews for a subset of the food products on Amazon."
   wallpaper: "amazon-food.jpg"
 - title: "Bank Customer Churn Prediction"
-  link: "https://www.kaggle.com/code/timothyabwao/predicting-churn"
+  link: "https://www.kaggle.com/timothyabwao/bank-customer-churn-prediction"
   summary: "Detecting clients that are likely to leave using machine learning models."
   wallpaper: "credit-cards.jpg"
 - title: "Market Basket Analysis"
