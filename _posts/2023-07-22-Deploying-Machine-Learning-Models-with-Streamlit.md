@@ -90,16 +90,12 @@ import joblib
 import streamlit as st
 
 st.title("Iris Species Classifier")
-st.write(
-    "Predict the iris flower species from petal and sepal dimensions. ",
-    "Adjust the dimensions to get a prediction.",
-)
+st.write("Predict the iris flower species from petal and sepal dimensions.")
 
 
 @st.cache_resource
 def load_model():
-    """Fetch and cache the saved model: avoids reloading it with each rerun/
-    event.
+    """Fetch and cache the fitted model.
 
     Returns:
         RandomForestClassifier: Trained Scikit-learn model.
@@ -114,13 +110,18 @@ image_attributions = dict(
     versicolor="D. Gordon E. Robertson, CC BY-SA 3.0, via Wikimedia Commons",
     virginica="Eric Hunt, CC BY-SA 4.0, via Wikimedia Commons",
 )
-# Set a 2-column layout: Dimensions | Prediction
-col1, col2 = st.columns([0.35, 0.65], gap="medium")
-with col1:
+dimensions_input_col, results_col = st.columns([0.45, 0.55], gap="medium")
+with dimensions_input_col:
     st.subheader("Dimensions")
+    st.caption("Enter values to get a prediction.")
     input_data = [
         st.number_input(
-            dim, max_value=10.0, min_value=0.0, step=0.1, value=5.0, format="%.1f"
+            dim,
+            max_value=10.0,
+            min_value=0.0,
+            step=0.1,
+            value=5.0,
+            format="%.1f",
         )
         for dim in [
             "Sepal length (cm)",
@@ -131,10 +132,9 @@ with col1:
     ]
     st.write(f"Input data:\n :blue[{[round(x, 1) for x in input_data]}]")
 
-with col2:
+with results_col:
     st.subheader("Prediction")
-    pred = model.predict([input_data])  # array of length 1 e.g [2]
-    predicted_species = species_dict.get(pred[0])
+    predicted_species = species_dict.get(model.predict([input_data])[0])
     st.write(f"Species: :green[Iris {predicted_species}]")
     st.image(
         f"assets/iris-{predicted_species}.jpg",
