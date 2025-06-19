@@ -3,13 +3,11 @@
 
 h1
   font-size: 2em
+  margin: 7%
 h2
   font-size: 1.6em
 
-h1, .tools h2
-  margin: 7%
-
-.projects, .tools
+.projects
   font-size: 0.9em
   margin: 7%
 
@@ -23,29 +21,9 @@ h1, .tools h2
     min-height: 170px
     width: 100%
 
-.tool-category
-  display: grid
-  grid-template-columns: 1fr 1fr
-  grid-auto-rows: minmax(120px, auto)
-  gap: 20px
-
-.tool-icon
-  text-align: center
-
-  img
-    background-color: inherit
-    max-width: 110px
-    max-height: 90px
-
-  img:hover
-    opacity: 0.5
-
 @media only screen and (min-width: 768px)
   h1
     margin: 30px 5px
-
-  .tools h2
-    margin: 4%
 
   .projects-container
     display: grid
@@ -55,20 +33,10 @@ h1, .tools h2
     .card
       margin-bottom: 0%
 
-  .tool-category
-    grid-template-columns: repeat(3, 1fr)
-
-  .tool-icon
-    img
-      max-width: 125px
-
 @media only screen and (min-width: 1024px)
-  .projects, .tools
+  .projects
     max-width: 80%
     margin: 4% auto
-
-  .tool-category
-    grid-template-columns: repeat(4, 1fr)
 
 @media only screen and (min-width: 1280px)
   .projects-container

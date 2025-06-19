@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Tim Abwao | Portfolio
-description: A gallery of data science projects I've built, and the tools I use
+description: A gallery of data science projects I've built
 style: portfolio.css
 ---
 
@@ -32,27 +32,6 @@ style: portfolio.css
 				<p class="card-text">{{ project.summary }}</p>
 				<a href="{{ project.link }}" class="btn btn btn-outline-primary btn-sm">View on GitHub</a>
 			</div>
-		</div>
-		{% endfor %}
-	</div>
-</div>
-
-<div class="tools">
-	<h1>Tools & Platforms</h1>
-	<div class="tools-container">
-		{% for tool_set in site.data.toolkit %}
-		<h2> {{ tool_set.category }}</h2>
-		<div class="tool-category">
-			{% for tool in tool_set['items'] %}
-			<div class="tool-icon">
-				<figure>
-					<a href="{{ tool.link }}">
-						<img src="/assets/images/toolkit/{{ tool.icon }}" alt="{{ tool.icon }}">
-					</a>
-					<figcaption> {{ tool.name }} </figcaption>
-				</figure>
-			</div>
-			{% endfor %}
 		</div>
 		{% endfor %}
 	</div>
